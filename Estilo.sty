@@ -14,46 +14,44 @@
             \center
             \includegraphics[scale = 0.18]{images/escudo}
         \end{figure}
-        
-        {\large{\textbf{TESIS}}}
+
+        {\large{\textbf{PROYECTO}}}
     \end{center}
 
-    % Título de la tesis
+    % Título del proyecto
     \begin{center}
         \tikz{
           \node[draw=black, shape=rectangle, line width = 3pt, rounded corners=4pt, text width=\linewidth-1cm, align=center, inner sep=0.5cm]{\large \textbf{\mytitle{\@title}} \par};
         }
     \end{center}
 
-    % Datos del estudiante y asesor
-    \setlength{\tabcolsep}{15em} 
-    {\renewcommand{\arraystretch}{0.9}
-    \begin{tabular}{p{8.5cm}}
-        \raggedright
-        \vspace{0.1cm}
-        \textbf{PRESENTADO POR:}\\
-        {\@author}\\
-        \vspace*{0.25cm}
-      \textbf{PARA OPTAR AL TÍTULO PROFESIONAL}\\
-      \textbf{DE {\@academicdegree}}\\
-      \vspace*{0.25cm}
-      \textbf{ASESOR:}\\
-      {\@orientador}\\
-      \vspace*{0.25cm}
-      % Solo mostrar CO-ASESOR si el campo no está vacío
-      \ifdefempty{\@coorientador}{}{%
-      \textbf{CO-ASESOR:}\\
-      {\@coorientador}\\
-      \vspace*{0.25cm}
-      }
-      \vspace*{\stretch{1}}
-    \end{tabular}
-    }
+    % Datos de la asignatura, docente e integrantes
+    \vspace*{1cm}
+    {\renewcommand{\arraystretch}{1.4}
     \begin{center}
-    \vspace*{1.5cm}
+    \begin{tabular}{rl}
+        \textbf{Asignatura:} & {\@asignatura}\\
+        \textbf{Docente:} & {\@docente}\\
+        \textbf{Semestre:} & {\@semestre}\\
+    \end{tabular}
+    \end{center}
+    }
+
+    \vspace*{0.6cm}
+    \begin{center}
+        \textbf{\large Integrantes:}\\[0.4cm]
+        {\renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{ll}
+            \@integrantes
+        \end{tabular}
+        }
+    \end{center}
+
+    \begin{center}
+    \vspace*{\stretch{1}}
     \textbf{\large CUSCO - PERÚ}\\
     \vspace*{0.5cm}
-    \textbf{\large \the\year}\\  
+    \textbf{\large \the\year}\\
     \end{center}
     \vspace*{\stretch{1}}
 }
@@ -64,6 +62,10 @@
 \newcommand{\academicdegree}{\gdef\@academicdegree}
 \newcommand{\faculty}{\gdef\@faculty}
 \newcommand{\school}{\gdef\@school}
+\newcommand{\asignatura}{\gdef\@asignatura}
+\newcommand{\docente}{\gdef\@docente}
+\newcommand{\semestre}{\gdef\@semestre}
+\newcommand{\integrantes}{\gdef\@integrantes}
 
 %::::::::::::::::::::::::::::::::::::::::::::::::::::
 %::::::::::::::    FORMATO CAPITULOS   ::::::::::::::
