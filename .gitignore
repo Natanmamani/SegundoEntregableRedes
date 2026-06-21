@@ -1,0 +1,41 @@
+# ===== Archivos generados por LaTeX (no se suben) =====
+
+## Auxiliares de compilación
+*.aux
+*.lof
+*.lot
+*.toc
+*.out
+*.log
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+*.xdy
+
+## PDF de salida en la raíz (descomenta la siguiente línea si NO quieres subir el PDF final)
+# /main.pdf
+
+# IMPORTANTE: no ignoramos las imágenes (images/*.pdf, images/*.png) porque son fuentes del documento.
+
+# ===== Sistema operativo / editores =====
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/

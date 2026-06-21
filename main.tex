@@ -1,0 +1,63 @@
+\documentclass[a4paper,openzrany,12pt]{book}
+\input{contenido/Incluir.tex}
+
+% Iniciar numeración en romanos
+\pagenumbering{roman}
+
+% Colocar los argumentos definidos
+\faculty{INGRESE SU FACULTAD}
+\school{INGRESE SU E.P.}
+\title{TITULO DEL TRABAJO DE TESIS}
+\author{Br. NOMBRE COMPLETO AUTOR}
+\academicdegree{INGRESE SU GRADO ACADÉMICO}
+\orientador{Dr/Mtro. NOMBRE COMPLETO ASESOR}
+\coorientador{SI TIENE, SINO EN BLANCO}
+
+%Iniciar el documento
+\begin{document}
+\maketitle % Caratula
+\doublespacing
+\input{contenido/presentacion}
+\input{contenido/dedicatoria}
+\input{contenido/agradecimiento}
+
+\newpage
+\addcontentsline{toc}{chapter}{ÍNDICE}
+\tableofcontents 
+
+\newpage
+\addcontentsline{toc}{chapter}{ÍNDICE DE TABLAS}
+\listoftables  
+
+\newpage
+\addcontentsline{toc}{chapter}{ÍNDICE DE FIGURAS}
+\listoffigures  
+
+\setlength{\tabcolsep}{10pt}
+%-------------------------------------
+\input{contenido/resumen}
+\input{contenido/abstract}
+\input{contenido/introduccion}
+\clearpage
+\pagenumbering{arabic} % Numeracion normal
+
+\input{contenido/cap_1_planteamiento_problema} 
+\input{contenido/cap_2_marco_teorico} 
+\input{contenido/cap_3_hipotesis_variables} 
+\input{contenido/cap_4_metodologia}
+\input{contenido/cap_5_resultados}
+
+\input{contenido/discusiones}
+\input{contenido/conclusiones} 
+\input{contenido/recomendaciones} 
+
+\newpage
+\bibliographystyle{apalike}
+\addcontentsline{toc}{chapter}{BIBLIOGRAFÍA}
+\bibliography{contenido/bibliog.bib}
+\clearpage
+
+% ANEXOS
+\input{contenido/anexo} 
+
+\end{document}
