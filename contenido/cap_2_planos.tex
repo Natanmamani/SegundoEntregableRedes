@@ -1,14 +1,407 @@
 \newpage
 \chapter{Planos}
+\label{chap:planos}
 
+Este capítulo presenta la documentación gráfica del sistema de cableado estructurado
+de la Escuela Profesional de Enfermería de la UNSAAC. Los planos muestran la
+distribución de la red, los puntos de datos, canalizaciones, backbone, puesta a
+tierra y cobertura inalámbrica, y constituyen la guía técnica para la
+implementación, administración y mantenimiento del sistema.
+
+% -----------------------------------------------------------
 \section{Plano de ubicación general de la red}
+\label{sec:plano_ubicacion}
+% -----------------------------------------------------------
 
+El plano de ubicación identifica la posición del edificio de Enfermería dentro del
+campus de la UNSAAC y su integración con la red institucional administrada por la
+DTIC. Para efectos del diseño, el edificio se identifica como y se conecta a la red de campus mediante fibra óptica tendida en canalización
+subterránea, conforme a la norma \mbox{ANSI/TIA-568-C.0}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\textwidth]{images/imagenes/plano_campus.png}
+    \caption{Plano de ubicación general — Campus perayoc UNSAAC. El edificio de la Escuela
+    Profesional de Enfermería (Gabinete G09) se indica con el recuadro rojo en el
+    sector sureste. Plano N.° G00CBSN01, Esc.\ 1:100.}
+    \label{fig:plano_ubicacion_campus}
+\end{figure}
+% -----------------------------------------------------------
 \section{Planos de planta con puntos de red y canalizaciones}
+\label{sec:planos_planta}
+% -----------------------------------------------------------
+
+Los planos de planta muestran la ubicación exacta de cada punto de red
+(outlet de telecomunicaciones), las rutas de canalización y el recorrido del
+cableado horizontal por nivel. Para su elaboración se realizó visita técnica al
+edificio, inventario de ambientes con demanda de conectividad según
+\mbox{ANSI/TIA-568-C.1}, análisis de infraestructura existente y digitalización
+en AutoCAD sobre los planos arquitectónicos originales.
+
+\subsection{Sistema de codificación de puntos de red}
+
+Cada punto de red se identifica con el código \textbf{GXX-DYY}, definido según
+la norma \mbox{ANSI/TIA-606-B} y adaptado al esquema institucional de la UNSAAC.
+
+\begin{table}[H]
+    \centering
+    \caption{Estructura del código de identificación de puntos de red.}
+    \label{tab:codigo_nodos}
+    \begin{tabular}{|c|c|p{9cm}|}
+        \hline
+        \textbf{Campo} & \textbf{Símbolo} & \textbf{Descripción} \\
+        \hline
+        Prefijo Gabinete  & G  & Identifica el rack del sistema de cableado. \\
+        \hline
+        Número Gabinete   & XX & Código del rack; para Enfermería corresponde
+                                  al \textbf{09}. \\
+        \hline
+        Indicador de Dato & D  & Señala que es un punto de datos (outlet RJ-45). \\
+        \hline
+        Número de Punto   & YY & Numeración secuencial desde 01. \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/imagenes/leyenda_puntos_red.png}
+    \caption{Leyenda de simbología empleada en los planos de planta
+    (puntos de red, canalizaciones y equipos).}
+    \label{fig:leyenda_puntos_red}
+\end{figure}
+
+\subsection{Primer nivel}
+
+El primer nivel concentra las dependencias administrativas de la facultad: Decanato,
+Secretaría Docente, Coordinación, Jefatura, Sala de Lectura, Almacén de Libros,
+Editorial y A.S.P. Se instalaron \textbf{7 puntos de red} (G09-D01 a G09-D07),
+cada uno con outlet doble Cat.6 (2 puertos RJ-45), en cumplimiento de los mínimos
+establecidos por \mbox{ANSI/TIA-568-C.1}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.97\textwidth]{images/imagenes/plano_primer_nivel.png}
+    \caption{Plano del primer nivel con puntos de red G09-D01 a G09-D07
+    y rutas de canalización. Esc.\ 1:100.}
+    \label{fig:plano_primer_nivel}
+\end{figure}
+\begin{table}[H]
+    \centering
+    \caption{Distribución de puntos de red — Primer nivel.}
+    \label{tab:puntos_nivel1}
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Código} & \textbf{Ambiente} & \textbf{Puertos} & \textbf{Uso previsto} \\
+        \hline
+        G09-D01 & Secretaría Docente       & 2 & PC + VoIP \\
+        G09-D02 & Decanato                 & 2 & PC + VoIP \\
+        G09-D03 & Sec.\ Adm.\ Acad.\ Adm. & 2 & PC + VoIP \\
+        G09-D04 & Jefatura                 & 2 & PC + VoIP \\
+        G09-D05 & Sala de Lectura          & 2 & PC + VoIP \\
+        G09-D06 & Sala de Lectura          & 2 & PC + Internet \\
+        G09-D07 & Almacén de Libros        & 2 & PC + VoIP \\
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{14} & \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Segundo nivel}
+
+Este nivel alberga las aulas 201--204, la Galería (Aula 210) y el Ambiente 209.
+Se instalaron \textbf{6 puntos de red} (G09-D08 a G09-D13), orientados
+principalmente al puesto del docente para soporte de proyección multimedia
+y videoconferencia.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.97\textwidth]{images/imagenes/plano_segundo_nivel.png}
+    \caption{Plano del segundo nivel con puntos de red G09-D08 a G09-D13
+    y rutas de canalización. Esc.\ 1:100.}
+    \label{fig:plano_segundo_nivel}
+\end{figure}
+\begin{table}[H]
+    \centering
+    \caption{Distribución de puntos de red — Segundo nivel.}
+    \label{tab:puntos_nivel2}
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Código} & \textbf{Ambiente} & \textbf{Puertos} & \textbf{Uso previsto} \\
+        \hline
+        G09-D08 & Aula 204     & 2 & Docente + Proyector \\
+        G09-D09 & Aula 204     & 2 & Estudiantes / AP WiFi \\
+        G09-D10 & Aula 204     & 2 & Estudiantes / AP WiFi \\
+        G09-D11 & Aula 203     & 2 & Docente + Proyector \\
+        G09-D12 & Aula 202     & 2 & Docente + Proyector \\
+        G09-D13 & Aula 201     & 2 & PC + VoIP \\
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{12} & \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Cuarto nivel}
+
+El cuarto nivel es el más relevante en términos de infraestructura, ya que aloja
+el \textbf{Gabinete G09 (MDF)}. Cuenta con \textbf{16 puntos de red}
+(G09-D14 a G09-D29), distribuidos en ambientes de trabajo, Ambientes 404 y 405,
+Salón de Grados y Depósito.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.97\textwidth]{images/imagenes/plano_cuarto_nivel.png}
+    \caption{Plano del cuarto nivel con puntos de red G09-D14 a G09-D29 y
+    ubicación del Gabinete G09 (MDF). Esc.\ 1:100.}
+    \label{fig:plano_cuarto_nivel}
+\end{figure}
+\begin{table}[H]
+    \centering
+    \caption{Distribución de puntos de red — Cuarto nivel.}
+    \label{tab:puntos_nivel4}
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Código} & \textbf{Ambiente} & \textbf{Puertos} & \textbf{Uso previsto} \\
+        \hline
+        G09-D14 & Ambiente (escaleras) & 2 & PC + VoIP \\
+        G09-D15 & Ambiente             & 2 & PC + VoIP \\
+        G09-D16 & Ambiente             & 2 & PC + VoIP \\
+        G09-D17 & Ambiente             & 2 & PC + VoIP \\
+        G09-D18 & Ambiente             & 2 & PC + VoIP \\
+        G09-D19 & Ambiente             & 2 & PC + VoIP \\
+        G09-D20 & Ambiente             & 2 & PC + VoIP \\
+        G09-D21 & Ambiente             & 2 & PC + VoIP \\
+        G09-D22 & Ambiente             & 2 & PC + VoIP \\
+        G09-D23 & Ambiente             & 2 & PC + VoIP \\
+        G09-D24 & Ambiente zona oeste  & 2 & PC + VoIP \\
+        G09-D25 & Ambiente zona oeste  & 2 & PC + VoIP \\
+        G09-D26 & Ambiente 404         & 2 & PC + VoIP \\
+        G09-D27 & Ambiente 405         & 2 & PC + VoIP \\
+        G09-D28 & Depósito             & 2 & PC + VoIP \\
+        G09-D29 & Depósito             & 2 & PC + VoIP \\
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{32} & \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Resumen consolidado por nivel}
+
+\begin{table}[H]
+    \centering
+    \caption{Resumen de puntos de red por nivel — Edificio G09.}
+    \label{tab:resumen_puntos}
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Nivel} & \textbf{Puntos} & \textbf{Puertos} & \textbf{Códigos} \\
+        \hline
+        Primer nivel (Administrativo)  &  7 & 14 & G09-D01 -- G09-D07 \\
+        Segundo nivel (Académico)      &  6 & 12 & G09-D08 -- G09-D13 \\
+        Cuarto nivel (Adm./Académico)  & 16 & 32 & G09-D14 -- G09-D29 \\
+        \hline
+        \textbf{Total Edificio G09} & \textbf{29} & \textbf{58} &
+        G09-D01 -- G09-D29 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Canalizaciones y criterios de tendido}
+
+Las rutas de canalización se diseñaron conforme a \mbox{ANSI/TIA-569-D} y
+\mbox{ANSI/TIA-568-C.2}. Se garantiza una separación mínima de 150\,mm respecto
+al cableado eléctrico, se respeta la longitud máxima de 90\,m del subsistema
+horizontal, la ocupación de canalizaciones no supera el 40\% y el soporte del
+cable se realiza aproximadamente cada 1.5\,m. Los sistemas empleados son canaletas
+PVC con tapa, conduit EMT de 3/4'' y 1'', bandejas portacables metálicas en cielo
+raso y cajas de registro cada 15\,m como máximo.
+
+\subsection{Cobertura inalámbrica estimada (mapa de calor)}
+
+Complementando el cableado horizontal, se proyecta una red inalámbrica WiFi 6
+mediante Access Points distribuidos por nivel. Los siguientes mapas de calor
+muestran la intensidad de señal estimada ($-$dBm), verificando una cobertura
+de al menos $-70$\,dBm en aulas y oficinas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/imagenes/mapa_calor_primer_nivel.png}
+    \caption{Mapa de calor de cobertura inalámbrica — Primer nivel.}
+    \label{fig:mapa_calor_primer_nivel}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/imagenes/mapa_calor_segundo_nivel.png}
+    \caption{Mapa de calor de cobertura inalámbrica — Segundo nivel.}
+    \label{fig:mapa_calor_segundo_nivel}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/imagenes/mapa_calor_cuarto_nivel.png}
+    \caption{Mapa de calor de cobertura inalámbrica — Cuarto nivel.}
+    \label{fig:mapa_calor_cuarto_nivel}
+\end{figure}
 
 \section{Plano de racks, patch panels y salas de telecomunicaciones}
+\label{sec:plano_racks}
 
+Las salas de telecomunicaciones (TR, según \mbox{ANSI/TIA-569-D}) son espacios
+dedicados a equipos activos, patch panels, UPS y demás componentes del cableado
+estructurado. Su diseño incide directamente en la confiabilidad y escalabilidad
+de la red.
+
+\subsection{MDF — Gabinete G09}
+
+El \textbf{MDF} del edificio corresponde al Gabinete G09, ubicado en el cuarto
+nivel. Concentra la terminación del backbone de campus (ODF con conectores
+LC dúplex monomodo), los patch panels Cat.6 del cableado horizontal, el switch
+de distribución del edificio y el sistema UPS para respaldo eléctrico.
+
+\begin{table}[H]
+    \centering
+    \caption{Características técnicas del Rack G09 — MDF.}
+    \label{tab:rack_g09}
+    \begin{tabular}{|p{5.5cm}|p{8cm}|}
+        \hline
+        \textbf{Parámetro} & \textbf{Especificación} \\
+        \hline
+        Tipo de rack          & Gabinete cerrado 19'' con puertas y paneles \\
+        \hline
+        Altura / Ancho / Prof.& 42U ($\approx$2000\,mm) / 600\,mm / 800\,mm \\
+        \hline
+        ODF fibra óptica      & 1U — LC dúplex SM OS2 \\
+        \hline
+        Patch panels Cat.6    & 3 $\times$ 24 puertos RJ-45 \\
+        \hline
+        Switch distribución   & 24p GbE + 4p SFP+, 1U \\
+        \hline
+        UPS                   & 1500\,VA, respaldo mínimo 30 min \\
+        \hline
+        Ventilación           & 2 ventiladores con termostato \\
+        \hline
+        Puesta a tierra       & Barra TGB Cu 6\,mm² — \mbox{ANSI/TIA-607-B} \\
+        \hline
+    \end{tabular}
+\end{table}
+
+La administración interna del rack sigue la norma \mbox{ANSI/TIA-606-B}: cada
+puerto del patch panel está etiquetado con el código del punto de red
+correspondiente (G09-D01, G09-D02, etc.), lo que garantiza trazabilidad completa
+y facilita el mantenimiento. Los patch cords son Cat.6 LSZH de 0.5, 1 y 1.5\,m,
+sin superar los 10\,m totales de cordones de parcheo por canal.
+
+% -----------------------------------------------------------
 \section{Plano de backbone}
+\label{sec:plano_backbone}
+% -----------------------------------------------------------
 
+El backbone del edificio opera en dos niveles complementarios. El
+\textbf{backbone de campus} utiliza fibra óptica monomodo \textbf{OS2}
+(9/125\,µm) para el enlace entre el nodo DTIC y el MDF G09, tendido por
+canalización subterránea en cable ADSS de 12 fibras con conectores LC dúplex
+y empalmes por fusión. El \textbf{backbone vertical} emplea fibra óptica
+multimodo \textbf{OM3} (50/125\,µm) para interconectar el MDF con los equipos
+de los niveles inferiores a través del shaft del edificio, soportando 10GbE
+en distancias muy inferiores al límite de 300\,m.
+
+\begin{table}[H]
+    \centering
+    \caption{Especificaciones técnicas del backbone del edificio G09.}
+    \label{tab:backbone_specs}
+    \begin{tabular}{|p{4cm}|p{4.5cm}|p{4.5cm}|}
+        \hline
+        \textbf{Parámetro} & \textbf{Campus (OS2)} & \textbf{Vertical (OM3)} \\
+        \hline
+        Diámetro núcleo   & 9/125\,µm          & 50/125\,µm \\
+        \hline
+        Longitud de onda  & 1310 / 1550\,nm    & 850 / 1300\,nm \\
+        \hline
+        Atenuación máx.\  & 0.4\,dB/km         & 3.5\,dB/km \\
+        \hline
+        Capacidad         & 10GbE / 40GbE      & 10GbE (hasta 300\,m) \\
+        \hline
+        N.° de fibras     & 12                 & 4 \\
+        \hline
+        Conector          & LC dúplex          & LC dúplex \\
+        \hline
+        Norma             & ISO/IEC 11801:2017 & ANSI/TIA-568-C.3 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+La topología adoptada es de \textbf{estrella jerárquica}: el MDF (G09) actúa
+como nodo raíz desde el que parten enlaces directos hacia los switches de acceso
+de cada nivel, sin interconexiones entre pisos que no pasen por el MDF. Este
+modelo garantiza aislamiento de fallas, escalabilidad y un máximo de tres saltos
+entre cualquier punto de trabajo y el nodo de distribución de campus.
+
+% -----------------------------------------------------------
 \section{Detalles constructivos de ductos, bandejas y registros}
+\label{sec:detalles_constructivos}
+% -----------------------------------------------------------
 
+Los sistemas de canalización protegen y ordenan el cableado conforme a
+\mbox{ANSI/TIA-569-D}. Se emplean \textbf{canaletas de PVC tipo V0}
+(autoextinguibles) con tapa extraíble para recorridos superficiales, en secciones
+de 40$\times$25, 60$\times$40 y 100$\times$60\,mm según la carga de cables,
+instaladas a 150\,mm de separación mínima del cableado eléctrico.
+
+\begin{table}[H]
+    \centering
+    \caption{Secciones de canaletas PVC y capacidad de cables Cat.6.}
+    \label{tab:canaletas}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Sección (mm)} & \textbf{Área (mm²)} &
+        \textbf{Capacidad al 40\%} & \textbf{Uso típico} \\
+        \hline
+        40 $\times$ 25  & 1\,000 & $\approx$4 cables  & Bajadas a outlet \\
+        60 $\times$ 40  & 2\,400 & $\approx$9 cables  & Distribución en ambiente \\
+        100 $\times$ 60 & 6\,000 & $\approx$22 cables & Tramos principales \\
+        \hline
+    \end{tabular}
+\end{table}
+
+El \textbf{conduit EMT galvanizado} se utiliza en tramos empotrados y
+cruzamientos estructurales (3/4'' para hasta 2 cables, 1'' para hasta 5 cables).
+Las \textbf{bandejas portacables metálicas} (tipo escalera o perforada, 100--300\,mm
+de ancho) se instalan en cielo raso con soportes cada 1.5\,m. Las \textbf{cajas de
+registro} se ubican cada 15\,m y en cada cambio de dirección mayor de 90°; las cajas
+de salida para outlet se instalan a 45\,cm o 1.20\,m del piso según el tipo de ambiente.
+
+% -----------------------------------------------------------
 \section{Diagrama de puesta a tierra}
+\label{sec:puesta_a_tierra}
+% -----------------------------------------------------------
+
+Un sistema de puesta a tierra deficiente genera interferencia electromagnética,
+ruido y daño por sobretensiones en los equipos de red. Por ello, el diseño sigue
+la norma \textbf{\mbox{ANSI/TIA-607-B}}, que establece los requisitos de
+equipotencialización (bonding) para infraestructura de telecomunicaciones.
+
+\begin{table}[H]
+    \centering
+    \caption{Componentes del sistema de puesta a tierra — ANSI/TIA-607-B.}
+    \label{tab:tierra}
+    \begin{tabular}{|p{4.5cm}|p{3cm}|p{5.5cm}|}
+        \hline
+        \textbf{Elemento} & \textbf{Conductor} & \textbf{Requisito} \\
+        \hline
+        TGB (sala telecom.)  & Cu 50$\times$6\,mm   & Resistencia $< 1\,\Omega$ \\
+        \hline
+        TMGB (barra princ.)  & Cu 100$\times$6\,mm  & Resistencia $< 1\,\Omega$ \\
+        \hline
+        TGBBC                & Cu 6\,mm² mín.       & Verde/amarillo, sin empalmes \\
+        \hline
+        Bonding rack--TGB    & Cu 6\,mm²            & Sin empalmes intermedios \\
+        \hline
+        Electrodo de tierra  & Varilla Cu 5/8''     & Resistencia $\leq 5\,\Omega$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+El diseño sigue una topología de referencia única (estrella) para evitar lazos de
+tierra, con conductores continuos sin empalmes y protectores de sobretensión (SPD)
+en la alimentación del rack y en la entrada de la fibra óptica. La resistencia total
+se verifica con telurómetro conforme a IEEE 81.
