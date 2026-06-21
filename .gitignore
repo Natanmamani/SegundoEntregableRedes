@@ -28,6 +28,7 @@
 *.acr
 *.alg
 *.xdy
+*.pdf
 
 ## PDF de salida en la raíz (descomenta la siguiente línea si NO quieres subir el PDF final)
 # /main.pdf
