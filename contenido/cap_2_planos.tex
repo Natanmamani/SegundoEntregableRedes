@@ -82,13 +82,13 @@ establecidos por \mbox{ANSI/TIA-568-C.1}.
         \hline
         \textbf{Código} & \textbf{Ambiente} & \textbf{Puertos} & \textbf{Uso previsto} \\
         \hline
-        G09-D01 & Secretaría Docente       & 2 & PC + VoIP \\
-        G09-D02 & Decanato                 & 2 & PC + VoIP \\
-        G09-D03 & Sec.\ Adm.\ Acad.\ Adm. & 2 & PC + VoIP \\
-        G09-D04 & Jefatura                 & 2 & PC + VoIP \\
-        G09-D05 & Sala de Lectura          & 2 & PC + VoIP \\
-        G09-D06 & Sala de Lectura          & 2 & PC + Internet \\
-        G09-D07 & Almacén de Libros        & 2 & PC + VoIP \\
+        G09-D01 & Secretaría Docente       & 2 & Workstation --- CU \\
+        G09-D02 & Decanato                 & 2 & Workstation --- CU \\
+        G09-D03 & Sec.\ Adm.\ Acad.\ Adm. & 2 & Workstation --- CU \\
+        G09-D04 & Jefatura                 & 2 & Workstation --- CU \\
+        G09-D05 & Sala de Lectura          & 2 & Terminal de datos / CU \\
+        G09-D06 & Sala de Lectura          & 2 & Terminal de datos / CU \\
+        G09-D07 & Almacén de Libros        & 2 & Workstation --- CU \\
         \hline
         \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{14} & \\
         \hline
@@ -122,9 +122,50 @@ y videoconferencia.
         G09-D10 & Aula 204     & 2 & Estudiantes / AP WiFi \\
         G09-D11 & Aula 203     & 2 & Docente + Proyector \\
         G09-D12 & Aula 202     & 2 & Docente + Proyector \\
-        G09-D13 & Aula 201     & 2 & PC + VoIP \\
+        G09-D13 & Aula 201     & 2 & Estación docente --- videoconf. \\
         \hline
         \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{12} & \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Tercer nivel}
+
+El tercer nivel concentra aulas de teoría, una oficina de gestión institucional y un
+laboratorio especializado: Aulas 301, 303--307, la Dirección de Calidad y Acreditación
+(302) y el Laboratorio de Salud Materno Infantil (308). Se instalaron
+\textbf{9 puntos de red} (G09-D14 a G09-D22), cada uno con outlet doble Cat.6
+(2 puertos RJ-45), conforme a \mbox{ANSI/TIA-568-C.1}. Las aulas cuentan con punto
+dedicado para la estación docente con capacidad de videoconferencia; el laboratorio
+incorpora puntos para el equipamiento de simulación clínica y la estación de
+monitoreo del docente.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.97\textwidth]{images/imagenes/plano_tercer_nivel.png}
+    \caption{Plano del tercer nivel con puntos de red G09-D14 a G09-D22
+    y rutas de canalización. Esc.\ 1:100.}
+    \label{fig:plano_tercer_nivel}
+\end{figure}
+\begin{table}[H]
+    \centering
+    \caption{Distribución de puntos de red — Tercer nivel.}
+    \label{tab:puntos_nivel3}
+    \begin{tabular}{|c|l|c|c|}
+        \hline
+        \textbf{Código} & \textbf{Ambiente} & \textbf{Puertos} & \textbf{Uso previsto} \\
+        \hline
+        G09-D14 & Aula 301                          & 2 & Workstation --- videoconf. \\
+        G09-D15 & Dir.\ Calidad y Acreditación 302  & 2 & Workstation --- AP Wi-Fi \\
+        G09-D16 & Lab.\ Salud Materno Infantil 308  & 2 & Simulación Clínica / multimedia \\
+        G09-D17 & Lab.\ Salud Materno Infantil 308  & 2 & Estación de Monitoreo --- Workstation \\
+        G09-D18 & Aula 307                          & 2 & Workstation --- videoconf. \\
+        G09-D19 & Aula 303                          & 2 & Workstation --- videoconf. \\
+        G09-D20 & Aula 304                          & 2 & Workstation --- videoconf. \\
+        G09-D21 & Aula 305                          & 2 & Workstation --- videoconf. \\
+        G09-D22 & Aula 306                          & 2 & Workstation --- videoconf. \\
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{18} & \\
         \hline
     \end{tabular}
 \end{table}
@@ -132,14 +173,18 @@ y videoconferencia.
 \subsection{Cuarto nivel}
 
 El cuarto nivel es el más relevante en términos de infraestructura, ya que aloja
-el \textbf{Gabinete G09 (MDF)}. Cuenta con \textbf{16 puntos de red}
-(G09-D14 a G09-D29), distribuidos en ambientes de trabajo, Ambientes 404 y 405,
-Salón de Grados y Depósito.
+el \textbf{Gabinete G09 (MDF)}. Cuenta con \textbf{11 puntos de red}
+(G09-D23 a G09-D33), distribuidos entre oficinas administrativas, un aula de
+teoría, espacios de uso múltiple y un laboratorio especializado: Oficina
+Administrativa 401, Centro de Investigación 403, Centro Federado 404,
+Aula 405, Oficina de Maestrías 406, Oficina de Segunda Especialidad 407,
+Salón de Uso Múltiple 408, Laboratorio de Simuladores 409 y Salón
+Administrativo 410.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.97\textwidth]{images/imagenes/plano_cuarto_nivel.png}
-    \caption{Plano del cuarto nivel con puntos de red G09-D14 a G09-D29 y
+    \caption{Plano del cuarto nivel con puntos de red G09-D23 a G09-D33 y
     ubicación del Gabinete G09 (MDF). Esc.\ 1:100.}
     \label{fig:plano_cuarto_nivel}
 \end{figure}
@@ -151,24 +196,19 @@ Salón de Grados y Depósito.
         \hline
         \textbf{Código} & \textbf{Ambiente} & \textbf{Puertos} & \textbf{Uso previsto} \\
         \hline
-        G09-D14 & Ambiente (escaleras) & 2 & PC + VoIP \\
-        G09-D15 & Ambiente             & 2 & PC + VoIP \\
-        G09-D16 & Ambiente             & 2 & PC + VoIP \\
-        G09-D17 & Ambiente             & 2 & PC + VoIP \\
-        G09-D18 & Ambiente             & 2 & PC + VoIP \\
-        G09-D19 & Ambiente             & 2 & PC + VoIP \\
-        G09-D20 & Ambiente             & 2 & PC + VoIP \\
-        G09-D21 & Ambiente             & 2 & PC + VoIP \\
-        G09-D22 & Ambiente             & 2 & PC + VoIP \\
-        G09-D23 & Ambiente             & 2 & PC + VoIP \\
-        G09-D24 & Ambiente zona oeste  & 2 & PC + VoIP \\
-        G09-D25 & Ambiente zona oeste  & 2 & PC + VoIP \\
-        G09-D26 & Ambiente 404         & 2 & PC + VoIP \\
-        G09-D27 & Ambiente 405         & 2 & PC + VoIP \\
-        G09-D28 & Depósito             & 2 & PC + VoIP \\
-        G09-D29 & Depósito             & 2 & PC + VoIP \\
+        G09-D23 & Of.\ Administrativa 401              & 2 & Workstation --- AP Wi-Fi \\
+        G09-D24 & Centro de Investigación 403           & 2 & Workstation \\
+        G09-D25 & Centro Federado 404                   & 2 & Workstation --- AP Wi-Fi \\
+        G09-D26 & Aula 405                              & 2 & Estación docente --- videoconf. \\
+        G09-D27 & Of.\ Maestrías 406                   & 2 & Workstation \\
+        G09-D28 & Of.\ Segunda Especialidad 407         & 2 & Workstation \\
+        G09-D29 & Salón de Uso Múltiple 408             & 2 & Workstation --- videoconf. \\
+        G09-D30 & Salón de Uso Múltiple 408             & 2 & AP Wi-Fi~6 \\
+        G09-D31 & Lab.\ de Simuladores 409              & 2 & Simulación Biomédica \\
+        G09-D32 & Lab.\ de Simuladores 409              & 2 & Workstation docente \\
+        G09-D33 & Salón Administrativo 410              & 2 & Workstation \\
         \hline
-        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{32} & \\
+        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{22} & \\
         \hline
     \end{tabular}
 \end{table}
@@ -185,10 +225,11 @@ Salón de Grados y Depósito.
         \hline
         Primer nivel (Administrativo)  &  7 & 14 & G09-D01 -- G09-D07 \\
         Segundo nivel (Académico)      &  6 & 12 & G09-D08 -- G09-D13 \\
-        Cuarto nivel (Adm./Académico)  & 16 & 32 & G09-D14 -- G09-D29 \\
+        Tercer nivel (Académico)       &  9 & 18 & G09-D14 -- G09-D22 \\
+        Cuarto nivel (Adm./Académico)  & 11 & 22 & G09-D23 -- G09-D33 \\
         \hline
-        \textbf{Total Edificio G09} & \textbf{29} & \textbf{58} &
-        G09-D01 -- G09-D29 \\
+        \textbf{Total Edificio G09} & \textbf{33} & \textbf{66} &
+        G09-D01 -- G09-D33 \\
         \hline
     \end{tabular}
 \end{table}
@@ -205,29 +246,52 @@ raso y cajas de registro cada 15\,m como máximo.
 
 \subsection{Cobertura inalámbrica estimada (mapa de calor)}
 
-Complementando el cableado horizontal, se proyecta una red inalámbrica WiFi 6
-mediante Access Points distribuidos por nivel. Los siguientes mapas de calor
-muestran la intensidad de señal estimada ($-$dBm), verificando una cobertura
-de al menos $-70$\,dBm en aulas y oficinas.
+Complementando el cableado horizontal, se proyecta una red inalámbrica
+\textbf{Wi-Fi 6 (802.11ax)} mediante Access Points (AP) de techo instalados
+por nivel. La ubicación de cada AP se definió con el criterio de cubrir la
+mayor cantidad de ambientes desde una posición central, aprovechando los
+pasillos como eje de distribución de señal. Los mapas de calor muestran la
+intensidad de señal estimada en dBm; se verifica una cobertura mínima de
+$-70$\,dBm en aulas y oficinas, umbral que garantiza tasas de transferencia
+adecuadas para videoconferencia y acceso a plataformas educativas.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{images/imagenes/mapa_calor_primer_nivel.png}
-    \caption{Mapa de calor de cobertura inalámbrica — Primer nivel.}
+    \caption{Mapa de calor de cobertura inalámbrica — Primer nivel.
+    El AP se ubica en el pasillo central, brindando cobertura a las
+    dependencias administrativas (Decanato, Secretaría, Jefatura y
+    Sala de Lectura).}
     \label{fig:mapa_calor_primer_nivel}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{images/imagenes/mapa_calor_segundo_nivel.png}
-    \caption{Mapa de calor de cobertura inalámbrica — Segundo nivel.}
+    \caption{Mapa de calor de cobertura inalámbrica — Segundo nivel.
+    Los AP se posicionan en el pasillo para dar cobertura a las aulas
+    201--204 y la Galería 210.}
     \label{fig:mapa_calor_segundo_nivel}
 \end{figure}
 
 \begin{figure}[H]
     \centering
+    \includegraphics[width=0.85\textwidth]{images/imagenes/mapa_calor_tercer_nivel.png}
+    \caption{Mapa de calor de cobertura inalámbrica — Tercer nivel.
+    Se instalan \textbf{2 AP} en el pasillo central: uno entre las Aulas 303
+    y 304, y otro entre las Aulas 305 y 306, logrando cobertura sobre las
+    cuatro aulas inferiores, la Dirección de Calidad 302 y el Laboratorio
+    de Salud Materno Infantil 308.}
+    \label{fig:mapa_calor_tercer_nivel}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
     \includegraphics[width=0.85\textwidth]{images/imagenes/mapa_calor_cuarto_nivel.png}
-    \caption{Mapa de calor de cobertura inalámbrica — Cuarto nivel.}
+    \caption{Mapa de calor de cobertura inalámbrica — Cuarto nivel.
+    Los AP se distribuyen a lo largo del pasillo central y en los ambientes
+    de mayor extensión (Salón de Uso Múltiple 408 y Laboratorio de
+    Simuladores 409), garantizando cobertura en oficinas, aula y laboratorio.}
     \label{fig:mapa_calor_cuarto_nivel}
 \end{figure}
 
