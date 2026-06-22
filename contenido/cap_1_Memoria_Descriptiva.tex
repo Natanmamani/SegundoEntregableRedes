@@ -1,319 +1,107 @@
 \newpage
 \chapter{Memoria Descriptiva}
 
-El presente proyecto consiste en el diseño de un sistema de cableado estructurado
-para la Escuela Profesional de Enfermería de la Universidad Nacional de San Antonio
-Abad del Cusco (UNSAAC), con la finalidad de implementar una infraestructura de
-telecomunicaciones moderna, segura y escalable que permita soportar los servicios
-de conectividad institucional.
+\section{Descripción General del Proyecto}
+El presente proyecto consiste en el diseño de una propuesta académica para la renovación y optimización del Sistema de Cableado Estructurado de la Escuela Profesional de Enfermería de la Universidad Nacional de San Antonio Abad del Cusco (UNSAAC).
+Físicamente, la escuela opera en un pabellón de concreto armado que consta de cuatro niveles funcionales.
+Actualmente el edificio cuenta con una instalación de red básica; sin embargo, esta propuesta plantea un rediseño técnico orientado exclusivamente a la \textbf{infraestructura física y pasiva de telecomunicaciones} (Capa 1 del modelo OSI). El diseño abarca el tendido de cables de datos para las estaciones de trabajo fijas, la canalización e interconexión de los puntos de acceso inalámbrico (Access Points) y los puntos para cámaras de video vigilancia (CCTV) del pabellón.
+El núcleo de la topología física propuesta se centraliza en un único Rack de Telecomunicaciones principal (Main Distribution Frame --- MDF), ubicado en el segundo nivel del edificio y compartiendo el entorno físico del Centro de Cómputo por motivos de centralidad geográfica y seguridad.
+Desde este punto central se distribuye el cableado horizontal de cobre de manera directa hacia los cuatro pisos del inmueble, prescindiendo de gabinetes secundarios para mantener una arquitectura de red simple, económica y de fácil mantenimiento.
 
-La infraestructura propuesta contempla una red convergente capaz de integrar
-servicios de transmisión de datos, acceso inalámbrico, telefonía IP y futuras
-aplicaciones tecnológicas como sistemas de videovigilancia IP. El diseño se basa
-en estándares internacionales de cableado estructurado utilizando cableado UTP
-Categoría 6 para el subsistema horizontal y fibra óptica para el backbone principal.
+\section{Objetivos de la Obra}
 
-Asimismo, la red estará organizada mediante un Main Distribution Frame (MDF)
-ubicado en el cuarto nivel del edificio, desde donde se distribuirán los enlaces
-hacia las áreas académicas y administrativas.
+\subsection{Objetivo General}
+Diseñar una propuesta técnica de cableado estructurado basada en estándares internacionales para el edificio de la Escuela Profesional de Enfermería de la UNSAAC, que optimice la conectividad física de datos y soporte la demanda de la red LAN inalámbrica mediante una infraestructura centralizada y escalable.
 
-El proyecto considera además criterios de ordenamiento, etiquetado,
-administración y mantenimiento de la infraestructura, garantizando confiabilidad,
-facilidad de expansión y adecuado desempeño de los servicios de telecomunicaciones.
-
-% -----------------------------------------------------------
-\section{Descripción general del proyecto}
-% -----------------------------------------------------------
-
-El proyecto consiste en el diseño e implementación de un sistema de cableado
-estructurado categoría 6 para el edificio de la Escuela Profesional de Enfermería,
-identificado institucionalmente como dentro de la red de
-conectividad de la UNSAAC.
-
-El sistema contempla la instalación de \textbf{29 puntos de red} distribuidos en
-tres niveles del edificio (primero, segundo y cuarto), todos ellos terminados en
-el rack principal \textbf{G09 (MDF)}, ubicado en el cuarto nivel. Desde este punto,
-el edificio se integra a la red institucional de la UNSAAC mediante un enlace de
-fibra óptica monomodo OS2 tendido a través de la canalización subterránea del campus,
-administrada por la Dirección de Tecnologías de la Información y Comunicaciones (DTIC).
-
-El diseño abarca el subsistema horizontal en cable UTP categoría 6, el subsistema
-de backbone en fibra óptica, las canalizaciones (canaletas PVC, conduit EMT y
-bandejas portacables), la sala de telecomunicaciones con su rack de 42U, el sistema
-de puesta a tierra y la red inalámbrica (WLAN) con siete Access Points Wi-Fi 6.
-
-% -----------------------------------------------------------
-\section{Objetivos de la obra}
-% -----------------------------------------------------------
-
-\subsection{Objetivo general}
-
-Diseñar e implementar un sistema de cableado estructurado categoría 6 en la
-Escuela Profesional de Enfermería de la UNSAAC, que provea una infraestructura
-de telecomunicaciones confiable, ordenada y escalable, integrada a la red
-institucional del campus universitario.
-
-\subsection{Objetivos específicos}
-
-\begin{itemize}
-    \item Dotar a todos los ambientes académicos y administrativos del edificio
-    de puntos de red certificados bajo la norma \mbox{ANSI/TIA-568-C.2}.
-
-    \item Establecer un backbone de fibra óptica que interconecte el MDF del
-    edificio con la red de campus de la DTIC-UNSAAC mediante tecnología Gigabit
-    y 10 Gigabit Ethernet.
-
-    \item Implementar una sala de telecomunicaciones que centralice
-    la gestión del cableado estructurado, conforme a \mbox{ANSI/TIA-569-D} y
-    \mbox{ANSI/TIA-606-B}.
-
-    \item Diseñar un sistema de puesta a tierra para telecomunicaciones que
-    garantice la equipotencialización de los equipos activos y la protección
-    contra interferencias electromagnéticas, según \mbox{ANSI/TIA-607-B}.
-
-    \item Proveer cobertura inalámbrica WiFi 6 en el 97\% del área útil del
-    edificio, con niveles de señal de al menos $-70$\,dBm en aulas y oficinas.
-
-    \item Documentar el sistema mediante planos, esquemas y etiquetado completo
-    que faciliten la administración y el mantenimiento futuro de la infraestructura.
+\subsection{Objetivos Específicos}
+\begin{itemize}[label=$\bullet$,leftmargin=1.4em]
+    \item Definir la distribución física de los puntos de red de datos para las áreas administrativas, académicas y laboratorios especializados en los cuatro niveles del pabellón.
+    \item Proyectar la ubicación de los puntos de red destinados a la alimentación y conectividad de los Access Points (APs) en techos, así como de las cámaras de seguridad, asegurando la infraestructura física necesaria para ambos servicios.
+    \item Diseñar la distribución interna del Rack Principal (MDF) en el segundo piso, organizando de forma estandarizada los paneles de parcheo (Patch Panels) y los organizadores de cable necesarios para el total de nodos del edificio.
+    \item Establecer los criterios técnicos de canalización y tendido de cables a través de canaletas y tuberías, garantizando que ningún enlace horizontal de cobre exceda el límite normativo de 90 metros lineales.
 \end{itemize}
 
-% -----------------------------------------------------------
-\section{Ubicación y área de intervención}
-% -----------------------------------------------------------
+\section{Ubicación y Área de Intervención}
 
-\subsection{Ubicación geográfica}
-
-\begin{table}[H]
-    \centering
-    \caption{Datos de ubicación del área de intervención.}
-    \label{tab:ubicacion}
-    \begin{tabular}{|p{4.5cm}|p{9cm}|}
-        \hline
-        \textbf{Parámetro} & \textbf{Descripción} \\
-        \hline
-        Departamento       & Cusco \\
-        \hline
-        Provincia          & Cusco \\
-        \hline
-        Distrito           & Cusco \\
-        \hline
-        Institución        & Universidad Nacional de San Antonio Abad del Cusco
-                             (UNSAAC) \\
-        \hline
-        Facultad           & Enfermería \\
-        \hline
-        Escuela Profesional & Enfermería \\
-        \hline
-        Identificación     & CIUDAD UNIVERSITARIA DE PERAYOC UNSAAC \\
-        \hline
-    \end{tabular}
-\end{table}%
-\nobreak\vspace{-0.3cm}
-\subsection{Descripción del inmueble}
-
-El edificio de la Escuela Profesional de Enfermería es una construcción de
-concreto armado y muros de albañilería confinada de cuatro niveles. Cuenta con
-una planta típica de aproximadamente 680\,m² por nivel, con una distribución
-funcional que incluye ambientes administrativos en el primer nivel, aulas en el
-segundo y ambientes académicos y de reunión en el cuarto nivel.
+\subsection{Ubicación Geográfica}
+El área objeto de estudio se encuentra localizada dentro de los predios de la Ciudad Universitaria de Perayoc de la Universidad Nacional de San Antonio Abad del Cusco.
 
 \begin{table}[H]
-    \centering
-    \caption{Distribución funcional del edificio G09 por nivel.}
-    \label{tab:distribucion_niveles}
-    \begin{tabular}{|c|p{5cm}|p{6.5cm}|}
-        \hline
-        \textbf{Nivel} & \textbf{Función principal} & \textbf{Ambientes principales} \\
-        \hline
-        Primero & Área administrativa y biblioteca &
-        Decanato, Secretarías, Jefatura, Sala de Lectura,
-        Almacén de Libros, Editorial, A.S.P., Hall \\
-        \hline
-        Segundo & Área académica &
-        Aulas 201--204, Galería (Aula 210),
-        Ambiente 209, Hall, SS.HH. \\
-        \hline
-        Cuarto  & Área académica / MDF &
-        Ambientes de trabajo, Ambientes 404--405,
-        Salón de Grados, Sala de Telecomunicaciones \\
-        \hline
-    \end{tabular}
-\end{table}%
-\nobreak\vspace{-0.3cm}
-% -----------------------------------------------------------
-\section{Alcances del proyecto}
-% -----------------------------------------------------------
-
-El proyecto comprende el diseño, suministro e instalación de los siguientes
-componentes y subsistemas:
-
-\textbf{Cableado horizontal:} Tendido de cable UTP categoría 6 de cuatro pares
-desde el rack G09 hasta cada uno de los 29 puntos de red del edificio, con una
-longitud máxima de 90\,m por canal conforme a \mbox{ANSI/TIA-568-C.2}. Cada
-punto de red cuenta con un outlet doble de dos puertos RJ-45 Cat.6.
-
-\textbf{Backbone de fibra óptica:} Enlace de fibra óptica monomodo entre
-el nodo de distribución y el MDF del edificio, y enlaces
-de fibra óptica multimodo OM3 para el backbone vertical interno entre el MDF y
-los equipos activos de los niveles inferiores.
-
-\textbf{Sala de telecomunicaciones y rack:} Instalación del Gabinete G09 de 42U
-en el cuarto nivel, equipado con panel de distribución de fibra óptica (ODF),
-tres patch panels Cat.6 de 24 puertos, switch de distribución de 24 puertos GbE
-con uplinks SFP+, UPS de 1500\,VA y sistema de ventilación con termostato.
-
-\textbf{Canalizaciones:} Suministro e instalación de canaletas PVC tipo V0, bandejas portacables metálicas y cajas
-de registro, conforme a \mbox{ANSI/TIA-569-D}.
-
-\textbf{Puesta a tierra:} Implementación del sistema de equipotencialización según \mbox{ANSI/TIA-607-B},
-con resistencia total verificada.
-
-\textbf{Red inalámbrica (WLAN):} Instalación de siete Access Points Wi-Fi 6 con soporte dual-band, MU-MIMO y OFDMA, alimentados por PoE+
-desde el switch del rack G09, cubriendo el 97\% del área útil del edificio con
-un nivel de señal mínimo de $-70$\,dBm.
-
-\textbf{Documentación:} Elaboración del expediente técnico completo, que incluye
-planos en AutoCAD, memoria descriptiva, especificaciones técnicas, metrados y
-presupuesto.
-
-Lo que no forma parte del alcance del presente proyecto: obras civiles
-adicionales al edificio existente, instalaciones eléctricas de baja tensión
-(más allá de la puesta a tierra de telecomunicaciones), equipos de usuario final
-(computadoras, teléfonos IP) ni la configuración lógica de los equipos de red
-más allá de la puesta en marcha básica.
-
-% -----------------------------------------------------------
-\section{Justificación técnica y beneficios}
-% -----------------------------------------------------------
-
-La Escuela Profesional de Enfermería carece actualmente de una infraestructura
-de telecomunicaciones certificada y debidamente documentada. El cableado existente,
-en muchos casos improvisado, no cumple con los estándares mínimos de desempeño
-ni de administración, lo que genera problemas de conectividad, dificultad para
-el diagnóstico de fallas y una capacidad de respuesta muy limitada ante el
-crecimiento de la demanda tecnológica en la institución.
-
-La implementación del sistema de cableado estructurado categoría 6 resuelve
-esta situación, aportando los siguientes beneficios técnicos e institucionales:
-
-\begin{table}[H]
-    \centering
-    \caption{Beneficios técnicos e institucionales del proyecto.}
-    \label{tab:beneficios}
-    \begin{tabular}{|p{4.5cm}|p{9cm}|}
-        \hline
-        \textbf{Beneficio} & \textbf{Descripción} \\
-        \hline
-        Ancho de banda garantizado &
-        El cableado Cat.6 soporta aplicaciones de hasta 1\,GbE por enlace,
-        con margen para 10GbE en distancias cortas, suficiente para las
-        necesidades actuales y futuras del edificio. \\
-        \hline
-        Cobertura inalámbrica total &
-        Los siete APs Wi-Fi 6 garantizan conectividad sin interrupciones
-        para hasta 610 usuarios simultáneos en todo el edificio. \\
-        \hline
-        Administración simplificada &
-        El etiquetado completo y la documentación del sistema permiten
-        identificar y resolver fallas en menor tiempo, reduciendo el
-        impacto sobre las actividades académicas. \\
-        \hline
-        Escalabilidad &
-        La infraestructura tiene capacidad de crecimiento sin necesidad
-        de rediseño, tanto en puntos de red cableados como en APs
-        inalámbricos adicionales. \\
-        \hline
-        Integración institucional &
-        El sistema se integra a la red de campus de la UNSAAC mediante
-        fibra óptica, facilitando el acceso a servicios centralizados
-        de la DTIC (Internet, servidores, VoIP). \\
-        \hline
-        Seguridad y protección &
-        La puesta a tierra normalizada y los protectores de sobretensión
-        resguardan los equipos activos frente a fallas eléctricas y
-        descargas, prolongando su vida útil. \\
-        \hline
-    \end{tabular}
+\centering
+\caption{Datos de ubicación político-institucional.}
+\begin{tabular}{ll}
+\hline
+\textbf{Parámetro} & \textbf{Descripción} \\
+\hline
+Departamento & Cusco \\
+Provincia & Cusco \\
+Distrito & Cusco \\
+Institución & Universidad Nacional de San Antonio Abad del Cusco \\
+Facultad & Facultad de Ciencias de la Salud \\
+Escuela Profesional & Enfermería \\
+Sede & Ciudad Universitaria de Perayoc \\
+\hline
+\end{tabular}
 \end{table}
 
-Desde el punto de vista académico, el proyecto mejora directamente las condiciones
-tecnológicas para la enseñanza, el acceso a plataformas virtuales, la realización
-de videoconferencias y el uso de recursos digitales por parte de docentes y
-estudiantes de la Escuela Profesional de Enfermería.%
-\nobreak\vspace{-0.3cm}
-% -----------------------------------------------------------
-\section{Normas y estándares aplicados}
-% -----------------------------------------------------------
-
-El diseño e implementación del sistema de cableado estructurado se rige por las
-normas internacionales de mayor reconocimiento en la industria de
-telecomunicaciones. La Tabla \ref{tab:normas} resume los estándares aplicados
-y su ámbito de aplicación en el proyecto.
+\subsection{Descripción del Inmueble}
+El pabellón de la Escuela Profesional de Enfermería presenta una estructura típica de concreto y albañilería confinada distribuida en cuatro niveles, con ambientes orientados tanto a la gestión administrativa como al entrenamiento clínico y la docencia teórica.
+La distribución funcional macro considerada para el diseño se detalla a continuación:
 
 \begin{table}[H]
-    \centering
-    \caption{Normas y estándares internacionales aplicados al proyecto.}
-    \label{tab:normas}
-    \begin{tabular}{|p{4.5cm}|p{9cm}|}
-        \hline
-        \textbf{Norma / Estándar} & \textbf{Ámbito de aplicación} \\
-        \hline
-        ANSI/TIA-568-C.0 &
-        Requisitos generales de cableado de telecomunicaciones en edificios
-        comerciales. Topología, distancias y arquitectura del sistema. \\
-        \hline
-        ANSI/TIA-568-C.1 &
-        Cableado de telecomunicaciones en edificios comerciales.
-        Requisitos mínimos de puntos de red y subsistemas. \\
-        \hline
-        ANSI/TIA-568-C.2 &
-        Especificaciones para cableado de par trenzado no blindado (UTP)
-        categoría 6. Parámetros de desempeño y pruebas de certificación. \\
-        \hline
-        ANSI/TIA-568-C.3 &
-        Especificaciones para cableado de fibra óptica. Parámetros de
-        atenuación, conectores y empalmes. \\
-        \hline
-        ANSI/TIA-569-D &
-        Espacios y sendas para telecomunicaciones en edificios comerciales.
-        Diseño de salas de telecomunicaciones, canalizaciones y rutas de
-        cableado. \\
-        \hline
-        ANSI/TIA-606-B &
-        Administración de infraestructura de telecomunicaciones.
-        Etiquetado, codificación y documentación del sistema. \\
-        \hline
-        ANSI/TIA-607-B &
-        Puesta a tierra y equipotencialización para telecomunicaciones.
-        Diseño del sistema TGB, TMGB y conductores de bonding. \\
-        \hline
-        ISO/IEC 11801:2017 &
-        Estándar internacional de cableado genérico para edificios y
-        campus. Especificaciones de clases y categorías de cableado,
-        fibra óptica y topología de red. \\
-        \hline
-        IEEE 802.11ax (Wi-Fi 6) &
-        Estándar para redes inalámbricas de área local. Tecnologías
-        OFDMA, MU-MIMO, dual-band y seguridad WPA3. \\
-        \hline
-        IEEE 802.3at (PoE+) &
-        Alimentación eléctrica sobre cableado Ethernet para dispositivos
-        como Access Points y teléfonos IP (hasta 30\,W por puerto). \\
-        \hline
-        NEC / NFPA 70 &
-        Código Eléctrico Nacional. Referencia para la instalación
-        eléctrica asociada al sistema de telecomunicaciones. \\
-        \hline
-        IEEE 81 &
-        Guía para la medición de resistencia de puesta a tierra mediante
-        telurómetro. \\
-        \hline
-    \end{tabular}
+\centering
+\caption{Distribución funcional macro de la infraestructura por niveles.}
+\begin{tabular}{llp{6.5cm}}
+\hline
+\textbf{Nivel} & \textbf{Función Principal} & \textbf{Ambientes Destacados} \\
+\hline
+Primero & Área Administrativa & Decanato, Secretarías, Jefaturas y Sala de Lectura \\
+Segundo & Área Académica / Cómputo & Aulas teóricas y Centro de Cómputo (ubicación del MDF) \\
+Tercero & Área de Especialidad & Laboratorios de simulación de Enfermería y Aulas \\
+Cuarto & Área Académica Magna & Aulas teóricas y Auditorio Principal de la Escuela \\
+\hline
+\end{tabular}
 \end{table}
 
-El cumplimiento de estas normas garantiza que el sistema de cableado estructurado
-instalado en la Escuela Profesional de Enfermería sea interoperable con cualquier
-tecnología de red activa compatible con los estándares IEEE 802.3 y 802.11,
-y que su desempeño pueda ser verificado y certificado de forma objetiva mediante
-equipos de medición homologados.
+\section{Alcances del Proyecto}
+La presente propuesta académica delimita sus fronteras estrictamente al diseño técnico de los componentes pasivos de la red local. El alcance técnico comprende:
+\begin{itemize}[label=$\bullet$,leftmargin=1.4em]
+    \item \textbf{Cableado Horizontal:} Diseño del tendido de cable de par trenzado UTP desde el Centro de Cómputo (Piso 2) hacia las estaciones de trabajo del personal administrativo del primer nivel, las computadoras del laboratorio del segundo nivel y los escritorios de docentes distribuidos en los pisos superiores.
+    \item \textbf{Infraestructura para Wi-Fi:} Inclusión en el cableado horizontal de los puntos de red aéreos (jacks en cajas de paso fijadas en el techo) requeridos para conectar físicamente los Access Points que darán cobertura inalámbrica a los estudiantes.
+    \item \textbf{Infraestructura para Video Vigilancia (CCTV):} Tendido de los puntos de red aéreos destinados a alimentar y conectar las cámaras de seguridad IP del pabellón, las cuales se integran a la misma infraestructura de cobre.
+    \item \textbf{Gabinete de Telecomunicaciones Centralizado:} Configuración física del espacio del Rack Principal de piso (MDF) de 42U de altura, detallando el uso de Patch Panels RJ-45 de la categoría adecuada para recibir los cables de todo el edificio.
+    \item \textbf{Canalizaciones Pasivas:} Definición de las rutas físicas de distribución de cables empleando canaletas adosadas a la pared y tuberías conduit para el tránsito ordenado de los conductores entre los diferentes niveles del pabellón.
+\end{itemize}
+
+\textit{Exclusiones del Proyecto:} Se establece explícitamente que no forma parte del alcance la configuración lógica de los equipos activos de red (como el direccionamiento IP de switches o routers), el suministro de computadoras de usuario final, las obras civiles de perforación estructural pesada ni las instalaciones eléctricas de potencia del edificio.
+
+\section{Justificación Técnica y Beneficios}
+La infraestructura de red instalada actualmente en la Escuela Profesional de Enfermería opera de manera empírica, evidenciando un desgaste natural por uso y la falta de un diseño centralizado que responda a los requerimientos institucionales.
+El crecimiento en la cantidad de dispositivos portátiles de los estudiantes y la necesidad de contar con conexiones estables en las aulas para recursos multimedia hacen indispensable un rediseño de la capa física de red.
+La implementación de esta propuesta técnico-académica ofrece los siguientes beneficios de ingeniería:
+\begin{itemize}[label=$\bullet$,leftmargin=1.4em]
+    \item \textbf{Centralización del Mantenimiento:} Al consolidar todo el cableado en un único rack en el segundo nivel, el diagnóstico de fallas físicas se simplifica considerablemente, reduciendo los tiempos de interrupción de las actividades académicas.
+    \item \textbf{Soporte Efectivo para Movilidad:} Al cablear e instalar puntos dedicados para Access Points dentro de las aulas, laboratorios y el auditorio, se evita la degradación de la señal Wi-Fi que ocurre cuando los APs se colocan de forma improvisada únicamente en los pasillos.
+    \item \textbf{Ordenamiento Estándar:} La sustitución del cableado informal por un sistema estructurado con paneles de parcheo y etiquetado normativo permite que cualquier expansión futura de la red se realice de forma modular y sin alterar la estética arquitectónica del pabellón.
+\end{itemize}
+
+\section{Normas y Estándares Aplicados}
+Para garantizar que el diseño de la infraestructura pasiva posea un carácter profesional y sea interoperable con cualquier tecnología de red activa comercial, se toman como referencia las siguientes normativas internacionales de telecomunicaciones:
+
+\begin{table}[H]
+\centering
+\caption{Estándares internacionales de referencia.}
+\begin{tabular}{lp{10cm}}
+\hline
+\textbf{Norma / Estándar} & \textbf{Ámbito de Aplicación en el Proyecto} \\
+\hline
+ANSI/TIA-568-C.0 \& C.1 & Directrices generales para el diseño de la topología en estrella, distancias máximas permitidas y arquitectura del cableado estructurado en el edificio. \\
+%
+ANSI/TIA-569-D & Criterios de diseño para los espacios de telecomunicaciones, dimensionamiento de canaletas, tuberías conduit y rutas de paso del cableado horizontal. \\
+%
+ANSI/TIA-606-B & Estándar para la administración y etiquetado de la infraestructura pasiva (cables, patch panels, gabinetes y salidas de pared). \\
+%
+ISO/IEC 11801 & Referencia internacional complementaria para las especificaciones de rendimiento del cableado genérico en edificaciones institucionales. \\
+\hline
+\end{tabular}
+\end{table}

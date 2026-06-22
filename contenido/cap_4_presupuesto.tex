@@ -1,12 +1,140 @@
-\newpage
 \chapter{Presupuesto}
 
-\section{Presupuesto general de la obra}
+El presupuesto de la obra se elabora a partir del inventario de 62 puntos de red definido en el capítulo de Planos, considerando los materiales pasivos, los equipos activos, la mano de obra y la certificación final. Todos los montos son \textbf{referenciales} y están expresados en soles (S/) con IGV incluido; corresponden a precios promedio del mercado nacional de telecomunicaciones y pueden variar según el proveedor y la fecha de compra.
 
-\section{Presupuesto detallado por partidas}
+\section{Presupuesto General de la Obra}
+El presupuesto general agrupa la inversión en tres grandes rubros: los materiales y equipos del sistema de cableado, la mano de obra de instalación y la certificación de los enlaces. El resumen se muestra en el Cuadro~\ref{tab:presupuesto_general}.
 
-\section{Metrados de materiales}
+\begin{table}[H]
+\centering
+\caption{Presupuesto general de la obra.}
+\label{tab:presupuesto_general}
+\begin{tabular}{clr}
+\hline
+\textbf{Ítem} & \textbf{Descripción del Rubro} & \textbf{Monto (S/)} \\
+\hline
+1 & Materiales y equipos (cableado, gabinete, activos) & 20\,974.00 \\
+2 & Mano de obra de instalación (estimada en 30\,\%) & 6\,292.00 \\
+3 & Certificación de los 62 enlaces (global) & 1\,500.00 \\
+\hline
+\multicolumn{2}{r}{\textbf{TOTAL ESTIMADO DE LA OBRA}} & \textbf{28\,766.00} \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent El costo aproximado por punto de red instalado y certificado es de S/ 28\,766.00 / 62 $\approx$ \textbf{S/ 464.00 por nodo}, valor coherente con proyectos de cableado estructurado de mediana escala en el ámbito educativo.
+
+\section{Presupuesto Detallado por Partidas}
+A continuación se desglosa el presupuesto en partidas individuales, separando los componentes pasivos (cables, conectores, canalizaciones) de los equipos activos y de respaldo. Esta clasificación facilita la elaboración del cronograma de compras.
+
+\begin{table}[H]
+\centering
+\caption{Presupuesto detallado por partidas.}
+\label{tab:presupuesto_detallado}
+\small
+\begin{tabular}{clccrr}
+\hline
+\textbf{N.\textsuperscript{o}} & \textbf{Descripción de la Partida} & \textbf{Und.} & \textbf{Cant.} & \textbf{P. Unit. (S/)} & \textbf{Parcial (S/)} \\
+\hline
+\multicolumn{6}{l}{\textit{A. Componentes pasivos (cableado y conectividad)}} \\
+%
+1  & Cable U/UTP Cat 6A, caja x 305\,m            & caja & 8   & 950.00  & 7\,600.00 \\
+2  & Patch Panel 24 puertos Cat 6A               & und  & 3   & 200.00  & 600.00 \\
+3  & Jack Keystone RJ-45 Cat 6A                  & und  & 70  & 18.00   & 1\,260.00 \\
+4  & Faceplate (placa de pared)                  & und  & 45  & 8.00    & 360.00 \\
+5  & Caja de paso/registro (techo APs y CCTV)    & und  & 17  & 12.00   & 204.00 \\
+6  & Patch cord Cat 6A 1\,m (parcheo)            & und  & 62  & 15.00   & 930.00 \\
+7  & Organizador horizontal de cable 1U          & und  & 4   & 60.00   & 240.00 \\
+8  & Canaleta PVC 40$\times$25\,mm (tramo 2\,m)  & und  & 120 & 14.00   & 1\,680.00 \\
+9  & Tubería conduit y accesorios                & glb  & 1   & 600.00  & 600.00 \\
+%
+\multicolumn{6}{l}{\textit{B. Equipos activos y de respaldo}} \\
+%
+10 & Gabinete de piso 42U con llave              & und  & 1   & 1\,800.00 & 1\,800.00 \\
+11 & Switch 48 puertos Gigabit PoE+              & und  & 2   & 1\,900.00 & 3\,800.00 \\
+12 & UPS Online 1500\,VA / 1350\,W               & und  & 1   & 1\,500.00 & 1\,500.00 \\
+%
+\multicolumn{6}{l}{\textit{C. Puesta a tierra y rotulado}} \\
+%
+13 & Barra de tierra (TGB) y cable verde         & glb  & 1   & 250.00  & 250.00 \\
+14 & Etiquetas y material de rotulado            & glb  & 1   & 150.00  & 150.00 \\
+\hline
+\multicolumn{5}{r}{\textbf{SUBTOTAL MATERIALES Y EQUIPOS}} & \textbf{20\,974.00} \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Metrados de Materiales}
+El metrado consiste en calcular las cantidades físicas de cada material a partir del diseño. El insumo más importante es el cable de cobre, cuyo metrado se obtiene multiplicando el número de enlaces por la longitud promedio de cada uno y añadiendo un margen de desperdicio.
+
+\begin{table}[H]
+\centering
+\caption{Metrado del cable de cobre horizontal.}
+\label{tab:metrado_cable}
+\begin{tabular}{lr}
+\hline
+\textbf{Parámetro de Cálculo} & \textbf{Valor} \\
+\hline
+Número total de enlaces (nodos)                 & 62 enlaces \\
+Longitud promedio estimada por enlace           & 35\,m \\
+Longitud total de cable (62 $\times$ 35\,m)     & 2\,170\,m \\
+Margen de desperdicio y reservas (10\,\%)       & 217\,m \\
+\hline
+\textbf{Total de cable requerido}               & \textbf{2\,387\,m} \\
+Presentación comercial (caja x 305\,m)          & 305\,m/caja \\
+\textbf{Cajas a adquirir (2\,387 / 305 $\approx$ 7.8)} & \textbf{8 cajas} \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent El resto de materiales se metra directamente a partir del inventario de puntos: 62 jacks en pared (más repuestos), 45 faceplates para los puntos de datos fijos, 17 cajas de paso para los puntos aéreos (9 de Wi-Fi y 8 de CCTV) y 3 patch panels de 24 puertos para alojar los 62 nodos con holgura. La longitud de canaleta se estima en función del recorrido de los muros y de los tramos verticales hacia el Rack G09.
 
 \section{Análisis de Precios Unitarios (APU)}
+El Análisis de Precios Unitarios descompone el costo de instalar \textbf{un} punto de red, sumando el material directo, la mano de obra y una pequeña proporción de herramientas. Sirve para sustentar el precio de la partida principal del proyecto. El Cuadro~\ref{tab:apu} muestra el APU del punto de datos típico.
 
-\section{Fórmulas polinómicas}
+\begin{table}[H]
+\centering
+\caption{Análisis de Precios Unitarios para un punto de red instalado.}
+\label{tab:apu}
+\begin{tabular}{lccr}
+\hline
+\textbf{Recurso} & \textbf{Und.} & \textbf{Cant.} & \textbf{Parcial (S/)} \\
+\hline
+\multicolumn{4}{l}{\textit{Materiales}} \\
+Cable Cat 6A (35\,m a S/ 3.11/m)        & m   & 35   & 108.85 \\
+Jack Keystone Cat 6A                    & und & 1    & 18.00 \\
+Faceplate                              & und & 0.7  & 5.60 \\
+Canaleta y accesorios (prorrateo)       & glb & 1    & 25.00 \\
+%
+\multicolumn{4}{l}{\textit{Mano de obra}} \\
+Técnico instalador (tendido + ponchado) & h   & 1.5  & 30.00 \\
+%
+\multicolumn{4}{l}{\textit{Herramientas}} \\
+Desgaste de herramienta (3\,\% M.O.)    & glb & 1    & 0.90 \\
+\hline
+\multicolumn{3}{r}{\textbf{COSTO POR PUNTO DE RED}} & \textbf{188.35} \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent Este valor unitario es referencial y no incluye los equipos activos centralizados (gabinete, switches y UPS), que se presupuestan de forma global por ser únicos para todo el edificio.
+
+\section{Fórmulas Polinómicas}
+En obras formales, la fórmula polinómica es una expresión matemática que permite reajustar el presupuesto cuando los precios de los insumos varían en el tiempo (por inflación o cambios de mercado). Agrupa los costos en componentes y asigna a cada uno un coeficiente de incidencia que refleja su peso dentro del total.
+
+Para el presente proyecto, de carácter académico, la estructura de costos se puede representar de manera simplificada con tres componentes principales:
+
+\[
+K = a\,\frac{C_c}{C_{c0}} + b\,\frac{E_a}{E_{a0}} + c\,\frac{M_o}{M_{o0}}
+\]
+
+\noindent donde:
+\begin{itemize}[label=$\bullet$,leftmargin=1.4em]
+    \item $K$ es el coeficiente de reajuste del presupuesto.
+    \item $C_c$ representa el costo del cable y materiales de cobre (incidencia $a \approx 0.45$).
+    \item $E_a$ representa el costo de los equipos activos y el gabinete (incidencia $b \approx 0.35$).
+    \item $M_o$ representa el costo de la mano de obra (incidencia $c \approx 0.20$).
+    \item El subíndice $0$ indica el precio en la fecha base del presupuesto.
+\end{itemize}
+
+\noindent La suma de los coeficientes cumple $a + b + c = 1$. En un proyecto universitario basta con \textbf{presentar la fórmula y justificar las incidencias}; no es necesario aplicar índices oficiales de reajuste.
