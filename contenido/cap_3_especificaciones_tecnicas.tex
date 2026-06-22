@@ -1,575 +1,78 @@
-\newpage
 \chapter{Especificaciones Técnicas}
-\label{chap:especificaciones}
 
-Este capítulo define los requisitos técnicos mínimos que deben cumplir los
-materiales, equipos y procedimientos empleados en la implementación del sistema
-de cableado estructurado de la Escuela Profesional de Enfermería de la UNSAAC.
-Las especificaciones aquí indicadas son de cumplimiento obligatorio y prevalecen
-sobre cualquier documento de menor jerarquía técnica.
+\section{Tipo y Categoría de Cables}
+La infraestructura física del pabellón de Enfermería requiere dos sistemas independientes de conducción de señales, divididos según su entorno de despliegue en un enlace troncal externo y un sistema de distribución interna hacia los terminales de usuario.
 
-% -----------------------------------------------------------
-\section{Tipo y categoría de cables}
-\label{sec:cables}
-% -----------------------------------------------------------
+\subsection{Cableado Horizontal de Cobre (interior)}
+El subsistema horizontal está destinado a la interconexión directa de las estaciones de trabajo fijas, los puntos de acceso inalámbrico (Access Points) y las cámaras de seguridad del edificio.
+Los conductores se despliegan de manera oculta y protegida en el interior de canaletas plásticas adosadas a los muros de los salones, y transitan verticalmente a través de tuberías conduit que cruzan los techos y pasillos desde el segundo nivel hacia las demás plantas.
+Se prescribe el uso de cable de par trenzado \textbf{Categoría 6A U/UTP} (Unshielded Twisted Pair) de marcas reconocidas en el mercado de telecomunicaciones.
+La elección de esta categoría permite asegurar una transmisión de datos de alta velocidad de hasta 10\,Gbps a una frecuencia operativa de 500\,MHz, duplicando la capacidad de los sistemas convencionales de Categoría 6. La separación de 150\,mm respecto a los conductores de energía controla las interferencias electromagnéticas sin necesidad de un sistema apantallado.
 
-\subsection{Cable de cableado horizontal — UTP categoría 6}
+\subsection{Cable de Fibra Óptica (conexión externa)}
+El enlace troncal de campus conecta el edificio de Enfermería con el centro de datos principal de la universidad, administrado por la Dirección de Tecnologías de la Información y Comunicaciones (DTIC-UNSAAC).
+Este conductor ingresa de forma subterránea por las canalizaciones del campus, penetra en el pabellón a través de la acometida de la planta baja y se extiende hasta el armario de telecomunicaciones del segundo piso.
+Se especifica para este tramo el uso de \textbf{Fibra Óptica Monomodo (OS2)} de 12 hilos, apta para tendido subterráneo en ducto.
+Su propósito es garantizar la conectividad del pabellón a largas distancias sin degradación de señal.
 
-El cableado horizontal del edificio G09 se implementa con cable de par trenzado
-no blindado (UTP) de \textbf{categoría 6}, conforme a la norma
-\mbox{ANSI/TIA-568-C.2} e \mbox{ISO/IEC 11801:2017} (Clase E). Este cable
-soporta aplicaciones de hasta \textbf{1\,GbE} con un ancho de banda de
-250\,MHz, y es compatible con tecnologías como IEEE 802.3ab (1000BASE-T),
-PoE+ (IEEE 802.3at) y telefonía IP.
+\textit{Criterio de diseño:} El proyecto descarta el uso de fibra óptica en los recorridos verticales internos; toda la interconexión entre pisos se resuelve mediante cobre Categoría 6A, ya que las distancias horizontales y verticales acumuladas no superan el límite normativo de 90 metros. Esto optimiza los costos al evitar fusiones ópticas y módulos transceptores redundantes en cada nivel.
 
-\begin{table}[H]
-    \centering
-    \caption{Especificaciones técnicas del cable UTP Cat.6 para cableado horizontal.}
-    \label{tab:cable_utp}
-    \begin{tabular}{|p{5cm}|p{8.5cm}|}
-        \hline
-        \textbf{Parámetro} & \textbf{Especificación} \\
-        \hline
-        Categoría / Clase     & Categoría 6 / Clase E \\
-        \hline
-        Norma                 & ANSI/TIA-568-C.2, ISO/IEC 11801:2017 \\
-        \hline
-        Número de pares       & 4 pares trenzados (8 conductores) \\
-        \hline
-        Calibre conductor     & AWG 23 (sólido) \\
-        \hline
-        Impedancia            & 100\,$\Omega$ $\pm$ 15\% \\
-        \hline
-        Ancho de banda        & 250\,MHz \\
-        \hline
-        Atenuación máx.\      & 19.8\,dB/100\,m a 100\,MHz \\
-        \hline
-        NEXT mínimo           & 44.3\,dB a 100\,MHz \\
-        \hline
-        Cubierta              & PVC o LSZH (Low Smoke Zero Halogen) \\
-        \hline
-        Temperatura de oper.\ & $-20\,^\circ$C a $+60\,^\circ$C \\
-        \hline
-        Longitud máx.\ canal  & 90\,m (más hasta 10\,m en cordones de parcheo) \\
-        \hline
-        Aplicaciones          & 1GbE, 10GbE (hasta 55\,m), PoE+, VoIP \\
-        \hline
-    \end{tabular}
-\end{table}
+\section{Normas de Instalación, Etiquetado y Terminación}
 
-Se exige que el cable suministrado cuente con certificación de tercera parte
-(UL, ETL, o equivalente) y que los rollos incluyan la marca de la categoría,
-el nombre del fabricante y la metraje impreso sobre la cubierta. No se aceptan
-cables sin marcación o de procedencia no verificable.
-
-\subsection{Cable de fibra óptica — Backbone de campus (OS2)}
-
-Para el enlace de backbone entre el nodo de distribución de campus de la
-DTIC-UNSAAC y el MDF del edificio G09, se emplea fibra óptica
-\textbf{monomodo OS2}, conforme a \mbox{ISO/IEC 11801:2017} y
-\mbox{ANSI/TIA-568-C.3}.
-
-\begin{table}[H]
-    \centering
-    \caption{Especificaciones del cable de fibra óptica monomodo OS2.}
-    \label{tab:fo_os2}
-    \begin{tabular}{|p{5cm}|p{8.5cm}|}
-        \hline
-        \textbf{Parámetro} & \textbf{Especificación} \\
-        \hline
-        Tipo                  & Monomodo OS2 \\
-        \hline
-        Diámetro núcleo/cubie.& 9/125\,µm \\
-        \hline
-        Longitud de onda      & 1310\,nm y 1550\,nm \\
-        \hline
-        Atenuación máx.\      & 0.4\,dB/km a 1310\,nm / 0.3\,dB/km a 1550\,nm \\
-        \hline
-        Capacidad             & 10GbE (hasta 10\,km), 40/100GbE \\
-        \hline
-        Construcción          & ADSS, 12 fibras, tight buffer \\
-        \hline
-        Conector              & LC dúplex, pérdida de inserción $\leq 0.3$\,dB \\
-        \hline
-        Tipo de empalme       & Fusión, pérdida $\leq 0.1$\,dB por empalme \\
-        \hline
-        Norma                 & ISO/IEC 11801:2017, ANSI/TIA-568-C.3 \\
-        \hline
-    \end{tabular}
-\end{table}%
-\nobreak\vspace{-0.3cm}
-\subsection{Cable de fibra óptica — Backbone vertical (OM3)}
-
-El backbone vertical interno del edificio utiliza fibra óptica
-\textbf{multimodo OM3} (50/125\,µm), que soporta aplicaciones de 10GbE
-hasta 300\,m y es compatible con transmisores VCSEL de bajo costo, conforme
-a \mbox{ANSI/TIA-568-C.3}.
-
-\begin{table}[H]
-    \centering
-    \caption{Especificaciones del cable de fibra óptica multimodo OM3.}
-    \label{tab:fo_om3}
-    \begin{tabular}{|p{5cm}|p{8.5cm}|}
-        \hline
-        \textbf{Parámetro} & \textbf{Especificación} \\
-        \hline
-        Tipo                  & Multimodo OM3 \\
-        \hline
-        Diámetro núcleo/cubie.& 50/125\,µm \\
-        \hline
-        Longitud de onda      & 850\,nm y 1300\,nm \\
-        \hline
-        Ancho de banda modal  & $\geq$2000\,MHz·km a 850\,nm \\
-        \hline
-        Atenuación máx.\      & 3.5\,dB/km a 850\,nm \\
-        \hline
-        Capacidad             & 10GbE (hasta 300\,m), 1GbE (hasta 1000\,m) \\
-        \hline
-        N.° de fibras         & 4 fibras por enlace \\
-        \hline
-        Conector              & LC dúplex, pérdida de inserción $\leq 0.3$\,dB \\
-        \hline
-        Tipo de empalme       & Fusión, pérdida $\leq 0.1$\,dB por empalme \\
-        \hline
-        Norma                 & ANSI/TIA-568-C.3, IEC 60793-2-10 \\
-        \hline
-    \end{tabular}
-\end{table}%
-\nobreak\vspace{-0.3cm}
-% -----------------------------------------------------------
-\section{Normas de instalación, etiquetado y terminación}
-\label{sec:instalacion}
-% -----------------------------------------------------------
-
-\subsection{Instalación del cableado horizontal}
-
-La instalación del cableado horizontal debe cumplir estrictamente con la norma
-\mbox{ANSI/TIA-568-C.1} y \mbox{ANSI/TIA-569-D}. Los criterios obligatorios son:
-
-\begin{itemize}
-    \item La longitud total del canal (cable horizontal + cordones de parcheo)
-    no debe superar los \textbf{100\,m}, con un máximo de 90\,m para el cable
-    horizontal y 10\,m para los cordones combinados.
-
-    \item El radio de curvatura mínimo durante la instalación es de
-    \textbf{8 veces} el diámetro exterior del cable; en reposo, \textbf{4 veces}.
-
-    \item La tensión de tracción máxima durante el tendido no debe exceder los
-    \textbf{110\,N} (25\,lbf) para cables UTP de 4 pares.
-
-    \item La separación mínima entre canalizaciones de telecomunicaciones y
-    cableado eléctrico es de \textbf{150\,mm} en tendido paralelo; los
-    cruzamientos se realizan en ángulo de 90°.
-
-    \item La ocupación de las canalizaciones (fill ratio) no debe superar el
-    \textbf{40\%} de la sección transversal disponible.
-
-    \item Los cables no deben estar sujetos con amarres excesivamente apretados
-    que deformen el par trenzado; se admite el uso de velcro o amarres de baja
-    presión.
+\subsection{Normas de Instalación}
+El tendido físico de los conductores de cobre a través de las canalizaciones se ejecutará resguardando las propiedades mecánicas del material para evitar la pérdida de paquetes de datos, bajo los lineamientos de la norma ANSI/TIA-569-D:
+\begin{itemize}[label=$\bullet$,leftmargin=1.4em]
+    \item \textbf{Tensión de Tracción:} La fuerza ejercida durante el jalado de los cables no superará los 110\,N (25 libras), evitando el estiramiento y la deformación de los pares internos de cobre.
+    \item \textbf{Radios de Curvatura:} El cableado no admitirá dobleces en ángulos rectos severos. En los cambios de dirección, los accesorios de las canaletas garantizarán curvas suaves con un radio mínimo de 4 veces el diámetro exterior del cable.
+    \item \textbf{Sujeción de Manojos:} Queda prohibido el uso de cintillos plásticos a presión que estrangulen las chaquetas de los conductores. Se emplearán cintas de contacto suave tipo velcro para agrupar y peinar los cables sin alterar su geometría interna.
 \end{itemize}
 
-\subsection{Terminación de conectores y patch panels}
+\subsection{Normas de Terminación}
+La conexión interna de los 8 hilos conductores de cada cable se realizará de manera homogénea bajo el código de colores \textbf{T568-B} definido por la norma ANSI/TIA-568-C.2.
+En el extremo del usuario, la terminación se efectúa por impacto dentro de los conectores hembra (Jacks RJ-45) alojados en las cajas de pared.
+En el extremo central, los hilos se conectan en la parte posterior de los Patch Panels del cuarto de red.
+El destrenzado de los hilos en los puntos de contacto no superará los 13\,mm para mitigar problemas de diafonía en alta frecuencia.
 
-La terminación de los conductores en conectores RJ-45 hembra (módulos keystone)
-y en patch panels debe seguir el esquema de color \textbf{T568-B}, definido en
-\mbox{ANSI/TIA-568-C.2}, de forma homogénea en todo el sistema. Está prohibido
-mezclar esquemas T568-A y T568-B en el mismo canal.
+\subsection{Normas de Etiquetado}
+La identificación de los componentes sigue las directrices de la norma ANSI/TIA-606-B, empleando etiquetas de polímero autolaminables de transferencia térmica.
+La rotulación se aplicará de forma permanente en el conector de pared, en ambos extremos de cada cable y en los puertos frontales del rack, utilizando la nomenclatura unificada \textbf{G09-N[Piso]-[Tipo][Número]} establecida en la sección de codificación de puntos de red.
 
-\begin{table}[H]
-    \centering
-    \caption{Esquema de terminación T568-B — Asignación de pines y colores.}
-    \label{tab:t568b}
-    \begin{tabular}{|c|c|c|}
-        \hline
-        \textbf{Pin} & \textbf{Color del conductor} & \textbf{Par} \\
-        \hline
-        1 & Blanco / Naranja  & Par 2 \\
-        2 & Naranja           & Par 2 \\
-        3 & Blanco / Verde    & Par 3 \\
-        4 & Azul              & Par 1 \\
-        5 & Blanco / Azul     & Par 1 \\
-        6 & Verde             & Par 3 \\
-        7 & Blanco / Marrón   & Par 4 \\
-        8 & Marrón            & Par 4 \\
-        \hline
-    \end{tabular}
-\end{table}%
-\nobreak\vspace{-0.3cm}
-El despar (untwisting) de los pares en la terminación no debe exceder
-\textbf{13\,mm} (0.5'') para categoría 6, a fin de preservar las
-características de diafonía (NEXT) del canal.
+\section{Estándares de Racks y Gabinetes}
+Todos los componentes de conmutación y distribución del edificio se consolidarán de manera centralizada en una estructura metálica normalizada para telecomunicaciones, protegiendo el hardware contra el polvo, las fluctuaciones térmicas y los accesos no autorizados.
+El gabinete principal (MDF), denominado \textbf{Gabinete G09}, se ubicará anclado al suelo dentro del Centro de Cómputo del segundo piso, en un entorno con cerradura.
+Se especifica un gabinete cerrado de acero con ancho de montaje de 19 pulgadas (estándar EIA-310-D) y una altura útil de \textbf{42 Unidades de Rack (RU)}, con puerta delantera de vidrio templado y paneles laterales desmontables con cerradura.
+Para la gestión térmica, el gabinete integrará en su tapa superior un sistema de ventilación forzada controlado por un termostato. Este sistema activará los ventiladores únicamente cuando la temperatura interna supere los 35\,$^\circ$C, optimizando el consumo energético y reduciendo el ruido en el laboratorio.
 
-\subsection{Etiquetado del sistema}
+\section{Equipos Pasivos y Activos}
+Los materiales alojados en el Gabinete G09 se clasifican en componentes de distribución física que no requieren energía eléctrica (pasivos) y dispositivos electrónicos de procesamiento de datos (activos).
 
-El etiquetado de todos los componentes del sistema sigue la norma
-\mbox{ANSI/TIA-606-B}. Cada elemento debe identificarse de forma permanente
-e indeleble con el código correspondiente:
-
-\begin{table}[H]
-    \centering
-    \caption{Requisitos de etiquetado por componente — ANSI/TIA-606-B.}
-    \label{tab:etiquetado}
-    \begin{tabular}{|p{4cm}|p{4.5cm}|p{5cm}|}
-        \hline
-        \textbf{Componente} & \textbf{Código} & \textbf{Requisito} \\
-        \hline
-        Cable horizontal & G09-D01...G09-D29 &
-        Etiqueta adhesiva en ambos extremos \\
-        \hline
-        Puerto patch panel & G09-D01...G09-D29 &
-        Etiqueta impresa o grabada en el panel \\
-        \hline
-        Outlet (faceplate) & G09-D01...G09-D29 &
-        Etiqueta en el puerto del outlet \\
-        \hline
-        Rack / Gabinete & G09 &
-        Placa metálica en la parte frontal \\
-        \hline
-        Cable de FO & Código de enlace &
-        Etiqueta en ambos extremos \\
-        \hline
-        Sala de telecom.\ & Código de sala &
-        Rótulo en la puerta de acceso \\
-        \hline
-    \end{tabular}
-\end{table}%
-
-Las etiquetas deben ser resistentes a la humedad, al calor y al roce, con
-tipografía legible de al menos 3\,mm de altura. Se recomienda el uso de
-etiquetas generadas con impresoras de etiquetado profesional (p.\,ej.,
-Brady o Brother P-touch) para garantizar uniformidad y durabilidad.
-
-% -----------------------------------------------------------
-\section{Estándares de racks y gabinetes}
-% -----------------------------------------------------------
-
-El Gabinete G09 que aloja el MDF del edificio de Enfermería debe cumplir con
-los requisitos físicos y funcionales establecidos en \mbox{ANSI/TIA-569-D} y
-\mbox{ANSI/TIA-606-B}. Las especificaciones mínimas obligatorias son:
-
-\begin{table}[H]
-    \centering
-    \caption{Especificaciones mínimas del gabinete de telecomunicaciones G09.}
-    \label{tab:gabinete}
-    \begin{tabular}{|p{5cm}|p{8.5cm}|}
-        \hline
-        \textbf{Parámetro} & \textbf{Especificación mínima} \\
-        \hline
-        Ancho de montaje      & 19 pulgadas (EIA-310-D) \\
-        \hline
-        Altura                & 42U ($\approx$2000\,mm) \\
-        \hline
-        Ancho exterior        & 600\,mm \\
-        \hline
-        Profundidad           & 800\,mm (profundidad doble) \\
-        \hline
-        Material              & Acero laminado en frío, espesor $\geq$1.5\,mm \\
-        \hline
-        Tratamiento           & Pintura electroestática, color RAL 7035 \\
-        \hline
-        Tipo de acceso        & Puerta delantera de vidrio templado con cerradura;
-                                puerta trasera ciega con cerradura \\
-        \hline
-        Paneles laterales     & Desmontables con cerradura \\
-        \hline
-        Capacidad de carga    & $\geq$1000\,kg estático \\
-        \hline
-        Ventilación           & 2 ventiladores de 120\,mm en techo con
-                                termostato (umbral 35\,°C) \\
-        \hline
-        Puesta a tierra       & Barra TGB de cobre integrada, conductor
-                                de 6\,mm² al sistema de tierra \\
-        \hline
-        Organizadores de cable& Mínimo uno por cada dos unidades de equipos \\
-        \hline
-        Norma aplicable       & ANSI/TIA-569-D, EIA-310-D, IEC 60297 \\
-        \hline
-    \end{tabular}
-\end{table}%
-\nobreak\vspace{-0.3cm}
-La sala de telecomunicaciones donde se instala el rack debe cumplir con las
-condiciones ambientales de \mbox{ANSI/TIA-569-D}: temperatura entre
-18\,°C y 27\,°C, humedad relativa entre 30\% y 55\% sin condensación,
-iluminación mínima de 500\,lux a nivel de trabajo y acceso restringido
-mediante cerradura de seguridad.
-
-% -----------------------------------------------------------
-\section{Equipos pasivos y activos}
-\label{sec:equipos}
-% -----------------------------------------------------------
-
-\subsection{Equipos pasivos}
-
-Los equipos pasivos son los componentes del sistema de cableado que no requieren
-alimentación eléctrica para su funcionamiento. Sus especificaciones mínimas son:
-
-\begin{table}[H]
-    \centering
-    \caption{Especificaciones de equipos pasivos del sistema.}
-    \label{tab:pasivos}
-    \begin{tabular}{|p{3.5cm}|p{10cm}|}
-        \hline
-        \textbf{Equipo} & \textbf{Especificación mínima} \\
-        \hline
-        Patch panel Cat.6 &
-        24 puertos RJ-45 hembra, 1U, terminación 110/Krone,
-        certificado Cat.6 ANSI/TIA-568-C.2, con etiquetas identificadoras
-        por puerto. \\
-        \hline
-        Módulo keystone Cat.6 &
-        Conector RJ-45 hembra de impacto (tool-down), terminación T568-B,
-        categoría 6, color azul para datos, compatible con faceplate 2 puertos. \\
-        \hline
-        Faceplate (placa de salida) &
-        Plástico ABS con 2 posiciones para módulos keystone, con tapa
-        de polvo, color blanco, para caja de salida 2''$\times$4''. \\
-        \hline
-        Panel de fibra (ODF) &
-        1U, 24 adaptadores LC dúplex SM OS2, con bandejas de gestión de
-        fibra y tapa de protección. \\
-        \hline
-        Patch cord Cat.6 &
-        Cable UTP Cat.6 LSZH, con conector RJ-45 moldeado en ambos extremos,
-        certificado Cat.6, longitudes de 0.5, 1 y 1.5\,m. \\
-        \hline
-        Patch cord FO &
-        Cable de fibra óptica LC dúplex OS2 (SM) u OM3 (MM) según el enlace,
-        longitud 1\,m, pérdida de inserción $\leq$0.3\,dB. \\
-        \hline
-        Organizador de cable &
-        Pasacables horizontal de 1U con anillos guía, capacidad para
-        $\geq$48 cables, fabricado en acero laminado. \\
-        \hline
-    \end{tabular}
-\end{table}%
-\subsection{Equipos activos}
-
-Los equipos activos son los dispositivos electrónicos que procesan y conmutan
-el tráfico de red. Sus especificaciones mínimas son:
-
-\begin{table}[H]
-    \centering
-    \caption{Especificaciones mínimas de equipos activos del sistema.}
-    \label{tab:activos}
-    \begin{tabular}{|p{3.5cm}|p{10cm}|}
-        \hline
-        \textbf{Equipo} & \textbf{Especificación mínima} \\
-        \hline
-        Switch de distribución &
-        Capa 2/3, 24 puertos GbE RJ-45, 4 puertos SFP+ 10GbE,
-        PoE+ IEEE 802.3at en todos los puertos, presupuesto de energía
-        $\geq$370\,W, VLAN 802.1Q, RSTP 802.1w, 1U, administrable
-        por SNMP y SSH. \\
-        \hline
-        Access Point WiFi &
-        IEEE 802.11ax (Wi-Fi 6), dual-band 2.4/5\,GHz simultáneo,
-        MU-MIMO 4$\times$4:4 en 5\,GHz, OFDMA, 1 puerto GbE PoE+
-        (802.3at), WPA3-Enterprise, soporte 802.11r/k/v,
-        montaje en techo, gestión centralizada. \\
-        \hline
-        UPS &
-        Capacidad 1500\,VA / 1350\,W, topología on-line doble conversión
-        o line-interactive, autonomía mínima 30\,min con carga al 50\%,
-        salida senoidal pura, puerto de gestión USB/RS-232, alarmas
-        audibles y visuales, normativa IEC 62040. \\
-        \hline
-        PDU (regleta) &
-        Distribución de energía de 8 tomas IEC C13, con protección
-        contra sobretensiones integrada, diseñada para montaje en rack
-        vertical u horizontal, 1U. \\
-        \hline
-    \end{tabular}
-\end{table}%
-\nobreak\vspace{-0.3cm}
-Todos los equipos activos deben ser de marca reconocida con presencia de soporte
-técnico local en el Perú, disponer de garantía mínima de \textbf{3 años} y
-contar con documentación técnica completa en español o inglés.
-
-% -----------------------------------------------------------
-\section{Requisitos eléctricos y de puesta a tierra}
-\label{sec:electrico_tierra}
-% -----------------------------------------------------------
-
-\subsection{Alimentación eléctrica}
-
-La sala de telecomunicaciones del cuarto nivel debe contar con un circuito
-eléctrico dedicado y exclusivo para los equipos de telecomunicaciones, conforme
-al Código Eléctrico Nacional (NEC/NFPA 70) y al Código Nacional de Electricidad
-del Perú (CNE). Los requisitos mínimos son:
-
-\begin{table}[H]
-    \centering
-    \caption{Requisitos eléctricos de la sala de telecomunicaciones.}
-    \label{tab:electrico}
-    \begin{tabular}{|p{5cm}|p{8.5cm}|}
-        \hline
-        \textbf{Parámetro} & \textbf{Requisito} \\
-        \hline
-        Tensión de alimentación  & 220\,V AC $\pm$10\%, 60\,Hz \\
-        \hline
-        Circuito dedicado        & Independiente del circuito de iluminación
-                                   y otros usos \\
-        \hline
-        Capacidad del circuito   & Mínimo 20\,A por circuito \\
-        \hline
-        N.° de circuitos         & Mínimo 2 (uno principal, uno de respaldo) \\
-        \hline
-        Protección               & Interruptor termomagnético diferencial \\
-        \hline
-        Tomas de corriente       & NEMA 5-20R o equivalente, a 45\,cm del piso \\
-        \hline
-        Respaldo energético      & UPS 1500\,VA con autonomía $\geq$30\,min \\
-        \hline
-    \end{tabular}
-\end{table}
-\subsection{Sistema de puesta a tierra}
-
-El sistema de puesta a tierra de telecomunicaciones se diseña e implementa
-conforme a la norma \textbf{\mbox{ANSI/TIA-607-B}}. Los requisitos técnicos
-obligatorios son:
-
-\begin{table}[H]
-    \centering
-    \caption{Requisitos del sistema de puesta a tierra — ANSI/TIA-607-B.}
-    \label{tab:tierra_specs}
-    \begin{tabular}{|p{4.5cm}|p{4cm}|p{5cm}|}
-        \hline
-        \textbf{Componente} & \textbf{Conductor} & \textbf{Requisito} \\
-        \hline
-        TGB (sala telecom.) & Cu 50$\times$6\,mm &
-        Resist.\ $< 1\,\Omega$, fijada sobre aisladores \\
-        \hline
-        TMGB (barra princ.) & Cu 100$\times$6\,mm &
-        Resist.\ $< 1\,\Omega$, conectada al electrodo \\
-        \hline
-        TGBBC               & Cu 6\,mm² mín.\ &
-        Verde/amarillo, sin empalmes, aislado \\
-        \hline
-        Bonding rack--TGB   & Cu 6\,mm² &
-        Sin empalmes, terminal de compresión Cu estañado \\
-        \hline
-        Electrodo de tierra & Varilla Cu 5/8''$\times$2.4\,m &
-        Resist.\ total $\leq 5\,\Omega$ (IEEE 81) \\
-        \hline
-        SPD (protector sobretens.) & — &
-        Clase II, en tablero eléctrico y entrada de FO \\
-        \hline
-    \end{tabular}
-\end{table}
-
-La topología de puesta a tierra es de \textbf{referencia única} (Single Point
-Ground): todos los conductores de tierra del sistema convergen en la TGB sin
-formar lazos, evitando así las corrientes de tierra que son fuente de
-interferencia electromagnética en los cables de datos. La resistencia de puesta
-a tierra debe verificarse con telurómetro antes de la puesta en marcha y
-registrarse en el acta de comisionamiento.
-
-% -----------------------------------------------------------
-\section{Procedimientos de certificación}
-\label{sec:certificacion}
-% -----------------------------------------------------------
-
-\subsection{Certificación del cableado horizontal}
-
-Una vez concluida la instalación del cableado horizontal, cada canal debe ser
-certificado con un \textbf{certificador de cableado} (field tester) de nivel
-IV o superior, calibrado y con la versión de firmware vigente para categoría 6
-conforme a \mbox{ANSI/TIA-568-C.2}. Los equipos aceptados para la certificación
-incluyen el Fluke Networks DSX-600 CableAnalyzer, el IDEAL Networks R150 y
-equipos equivalentes de nivel IV certificados por la norma \mbox{IEC 61935-1}.
-
-Los parámetros que deben aprobarse en modo \textbf{Permanent Link} o
-\textbf{Channel} (según corresponda) son:
-
-\begin{table}[H]
-    \centering
-    \caption{Parámetros de certificación para canal categoría 6.}
-    \label{tab:certificacion}
-    \begin{tabular}{|p{4.5cm}|p{4cm}|p{5cm}|}
-        \hline
-        \textbf{Parámetro} & \textbf{Límite Cat.6 (Canal)} & \textbf{Referencia} \\
-        \hline
-        Wire Map              & Sin errores & Continuidad y polaridad \\
-        \hline
-        Longitud              & $\leq$100\,m & ANSI/TIA-568-C.2 \\
-        \hline
-        Atenuación (IL)       & $\leq$21.3\,dB a 100\,MHz & IEC 61935-1 \\
-        \hline
-        NEXT                  & $\geq$39.9\,dB a 100\,MHz & ANSI/TIA-568-C.2 \\
-        \hline
-        PSNEXT                & $\geq$37.1\,dB a 100\,MHz & ANSI/TIA-568-C.2 \\
-        \hline
-        ELFEXT (ACRF)         & $\geq$23.3\,dB a 100\,MHz & ANSI/TIA-568-C.2 \\
-        \hline
-        PSELFEXT (PS ACRF)    & $\geq$20.3\,dB a 100\,MHz & ANSI/TIA-568-C.2 \\
-        \hline
-        Return Loss (RL)      & $\geq$12.0\,dB a 100\,MHz & ANSI/TIA-568-C.2 \\
-        \hline
-        Retardo de propagación& $\leq$555\,ns & ANSI/TIA-568-C.2 \\
-        \hline
-        Asimetría de retardo  & $\leq$50\,ns  & ANSI/TIA-568-C.2 \\
-        \hline
-    \end{tabular}
-\end{table}
-
-Todo canal que no apruebe alguno de estos parámetros debe ser corregido y
-recertificado antes de la recepción del sistema. El instalador entregará un
-informe de certificación en formato digital (PDF) con los resultados de
-\textbf{todos} los canales, indicando el código del punto, fecha de medición,
-equipo utilizado y número de serie del certificador.
-
-\subsection{Certificación de la fibra óptica}
-
-Los enlaces de fibra óptica deben certificarse mediante medición de
-\textbf{pérdida de inserción} (Insertion Loss) con un medidor óptico de potencia
-(OLTS — Optical Loss Test Set), conforme a \mbox{ANSI/TIA-568-C.3} y al método
-de medición de dos puertos (método B). Los límites máximos aceptables son:
-
-\begin{table}[H]
-    \centering
-    \caption{Límites de pérdida de inserción para fibra óptica.}
-    \label{tab:certificacion_fo}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        \textbf{Tipo} & \textbf{Longitud de onda} &
-        \textbf{Pérdida máx.\ canal} & \textbf{Norma} \\
-        \hline
-        OS2 (SM) & 1310\,nm & $\leq$0.4\,dB/km + conectores & ANSI/TIA-568-C.3 \\
-        OS2 (SM) & 1550\,nm & $\leq$0.3\,dB/km + conectores & ANSI/TIA-568-C.3 \\
-        OM3 (MM) & 850\,nm  & $\leq$3.5\,dB/km + conectores & ANSI/TIA-568-C.3 \\
-        OM3 (MM) & 1300\,nm & $\leq$1.5\,dB/km + conectores & ANSI/TIA-568-C.3 \\
-        \hline
-    \end{tabular}
-\end{table}
-
-Adicionalmente, se realizarán mediciones con \textbf{OTDR} (Optical Time Domain
-Reflectometer) para verificar la continuidad del enlace, localizar empalmes y
-detectar discontinuidades que no sean visibles en la medición de pérdida total.
-Los resultados del OTDR deben adjuntarse al informe de certificación de fibra.
-
-\subsection{Entrega y documentación de la certificación}
-
-Al término de la obra, el contratista debe entregar al propietario un expediente
-de certificación que incluya:
-
-\begin{itemize}
-    \item Informe de certificación de todos los canales UTP Cat.6 en formato
-    digital (PDF) y en archivo nativo del certificador (.flw, .csv o equivalente).
-
-    \item Informe de medición de pérdida de inserción y trazas OTDR de todos los
-    enlaces de fibra óptica.
-
-    \item Informe de medición de resistencia de puesta a tierra (telurómetro),
-    con registro de fecha, condiciones del suelo y firma del técnico responsable.
-
-    \item Planos as-built actualizados que reflejen cualquier variación respecto
-    al proyecto original, en formato DWG y PDF.
-
-    \item Manual de administración del sistema con el inventario completo,
-    esquema de etiquetado y procedimientos de mantenimiento preventivo.
+\subsection{Equipos Pasivos}
+\begin{itemize}[label=$\bullet$,leftmargin=1.4em]
+    \item \textbf{Patch Panels Modulares Cat.\,6A:} Bloques metálicos de 24 puertos RJ-45 que ocupan 1U de espacio vertical. Reciben los cables horizontales de forma fija por la parte posterior y exponen puertos hembra en la parte frontal para la conmutación hacia el switch mediante cordones de parcheo (Patch Cords). Se instalarán 3 unidades para cubrir los 62 nodos del proyecto.
+    \item \textbf{Organizadores de Cable Horizontales:} Paneles de 1U con anillos guía, intercalados entre los Patch Panels para direccionar los cables de parcheo y evitar tensiones mecánicas o enredos.
+    \item \textbf{Tomas de Red de Usuario:} Conjunto instalado en las estaciones de trabajo, compuesto por placas de pared (Faceplates) con compuertas antipolvo y módulos Keystone Categoría 6A.
 \end{itemize}
 
-La recepción definitiva del sistema queda condicionada a la entrega completa
-de este expediente y a la aprobación por parte de la supervisión técnica de
-la DTIC-UNSAAC.
+\subsection{Equipos Activos}
+\begin{itemize}[label=$\bullet$,leftmargin=1.4em]
+    \item \textbf{Switches de Acceso:} Dos conmutadores de datos de 48 puertos Gigabit Ethernet (1U cada uno) con enlaces ascendentes SFP+ a 10\,Gbps para la troncal de fibra. En conjunto suman 96 puertos, suficientes para los 62 nodos del proyecto con holgura para crecimiento. Cuentan con tecnología \textbf{PoE+ (Power over Ethernet --- IEEE 802.3at)}, que permite alimentar a través del mismo cable UTP los 9 Access Points y las 8 cámaras de seguridad, eliminando fuentes de alimentación locales.
+\end{itemize}
+
+\section{Requisitos Eléctricos y de Puesta a Tierra}
+
+\subsection{Requisitos Eléctricos y Respaldo}
+El suministro eléctrico del equipamiento activo se centraliza en la base del gabinete mediante una regleta de distribución de energía (PDU) con supresión de sobretensiones.
+Los switches se alimentan a través de una \textbf{UPS Online de Doble Conversión de 1500\,VA / 1350\,W}.
+Esta tecnología aísla los componentes de red frente a las fluctuaciones de voltaje del campus y provee una autonomía mínima de 30 minutos ante un corte de energía, manteniendo operativas la red inalámbrica y el sistema de video vigilancia.
+
+\subsection{Sistema de Puesta a Tierra}
+La protección de la infraestructura se resuelve mediante una barra colectora de cobre de puesta a tierra (TGB) aislada dentro del gabinete, a la cual se conectan el chasis del rack y los switches mediante conductores de cobre verde normados.
+Su propósito es desviar de forma segura las corrientes estáticas y sobrecargas hacia el sistema de tierra física del edificio, evitando daños en los circuitos electrónicos y riesgos de descarga en los técnicos.
+La calidad de este sistema se evalúa a través de su resistencia eléctrica, expresada en Ohmios ($\Omega$).
+Para que la infraestructura se considere conforme, la medición directa con un telurómetro en el pozo de tierra debe certificar un valor menor o igual a 5 Ohmios ($\le 5\,\Omega$).
+
+\section{Procedimientos de Certificación}
+Una vez finalizada la instalación física de los cables y conectores, se ejecutará un proceso obligatorio de control de calidad denominado \textbf{Certificación de Enlace Permanente}.
+Los ensayos se realizarán con un analizador electrónico (certificador de cableado) calibrado y configurado bajo los parámetros de la Categoría 6A.
+El instrumento se conectará a cada uno de los 62 puntos de red para verificar la continuidad del mapa de hilos, confirmar que las longitudes no excedan los 90 metros permitidos y medir los niveles de atenuación y pérdida de retorno generados por las conexiones mecánicas.
+Cada punto deberá obtener de forma individual el estatus de ``Aprobado'' (PASS), el cual se registrará en reportes digitales para la entrega formal del proyecto.

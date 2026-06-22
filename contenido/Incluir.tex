@@ -7,40 +7,44 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage[inner=2.54cm,outer=2.54cm,top=2.54cm,bottom=2.54cm]{geometry}
-\usepackage{tcolorbox}
 \usepackage{newtxtext,newtxmath}
 \usepackage{Estilo}
 \let\openbox\relax
 \usepackage{amsmath}
-\usepackage{esvect}
-\usepackage{bm}
 \usepackage{ragged2e}
-\usepackage{amsthm}
 \usepackage{etoolbox}
 \usepackage{chngcntr}
 \usepackage{setspace}  
 \usepackage{multirow}
-\let\Bbbk\relax
-\usepackage{amssymb}
-\usepackage{tikz,pgfplots,pgfplotstable}
 \usepackage[breaklinks]{hyperref}
 \usepackage{caption}
-\usepackage{amsfonts}
 \usepackage{natbib}
 \usepackage{float}
 \usepackage{titlesec}
 \usepackage{titletoc}
 \usepackage[T1]{fontenc}
-\usepackage{chngcntr}
 \usepackage{enumitem}
 \usepackage{array}
-\usepackage{makecell}
 \usepackage{pdflscape}
-\usepackage{subcaption}
-\usepackage{longtable}
-\usepackage{booktabs}
 \usepackage{lipsum}
 \usepackage{tocloft}
+\usepackage{tikz}
+
+\newcommand{\figpend}[1]{%
+  \begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.85\textwidth}{\centering\textit{[Figura pendiente] #1}}}
+  \end{figure}
+}
+
+\newcommand{\imgpend}[2][0.85\textwidth]{%
+  \begin{tikzpicture}
+    \pgfmathsetmacro{\w}{#1/1cm}
+    \draw[step=1cm, gray!25, thin] (0,0) grid (#1,8cm);
+    \draw[gray!60] (0,0) rectangle (#1,8cm);
+    \node[text=gray!60, font=\large] at ({#1/2},4cm) {#2};
+  \end{tikzpicture}%
+}
 \setlength{\bibhang}{1.27cm}
 
 %:::::::::::::::::::::::::::::::::::::::::::::
@@ -103,9 +107,9 @@
 \addto\captionsspanish{\renewcommand{\listfigurename}{\begin{center} \large ÍNDICE DE FIGURAS \end{center}}}
 \addto\captionsspanish{\renewcommand{\bibname}{\large{BIBLIOGRAFÍA}}}
 
-% Quitar salto de página entre capítulos
+% Quitar salto de página entre capítulos pero mantener modo vertical
 \makeatletter
-\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{\par\vspace{1.5\baselineskip}}{}{}
 \makeatother
 
 % Formato de las tablas
@@ -122,10 +126,3 @@ singlelinecheck=false}
 \setlength{\cftfignumwidth}{4.5em}  
 \setlength{\cftfigindent}{0em} 
 
-%:::::::::::::::::::::::::::::::::::::::::
-%:::::::::::  DEFINIR DEF, TEO Y COR :::::
-%:::::::::::::::::::::::::::::::::::::::::
-\newtheorem{definition}{Definición}[section]
-\newtheorem{theorem}{Teorema}[section]
-\newtheorem{corolary}{Corolario}[section]
-\captionsetup[subfigure]{labelformat=empty}

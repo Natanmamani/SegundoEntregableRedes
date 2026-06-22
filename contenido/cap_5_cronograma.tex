@@ -1,8 +1,53 @@
-\newpage
 \chapter{Cronograma}
+\label{chap:cronograma}
 
-\section{Cronograma de ejecución de actividades}
+La ejecución del proyecto se organiza en el tiempo para asegurar que las actividades se realicen en un orden lógico: primero las canalizaciones, luego el tendido de cable, después el armado del gabinete y, finalmente, las pruebas. Se estima una duración total de \textbf{6 semanas}.
 
-\section{Cronograma de compras y desembolsos}
+\section{Cronograma de Ejecución de Actividades}
+Las actividades se agrupan en cuatro etapas secuenciales, con cierto traslape entre ellas para optimizar el tiempo. El Cuadro~\ref{tab:cronograma} resume la planificación.
 
-\section{Diagrama de Gantt de instalación}
+\begin{table}[H]
+\centering
+\caption{Cronograma de ejecución de actividades.}
+\label{tab:cronograma}
+\begin{tabular}{clcc}
+\hline
+\textbf{Etapa} & \textbf{Actividad Principal} & \textbf{Duración} & \textbf{Semana} \\
+\hline
+1 & Instalación de canaletas y tuberías conduit       & 2 semanas & 1 -- 2 \\
+2 & Tendido y peinado del cable horizontal            & 2 semanas & 2 -- 3 \\
+3 & Armado del Gabinete G09 (patch panels, switches)  & 1 semana  & 4 \\
+4 & Terminación, etiquetado y conexión de jacks       & 1 semana  & 4 -- 5 \\
+5 & Pruebas, certificación y entrega                  & 1 semana  & 6 \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Cronograma de Compras y Desembolsos}
+Las compras se programan de modo que cada material esté disponible antes de la etapa que lo requiere, evitando tanto retrasos como almacenar equipos costosos demasiado pronto. El Cuadro~\ref{tab:compras} relaciona las compras con su momento de desembolso.
+
+\begin{table}[H]
+\centering
+\caption{Cronograma de compras y desembolsos.}
+\label{tab:compras}
+\begin{tabular}{lcr}
+\hline
+\textbf{Adquisición} & \textbf{Momento de Compra} & \textbf{Monto (S/)} \\
+\hline
+Canaletas, conduit y accesorios       & Antes de la Semana 1 & 2\,280.00 \\
+Cable, jacks, faceplates, patch cords & Antes de la Semana 2 & 11\,164.00 \\
+Gabinete, switches, UPS y patch panels& Antes de la Semana 4 & 7\,700.00 \\
+Etiquetas, barra de tierra y otros    & Antes de la Semana 4 & 400.00 \\
+Servicio de certificación             & Semana 6 & 1\,500.00 \\
+\hline
+\multicolumn{2}{r}{\textbf{TOTAL}} & \textbf{23\,044.00*} \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent {\small *El total de compras corresponde a materiales, equipos y certificación; la mano de obra se desembolsa por avance durante toda la obra.}
+
+\section{Diagrama de Gantt de Instalación}
+El diagrama de Gantt representa visualmente la duración y el solapamiento de las etapas a lo largo de las seis semanas, facilitando el seguimiento del avance.
+
+\figpend{Diagrama de Gantt de barras horizontales con las 5 etapas en el eje vertical (canalización, tendido, armado del gabinete, terminación y certificación) y las 6 semanas en el eje horizontal. Cada barra se extiende sobre las semanas que dura la actividad, mostrando los traslapes entre etapas. Puede elaborarse en Excel, Project o draw.io.}

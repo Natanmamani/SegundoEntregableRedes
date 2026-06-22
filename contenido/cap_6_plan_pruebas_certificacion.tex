@@ -1,10 +1,51 @@
-\newpage
 \chapter{Plan de Pruebas y Certificación}
+\label{chap:pruebas}
 
-\section{Procedimientos de prueba}
+Una vez instalado todo el cableado, es obligatorio verificar que cada enlace funcione correctamente antes de entregar la red. Este capítulo define cómo se prueban los 62 puntos, qué resultados se consideran aceptables y cómo se documentan.
 
-\section{Protocolos de certificación}
+\section{Procedimientos de Prueba}
+Cada uno de los 62 enlaces se somete a una prueba individual con un certificador de cableado (por ejemplo, un equipo de la línea Fluke Networks), configurado para la Categoría 6A. El procedimiento básico consiste en:
+\begin{itemize}[label=$\bullet$,leftmargin=1.4em]
+    \item Conectar el certificador en el jack de pared (extremo del usuario) y en el patch panel del Rack G09 (extremo central).
+    \item Ejecutar la prueba automática de \textbf{Enlace Permanente}, que mide todos los parámetros eléctricos del canal.
+    \item Registrar el resultado de cada punto, identificándolo con su código de etiquetado (por ejemplo, G09-N1-D01).
+\end{itemize}
 
-\section{Reportes de certificación esperados}
+\section{Protocolos de Certificación}
+El certificador evalúa automáticamente varios parámetros normados por ANSI/TIA-568-C.2. Los principales se describen en el Cuadro~\ref{tab:parametros}.
 
-\section{Protocolos de aceptación}
+\begin{table}[H]
+\centering
+\caption{Parámetros evaluados en la certificación del enlace.}
+\label{tab:parametros}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Qué verifica} \\
+\hline
+Mapa de hilos (Wiremap) & Que los 8 hilos estén conectados en el orden correcto del código T568-B, sin pares cruzados ni invertidos. \\
+%
+Longitud & Que el enlace no supere los 90\,m de cable permitidos. \\
+%
+Atenuación (Insertion Loss) & Que la pérdida de señal a lo largo del cable se mantenga dentro del límite. \\
+%
+NEXT / PSNEXT & Que la diafonía (interferencia entre pares) esté por debajo del umbral, garantizando una señal limpia. \\
+%
+Pérdida de Retorno (Return Loss) & Que la señal reflejada por las conexiones mecánicas sea baja. \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Reportes de Certificación Esperados}
+Al finalizar cada prueba, el certificador genera un reporte digital por punto. Cada reporte indica el resultado global como \textbf{PASS} (aprobado) o \textbf{FAIL} (rechazado), junto con el detalle de cada parámetro medido y su margen respecto al límite normativo. Los 62 reportes se consolidan en un archivo PDF no modificable que forma parte de la entrega formal del proyecto.
+
+\figpend{(Opcional) Captura o ejemplo de un reporte de certificación de un enlace, mostrando el estado PASS y la gráfica de los parámetros NEXT y atenuación dentro de los límites. Puede tomarse de una hoja de ejemplo del fabricante del certificador.}
+
+\section{Protocolos de Aceptación}
+La red se considera aceptada y lista para su uso cuando se cumplen las siguientes condiciones:
+\begin{itemize}[label=$\bullet$,leftmargin=1.4em]
+    \item Los 62 puntos de red obtienen el estado \textbf{PASS} de forma individual.
+    \item El sistema de puesta a tierra mide un valor menor o igual a 5\,$\Omega$ con el telurómetro.
+    \item El etiquetado físico coincide con los reportes y con los planos del proyecto.
+    \item Se entrega el expediente completo: reportes de certificación, planos finales (as-built) y manual de operación.
+\end{itemize}
+Si algún punto resulta \textbf{FAIL}, se corrige la conexión defectuosa (reponchado o reemplazo del jack) y se vuelve a certificar hasta obtener el estado PASS.
