@@ -4,7 +4,7 @@
 Este capítulo presenta la documentación gráfica del sistema de cableado estructurado de la Escuela Profesional de Enfermería de la UNSAAC. Los planos muestran la distribución de la red, los puntos de datos, canalizaciones, backbone, puesta a tierra y cobertura inalámbrica, y constituyen la guía técnica para la implementación, administración y mantenimiento del sistema.
 
 % ---------------------------------------------------------------
-\subsection{Plano de ubicación general de la red}
+\section{Plano de ubicación general de la red}
 % ---------------------------------------------------------------
 La red sigue una topología en \textbf{estrella jerárquica}: la red de campus
 (DTIC) llega por fibra óptica al nodo principal (MDF) del 2.\textsuperscript{o} piso,
@@ -18,7 +18,7 @@ acceso de cada nivel y, finalmente, hacia los puntos de red de cada ambiente.
     \label{fig:ubicacion}
 \end{figure}
 
-\subsection{Planos de planta con puntos de red y canalizaciones}
+\section{Planos de planta con puntos de red y canalizaciones}
 % ---------------------------------------------------------------
 Por cada nivel se muestra la distribución de ambientes, la cantidad de puntos de
 red RJ-45 por ambiente y el recorrido de las canalizaciones: el cable principal
@@ -26,7 +26,7 @@ corre por el pasillo (bandeja por techo/piso) y, dentro de cada ambiente, el
 cableado se distribuye por las paredes hasta cada toma. El número en el círculo
 rojo del plano indica la cantidad de tomas RJ-45 del ambiente.
 
-\subsubsection{Primer piso}
+\subsection{Primer piso}
 Reúne ambientes administrativos (Decanato, Direcciones, Secretarías, Mesa de
 Partes), aulas, biblioteca, Sala de Lectura y servicios. \textbf{No tiene rack};
 se alimenta desde el MDF del 2.\textsuperscript{o} piso. La Sala de Lectura cuenta con un
@@ -65,7 +65,7 @@ se alimenta desde el MDF del 2.\textsuperscript{o} piso. La Sala de Lectura cuen
 \end{table}
 \noindent\small Los SS.HH.\ (112, 104) y la Caja de Escalera (111) no llevan puntos de red.\normalsize
 
-\subsubsection{Segundo piso}
+\subsection{Segundo piso}
 Aloja los laboratorios (Simulaciones y Médico Quirúrgico), el \textbf{Centro de
 Cómputo (208)} —que concentra 24 tomas y donde se ubica el \textbf{rack principal}
 (MDF)—, la Sala de Docentes, aulas y servicios.
@@ -101,7 +101,7 @@ Cómputo (208)} —que concentra 24 tomas y donde se ubica el \textbf{rack princ
 
 
 
-\subsection{Tercer nivel}
+\section{Tercer nivel}
 
 El tercer nivel concentra aulas de teoría, una oficina de gestión institucional y un
 laboratorio especializado: Aulas 301, 303--307, la Dirección de Calidad y Acreditación
@@ -123,26 +123,28 @@ monitoreo del docente.
     \centering
     \caption{Distribución de puntos de red — Tercer nivel.}
     \label{tab:puntos_nivel3}
+    \small
     \begin{tabular}{|c|l|c|c|}
         \hline
         \textbf{Código} & \textbf{Ambiente} & \textbf{Puertos} & \textbf{Uso previsto} \\
         \hline
-        G09-D14 & Aula 301                          & 2 & Workstation --- videoconf. \\
-        G09-D15 & Dir.\ Calidad y Acreditación 302  & 2 & Workstation --- AP Wi-Fi \\
-        G09-D16 & Lab.\ Salud Materno Infantil 308  & 2 & Simulación Clínica / multimedia \\
-        G09-D17 & Lab.\ Salud Materno Infantil 308  & 2 & Estación de Monitoreo --- Workstation \\
-        G09-D18 & Aula 307                          & 2 & Workstation --- videoconf. \\
-        G09-D19 & Aula 303                          & 2 & Workstation --- videoconf. \\
-        G09-D20 & Aula 304                          & 2 & Workstation --- videoconf. \\
-        G09-D21 & Aula 305                          & 2 & Workstation --- videoconf. \\
-        G09-D22 & Aula 306                          & 2 & Workstation --- videoconf. \\
+        G09-D14 & Aula 301                          & 2 & Workstation -- videoconf. \\
+        G09-D15 & Dir.\ Calidad y Acred.\ 302       & 2 & Workstation -- AP Wi-Fi \\
+        G09-D16 & Lab.\ Salud Mat.\ Infant.\ 308    & 2 & Simul.\ Clínica / multimedia \\
+        G09-D17 & Lab.\ Salud Mat.\ Infant.\ 308    & 2 & Est.\ Monitoreo -- Workstation \\
+        G09-D18 & Aula 307                          & 2 & Workstation -- videoconf. \\
+        G09-D19 & Aula 303                          & 2 & Workstation -- videoconf. \\
+        G09-D20 & Aula 304                          & 2 & Workstation -- videoconf. \\
+        G09-D21 & Aula 305                          & 2 & Workstation -- videoconf. \\
+        G09-D22 & Aula 306                          & 2 & Workstation -- videoconf. \\
         \hline
         \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{18} & \\
         \hline
     \end{tabular}
+    \normalsize
 \end{table}
 
-\subsection{Cuarto nivel}
+\section{Cuarto nivel}
 
 El cuarto nivel es el más relevante en términos de infraestructura, ya que aloja
 el \textbf{Gabinete G09 (MDF)}. Cuenta con \textbf{11 puntos de red}
@@ -153,7 +155,7 @@ Aula 405, Oficina de Maestrías 406, Oficina de Segunda Especialidad 407,
 Salón de Uso Múltiple 408, Laboratorio de Simuladores 409 y Salón
 Administrativo 410.
 
-\subsection{Cuarto Nivel}
+\section{Cuarto Nivel}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.97\textwidth]{images/imagenes/plano_cuarto_nivel1.png}
@@ -164,50 +166,54 @@ Administrativo 410.
     \centering
     \caption{Distribución de puntos de red — Cuarto nivel.}
     \label{tab:puntos_nivel4}
+    \small
     \begin{tabular}{|c|l|c|c|}
         \hline
         \textbf{Código} & \textbf{Ambiente} & \textbf{Puertos} & \textbf{Uso previsto} \\
         \hline
-        G09-D23 & Of.\ Administrativa 401              & 2 & Workstation --- AP Wi-Fi \\
-        G09-D24 & Centro de Investigación 403           & 2 & Workstation \\
-        G09-D25 & Centro Federado 404                   & 2 & Workstation --- AP Wi-Fi \\
-        G09-D26 & Aula 405                              & 2 & Estación docente --- videoconf. \\
-        G09-D27 & Of.\ Maestrías 406                   & 2 & Workstation \\
-        G09-D28 & Of.\ Segunda Especialidad 407         & 2 & Workstation \\
-        G09-D29 & Salón de Uso Múltiple 408             & 2 & Workstation --- videoconf. \\
-        G09-D30 & Salón de Uso Múltiple 408             & 2 & AP Wi-Fi~6 \\
-        G09-D31 & Lab.\ de Simuladores 409              & 2 & Simulación Biomédica \\
-        G09-D32 & Lab.\ de Simuladores 409              & 2 & Workstation docente \\
-        G09-D33 & Salón Administrativo 410              & 2 & Workstation \\
+        G09-D23 & Of.\ Administrativa 401         & 2 & Workstation -- AP Wi-Fi \\
+        G09-D24 & Centro de Investigación 403      & 2 & Workstation \\
+        G09-D25 & Centro Federado 404              & 2 & Workstation -- AP Wi-Fi \\
+        G09-D26 & Aula 405                         & 2 & Est.\ docente -- videoconf. \\
+        G09-D27 & Of.\ Maestrías 406               & 2 & Workstation \\
+        G09-D28 & Of.\ Segunda Especialidad 407    & 2 & Workstation \\
+        G09-D29 & Salón Uso Múltiple 408           & 2 & Workstation -- videoconf. \\
+        G09-D30 & Salón Uso Múltiple 408           & 2 & AP Wi-Fi~6 \\
+        G09-D31 & Lab.\ de Simuladores 409         & 2 & Simulación Biomédica \\
+        G09-D32 & Lab.\ de Simuladores 409         & 2 & Workstation docente \\
+        G09-D33 & Salón Administrativo 410         & 2 & Workstation \\
         \hline
         \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{22} & \\
         \hline
     \end{tabular}
+    \normalsize
 \end{table}
 
 
-\subsubsection{Resumen de puntos por piso}
+\subsection{Resumen de puntos por piso}
 \begin{table}[H]
     \centering
     \caption{Resumen de puntos de red por piso.}
     \label{tab:resumen}
-    \begin{tabular}{|l|c|c|l|}
-        \hline
-        \textbf{Piso} & \textbf{Tomas RJ-45} & \textbf{AP} & \textbf{Observaciones} \\
-        \hline
-        Piso 1 & 25 & 1 & Sin rack (enlaza al MDF del Piso 2) \\
-        Piso 2 & 42 & 0 & Rack principal (MDF) en Centro de Cómputo (208) \\
-        Piso 3 & \multicolumn{3}{c|}{\textit{Pendiente}} \\
-        Piso 4 & \multicolumn{2}{c|}{\textit{Pendiente}} & Rack secundario (IDF) \\
-        \hline
-        \textbf{Subtotal (Pisos 1--2)} & \textbf{67} & \textbf{1} & \\
-        \hline
+    \small
+    \begin{tabular}{|l|c|c|p{7cm}|}
+    \hline
+    \textbf{Piso} & \textbf{Tomas RJ-45} & \textbf{AP} & \textbf{Observaciones} \\
+    \hline
+    Piso 1 & 25 & 1 & Sin rack (enlaza al MDF del Piso 2) \\
+    Piso 2 & 42 & 0 & Rack principal (MDF) en Centro de Cómputo (208) \\
+    Piso 3 & \textit{Pendiente} & \textit{Pendiente} & \textit{Pendiente} \\
+    Piso 4 & \textit{Pendiente} & \textit{Pendiente} & Rack secundario (IDF) \\
+    \hline
+    \textbf{Subtotal (Pisos 1--2)} & \textbf{67} & \textbf{1} & \\
+    \hline
     \end{tabular}
+    \normalsize
 \end{table}
 
 
 % ---------------------------------------------------------------
-\subsection{Plano de racks, patch panels y salas de telecomunicaciones}
+\section{Plano de racks, patch panels y salas de telecomunicaciones}
 % ---------------------------------------------------------------
 El \textbf{rack principal (MDF)} se ubica en el \textbf{Centro de Cómputo (208)}
 del 2.\textsuperscript{o} piso: un gabinete cerrado 19" de 42U que concentra la llegada
@@ -224,7 +230,7 @@ El etiquetado de puertos sigue la norma ANSI/TIA-606-B.
 \end{figure}
 
 % ---------------------------------------------------------------
-\subsection{Plano de backbone}
+\section{Plano de backbone}
 % ---------------------------------------------------------------
 El backbone emplea \textbf{fibra óptica}: el enlace de campus llega al MDF por
 fibra monomodo OS2 y el backbone vertical interconecta el MDF (Piso 2) con
@@ -240,7 +246,7 @@ La topología es en estrella jerárquica.
 \end{figure}
 
 % ---------------------------------------------------------------
-\subsection{Detalles constructivos de ductos, bandejas y registros}
+\section{Detalles constructivos de ductos, bandejas y registros}
 % ---------------------------------------------------------------
 Las canalizaciones siguen la norma ANSI/TIA-569-D. Se emplean canaletas de PVC
 con tapa (40$\times$25, 60$\times$40 y 100$\times$60 mm), bandejas portacables
@@ -252,29 +258,29 @@ mínima de 150 mm respecto al cableado eléctrico.
     \centering
     \includegraphics[width=0.95\textwidth]{images/imagenes/detalles_constructivos1.png}
     \caption{Detalles constructivos de canalización (cortes típicos).}
-    \label{fig:detalles}
+    \label{fig:detalles1}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{images/imagenes/detalles_constructivos2.png}
     \caption{Detalles constructivos de canalización (cortes típicos).}
-    \label{fig:detalles}
+    \label{fig:detalles2}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{images/imagenes/detalles_constructivos3.png}
     \caption{Detalles constructivos de canalización (cortes típicos).}
-    \label{fig:detalles}
+    \label{fig:detalles3}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{images/imagenes/detalle_constructivos4.png}
     \caption{Detalles constructivos de canalización (cortes típicos).}
-    \label{fig:detalles}
+    \label{fig:detalles4}
 \end{figure}
 
 % ---------------------------------------------------------------
-\subsection{Diagrama de puesta a tierra}
+\section{Diagrama de puesta a tierra}
 % ---------------------------------------------------------------
 El sistema de puesta a tierra sigue la norma ANSI/TIA-607-B: una barra principal
 (TMGB) en planta baja, barras de tierra (TGB) en los pisos con rack (2 y 4), un
