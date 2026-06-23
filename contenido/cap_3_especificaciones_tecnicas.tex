@@ -4,7 +4,7 @@
 La infraestructura física del pabellón de Enfermería requiere dos sistemas independientes de conducción de señales, divididos según su entorno de despliegue en un enlace troncal externo y un sistema de distribución interna hacia los terminales de usuario.
 
 \subsection{Cableado Horizontal de Cobre (interior)}
-El subsistema horizontal está destinado a la interconexión directa de las estaciones de trabajo fijas, los puntos de acceso inalámbrico (Access Points) y las cámaras de seguridad del edificio.
+El subsistema horizontal está destinado a la interconexión directa de las estaciones de trabajo fijas y los puntos de acceso inalámbrico (Access Points) del edificio.
 Los conductores se despliegan de manera oculta y protegida en el interior de canaletas plásticas adosadas a los muros de los salones, y transitan verticalmente a través de tuberías conduit que cruzan los techos y pasillos desde el segundo nivel hacia las demás plantas.
 Se prescribe el uso de cable de par trenzado \textbf{Categoría 6A U/UTP} (Unshielded Twisted Pair) de marcas reconocidas en el mercado de telecomunicaciones.
 La elección de esta categoría permite asegurar una transmisión de datos de alta velocidad de hasta 10\,Gbps a una frecuencia operativa de 500\,MHz, duplicando la capacidad de los sistemas convencionales de Categoría 6. La separación de 150\,mm respecto a los conductores de energía controla las interferencias electromagnéticas sin necesidad de un sistema apantallado.
@@ -48,14 +48,14 @@ Los materiales alojados en el Gabinete G09 se clasifican en componentes de distr
 
 \subsection{Equipos Pasivos}
 \begin{itemize}[label=$\bullet$,leftmargin=1.4em]
-    \item \textbf{Patch Panels Modulares Cat.\,6A:} Bloques metálicos de 24 puertos RJ-45 que ocupan 1U de espacio vertical. Reciben los cables horizontales de forma fija por la parte posterior y exponen puertos hembra en la parte frontal para la conmutación hacia el switch mediante cordones de parcheo (Patch Cords). Se instalarán 3 unidades para cubrir los 62 nodos del proyecto.
+    \item \textbf{Patch Panels Modulares Cat.\,6A:} Bloques metálicos de 24 puertos RJ-45 que ocupan 1U de espacio vertical. Reciben los cables horizontales de forma fija por la parte posterior y exponen puertos hembra en la parte frontal para la conmutación hacia el switch mediante cordones de parcheo (Patch Cords). Se instalarán 5 unidades para cubrir los 116 nodos del proyecto.
     \item \textbf{Organizadores de Cable Horizontales:} Paneles de 1U con anillos guía, intercalados entre los Patch Panels para direccionar los cables de parcheo y evitar tensiones mecánicas o enredos.
     \item \textbf{Tomas de Red de Usuario:} Conjunto instalado en las estaciones de trabajo, compuesto por placas de pared (Faceplates) con compuertas antipolvo y módulos Keystone Categoría 6A.
 \end{itemize}
 
 \subsection{Equipos Activos}
 \begin{itemize}[label=$\bullet$,leftmargin=1.4em]
-    \item \textbf{Switches de Acceso:} Dos conmutadores de datos de 48 puertos Gigabit Ethernet (1U cada uno) con enlaces ascendentes SFP+ a 10\,Gbps para la troncal de fibra. En conjunto suman 96 puertos, suficientes para los 62 nodos del proyecto con holgura para crecimiento. Cuentan con tecnología \textbf{PoE+ (Power over Ethernet --- IEEE 802.3at)}, que permite alimentar a través del mismo cable UTP los 9 Access Points y las 8 cámaras de seguridad, eliminando fuentes de alimentación locales.
+    \item \textbf{Switches de Acceso:} Tres conmutadores de datos de 48 puertos Gigabit Ethernet (1U cada uno) con enlaces ascendentes SFP+ a 10\,Gbps para la troncal de fibra. En conjunto suman 144 puertos, suficientes para los 116 nodos del proyecto con holgura para crecimiento. Cuentan con tecnología \textbf{PoE+ (Power over Ethernet --- IEEE 802.3at)}, que permite alimentar a través del mismo cable UTP los 9 Access Points, eliminando fuentes de alimentación locales.
 \end{itemize}
 
 \section{Requisitos Eléctricos y de Puesta a Tierra}
@@ -63,7 +63,7 @@ Los materiales alojados en el Gabinete G09 se clasifican en componentes de distr
 \subsection{Requisitos Eléctricos y Respaldo}
 El suministro eléctrico del equipamiento activo se centraliza en la base del gabinete mediante una regleta de distribución de energía (PDU) con supresión de sobretensiones.
 Los switches se alimentan a través de una \textbf{UPS Online de Doble Conversión de 1500\,VA / 1350\,W}.
-Esta tecnología aísla los componentes de red frente a las fluctuaciones de voltaje del campus y provee una autonomía mínima de 30 minutos ante un corte de energía, manteniendo operativas la red inalámbrica y el sistema de video vigilancia.
+Esta tecnología aísla los componentes de red frente a las fluctuaciones de voltaje del campus y provee una autonomía mínima de 30 minutos ante un corte de energía, manteniendo operativa la red inalámbrica.
 
 \subsection{Sistema de Puesta a Tierra}
 La protección de la infraestructura se resuelve mediante una barra colectora de cobre de puesta a tierra (TGB) aislada dentro del gabinete, a la cual se conectan el chasis del rack y los switches mediante conductores de cobre verde normados.
@@ -74,5 +74,5 @@ Para que la infraestructura se considere conforme, la medición directa con un t
 \section{Procedimientos de Certificación}
 Una vez finalizada la instalación física de los cables y conectores, se ejecutará un proceso obligatorio de control de calidad denominado \textbf{Certificación de Enlace Permanente}.
 Los ensayos se realizarán con un analizador electrónico (certificador de cableado) calibrado y configurado bajo los parámetros de la Categoría 6A.
-El instrumento se conectará a cada uno de los 62 puntos de red para verificar la continuidad del mapa de hilos, confirmar que las longitudes no excedan los 90 metros permitidos y medir los niveles de atenuación y pérdida de retorno generados por las conexiones mecánicas.
+El instrumento se conectará a cada uno de los 116 puntos de red para verificar la continuidad del mapa de hilos, confirmar que las longitudes no excedan los 90 metros permitidos y medir los niveles de atenuación y pérdida de retorno generados por las conexiones mecánicas.
 Cada punto deberá obtener de forma individual el estatus de ``Aprobado'' (PASS), el cual se registrará en reportes digitales para la entrega formal del proyecto.
