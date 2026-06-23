@@ -1,6 +1,4 @@
-# ===== Archivos generados por LaTeX (no se suben) =====
-
-## Auxiliares de compilación
+# ===== LaTeX compilación =====
 *.aux
 *.lof
 *.lot
@@ -28,16 +26,13 @@
 *.acr
 *.alg
 *.xdy
-*.pdf
 
-## PDF de salida en la raíz (descomenta la siguiente línea si NO quieres subir el PDF final)
-# /main.pdf
+# PDF generado principal
+main.pdf
 
-# IMPORTANTE: no ignoramos las imágenes (images/*.pdf, images/*.png) porque son fuentes del documento.
-
-# ===== Sistema operativo / editores =====
+# ===== Sistema / IDE =====
 Thumbs.db
 desktop.ini
 .DS_Store
 .vscode/
-.claude/
+.claude/git status
