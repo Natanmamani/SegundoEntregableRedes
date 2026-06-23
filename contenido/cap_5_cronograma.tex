@@ -1,53 +1,127 @@
+
 \chapter{Cronograma}
 \label{chap:cronograma}
 
-La ejecución del proyecto se organiza en el tiempo para asegurar que las actividades se realicen en un orden lógico: primero las canalizaciones, luego el tendido de cable, después el armado del gabinete y, finalmente, las pruebas. Se estima una duración total de \textbf{6 semanas}.
+La ejecución del sistema de cableado estructurado se organiza en un periodo estimado de seis semanas. Las actividades siguen una secuencia lógica: primero se realiza el replanteo y la instalación de las canalizaciones; posteriormente se efectúa el tendido del cableado, la instalación del gabinete principal, la terminación de los puntos y, finalmente, las pruebas de certificación.
+
+La programación considera la implementación de un único gabinete principal MDF, ubicado en el Centro de Cómputo del segundo piso. Desde este punto se distribuirá el cableado horizontal de cobre Categoría 6A hacia los ambientes de los cuatro niveles del pabellón.
 
 \section{Cronograma de Ejecución de Actividades}
-Las actividades se agrupan en cuatro etapas secuenciales, con cierto traslape entre ellas para optimizar el tiempo. El Cuadro~\ref{tab:cronograma} resume la planificación.
+
+Las actividades han sido distribuidas de acuerdo con sus dependencias técnicas. Algunas tareas podrán desarrollarse parcialmente en paralelo para reducir el tiempo total de ejecución.
 
 \begin{table}[H]
 \centering
 \caption{Cronograma de ejecución de actividades.}
 \label{tab:cronograma}
-\begin{tabular}{clcc}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|c|p{7.2cm}|c|c|}
 \hline
-\textbf{Etapa} & \textbf{Actividad Principal} & \textbf{Duración} & \textbf{Semana} \\
+\textbf{Etapa} & \textbf{Actividad principal} & \textbf{Duración} & \textbf{Semana} \\
 \hline
-1 & Instalación de canaletas y tuberías conduit       & 2 semanas & 1 -- 2 \\
-2 & Tendido y peinado del cable horizontal            & 2 semanas & 2 -- 3 \\
-3 & Armado del Gabinete G09 (patch panels, switches)  & 1 semana  & 4 \\
-4 & Terminación, etiquetado y conexión de jacks       & 1 semana  & 4 -- 5 \\
-5 & Pruebas, certificación y entrega                  & 1 semana  & 6 \\
+1 & Revisión de planos y replanteo de las rutas de cableado & 2 días & 1 \\
+\hline
+2 & Instalación de canaletas, conduit y registros & 2 semanas & 1--2 \\
+\hline
+3 & Tendido y peinado del cableado horizontal Cat. 6A & 2 semanas & 2--3 \\
+\hline
+4 & Instalación del MDF y puesta a tierra & 1 semana & 3--4 \\
+\hline
+5 & Terminación, ponchado y etiquetado de jacks y patch panels & 1 semana & 4--5 \\
+\hline
+6 & Inspección y pruebas preliminares de los enlaces & 2 días & 5 \\
+\hline
+7 & Certificación, corrección de fallas y entrega final & 1 semana & 6 \\
 \hline
 \end{tabular}
+}
 \end{table}
 
+El replanteo permitirá verificar que las rutas señaladas en los planos no interfieran con instalaciones eléctricas, tuberías u otros elementos del edificio. Después de aprobar las rutas se instalarán las canaletas, tuberías conduit y cajas de registro que protegerán el cableado.
+
+El tendido de los cables podrá comenzar en las zonas donde las canalizaciones ya se encuentren concluidas. Posteriormente se instalará el MDF, se organizarán los cables en los patch panels y se realizará la terminación de cada punto bajo el esquema T568-B.
+
+La última semana se destinará a certificar los enlaces, corregir los puntos que obtengan un resultado FAIL y preparar los reportes y planos finales del proyecto.
+
 \section{Cronograma de Compras y Desembolsos}
-Las compras se programan de modo que cada material esté disponible antes de la etapa que lo requiere, evitando tanto retrasos como almacenar equipos costosos demasiado pronto. El Cuadro~\ref{tab:compras} relaciona las compras con su momento de desembolso.
+
+Los materiales deberán adquirirse antes de la actividad en la que serán utilizados. Esta programación evita retrasos y reduce el almacenamiento innecesario de equipos.
 
 \begin{table}[H]
 \centering
 \caption{Cronograma de compras y desembolsos.}
 \label{tab:compras}
-\begin{tabular}{lcr}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|p{7.3cm}|p{4.2cm}|r|}
 \hline
-\textbf{Adquisición} & \textbf{Momento de Compra} & \textbf{Monto (S/)} \\
+\textbf{Adquisición} & \textbf{Momento de compra} & \textbf{Monto (S/)} \\
 \hline
-Canaletas, conduit y accesorios       & Antes de la Semana 1 & 2\,280.00 \\
-Cable, jacks, faceplates, patch cords & Antes de la Semana 2 & 11\,164.00 \\
-Gabinete, switches, UPS y patch panels& Antes de la Semana 4 & 7\,700.00 \\
-Etiquetas, barra de tierra y otros    & Antes de la Semana 4 & 400.00 \\
-Servicio de certificación             & Semana 6 & 1\,500.00 \\
+Canaletas, conduit y accesorios & Antes de la semana 1 & 2\,280.00 \\
 \hline
-\multicolumn{2}{r}{\textbf{TOTAL}} & \textbf{23\,044.00*} \\
+Cable Cat. 6A, jacks, faceplates y patch cords & Antes de la semana 2 & 11\,164.00 \\
+\hline
+Gabinete MDF, switches, UPS y patch panels & Antes de la semana 4 & 7\,700.00 \\
+\hline
+Etiquetas, barra de tierra y materiales complementarios & Antes de la semana 4 & 400.00 \\
+\hline
+Servicio de certificación & Semana 6 & 1\,500.00 \\
+\hline
+\textbf{Total} & & \textbf{23\,044.00} \\
 \hline
 \end{tabular}
+}
 \end{table}
 
-\noindent {\small *El total de compras corresponde a materiales, equipos y certificación; la mano de obra se desembolsa por avance durante toda la obra.}
+El monto indicado corresponde a materiales, equipos y certificación. La mano de obra será desembolsada progresivamente según el avance de la instalación.
 
 \section{Diagrama de Gantt de Instalación}
-El diagrama de Gantt representa visualmente la duración y el solapamiento de las etapas a lo largo de las seis semanas, facilitando el seguimiento del avance.
 
-\figpend{Diagrama de Gantt de barras horizontales con las 5 etapas en el eje vertical (canalización, tendido, armado del gabinete, terminación y certificación) y las 6 semanas en el eje horizontal. Cada barra se extiende sobre las semanas que dura la actividad, mostrando los traslapes entre etapas. Puede elaborarse en Excel, Project o draw.io.}
+El diagrama de Gantt permite visualizar la duración, secuencia y superposición de las actividades durante las seis semanas previstas.
+
+\begin{table}[H]
+\centering
+\caption{Diagrama de Gantt de la instalación.}
+\label{tab:gantt}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|p{7cm}|c|c|c|c|c|c|}
+\hline
+\textbf{Actividad} &
+\textbf{S1} &
+\textbf{S2} &
+\textbf{S3} &
+\textbf{S4} &
+\textbf{S5} &
+\textbf{S6} \\
+\hline
+Revisión de planos y replanteo & X & & & & & \\
+\hline
+Instalación de canaletas, conduit y registros & X & X & & & & \\
+\hline
+Tendido y peinado del cableado & & X & X & & & \\
+\hline
+Instalación del MDF y puesta a tierra & & & X & X & & \\
+\hline
+Terminación y etiquetado & & & & X & X & \\
+\hline
+Inspección y pruebas preliminares & & & & & X & \\
+\hline
+Certificación, correcciones y entrega & & & & & & X \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+\section{Control del Avance}
+
+El avance del proyecto será verificado semanalmente mediante los siguientes indicadores:
+
+\begin{itemize}
+    \item Porcentaje de canalizaciones instaladas.
+    \item Cantidad de cables tendidos y organizados.
+    \item Número de puntos terminados y etiquetados.
+    \item Número de enlaces probados y certificados.
+    \item Porcentaje de resultados PASS.
+    \item Cantidad de fallas corregidas.
+    \item Cumplimiento del cronograma de compras.
+\end{itemize}
+
