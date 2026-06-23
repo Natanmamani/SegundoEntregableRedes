@@ -6,10 +6,11 @@ Este capítulo presenta la documentación gráfica del sistema de cableado estru
 % ---------------------------------------------------------------
 \section{Plano de ubicación general de la red}
 % ---------------------------------------------------------------
-La red sigue una topología en \textbf{estrella jerárquica}: la red de campus
-(DTIC) llega por fibra óptica al nodo principal (MDF) del 2.\textsuperscript{o} piso,
-y desde allí se distribuye, mediante el backbone vertical, hacia los switches de
-acceso de cada nivel y, finalmente, hacia los puntos de red de cada ambiente.
+La red sigue una topología en \textbf{estrella plana}: la red de campus
+(DTIC) llega por fibra óptica monomodo OS2 al único nodo central — el
+\textbf{Gabinete G09 (MDF)} del 2.\textsuperscript{o} piso — y desde allí
+todos los puntos de red de los cuatro niveles se conectan directamente mediante
+cableado horizontal de cobre Cat.\ 6A, sin racks intermedios por piso.
 
 \begin{figure}[H]
     \centering
@@ -101,7 +102,7 @@ Cómputo (208)} —que concentra 24 tomas y donde se ubica el \textbf{rack princ
 
 
 
-\section{Tercer nivel}
+\subsection{Tercer nivel}
 
 El tercer nivel concentra aulas de teoría, una oficina de gestión institucional y un
 laboratorio especializado: Aulas 301, 303--307, la Dirección de Calidad y Acreditación
@@ -114,7 +115,7 @@ monitoreo del docente.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.97\textwidth]{images/imagenes/plano_tercer_nivel.png}
+    \includegraphics[width=0.97\textwidth]{images/imagenes/plano_tercer_piso.jpeg}
     \caption{Plano del tercer nivel con puntos de red G09-D14 a G09-D22
     y rutas de canalización. Esc.\ 1:100.}
     \label{fig:plano_tercer_nivel}
@@ -144,22 +145,21 @@ monitoreo del docente.
     \normalsize
 \end{table}
 
-\section{Cuarto nivel}
+\subsection{Cuarto nivel}
 
-El cuarto nivel es el más relevante en términos de infraestructura, ya que aloja
-el \textbf{Gabinete G09 (MDF)}. Cuenta con \textbf{11 puntos de red}
-(G09-D23 a G09-D33), distribuidos entre oficinas administrativas, un aula de
-teoría, espacios de uso múltiple y un laboratorio especializado: Oficina
-Administrativa 401, Centro de Investigación 403, Centro Federado 404,
-Aula 405, Oficina de Maestrías 406, Oficina de Segunda Especialidad 407,
-Salón de Uso Múltiple 408, Laboratorio de Simuladores 409 y Salón
-Administrativo 410.
+El cuarto nivel concentra oficinas administrativas, un aula de teoría, espacios
+de uso múltiple y un laboratorio especializado. Cuenta con \textbf{11 puntos de
+red} (G09-D23 a G09-D33) distribuidos entre: Oficina Administrativa 401,
+Centro de Investigación 403, Centro Federado 404, Aula 405, Oficina de
+Maestrías 406, Oficina de Segunda Especialidad 407, Salón de Uso Múltiple 408,
+Laboratorio de Simuladores 409 y Salón Administrativo 410. Todos los puntos se
+enlazan directamente al MDF del 2.\textsuperscript{o} piso mediante cableado
+horizontal Cat.\ 6A.
 
-\section{Cuarto Nivel}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.97\textwidth]{images/imagenes/plano_cuarto_nivel1.png}
-    \caption{Plano del cuarto nivel con puntos de red G09-D14 a G09-D29 y ubicación del Gabinete G09 (MDF). Esc.\ 1:100.}
+    \includegraphics[width=0.97\textwidth]{images/imagenes/plano_cuarto_piso.jpeg}
+    \caption{Plano del cuarto nivel con puntos de red G09-D23 a G09-D33. Esc.\ 1:100.}
     \label{fig:plano_cuarto_nivel}
 \end{figure}
 \begin{table}[H]
@@ -190,22 +190,22 @@ Administrativo 410.
 \end{table}
 
 
-\subsection{Resumen de puntos por piso}
+\subsection{Resumen consolidado por nivel}
 \begin{table}[H]
     \centering
-    \caption{Resumen de puntos de red por piso.}
+    \caption{Resumen consolidado de infraestructura de cableado horizontal.}
     \label{tab:resumen}
     \small
-    \begin{tabular}{|l|c|c|p{7cm}|}
+    \begin{tabular}{|l|c|c|c|c|}
     \hline
-    \textbf{Piso} & \textbf{Tomas RJ-45} & \textbf{AP} & \textbf{Observaciones} \\
+    \textbf{Nivel del Edificio} & \textbf{Datos (D)} & \textbf{Wi-Fi (W)} & \textbf{CCTV (C)} & \textbf{Total} \\
     \hline
-    Piso 1 & 25 & 1 & Sin rack (enlaza al MDF del Piso 2) \\
-    Piso 2 & 42 & 0 & Rack principal (MDF) en Centro de Cómputo (208) \\
-    Piso 3 & \textit{Pendiente} & \textit{Pendiente} & \textit{Pendiente} \\
-    Piso 4 & \textit{Pendiente} & \textit{Pendiente} & Rack secundario (IDF) \\
+    Primer Nivel (Administración)       & 10 & 2 & 2 & 14 \\
+    Segundo Nivel (Cómputo / Aulas)     & 19 & 2 & 2 & 23 \\
+    Tercer Nivel (Laboratorios / Aulas) & 8  & 2 & 2 & 12 \\
+    Cuarto Nivel (Auditorio / Aulas)    & 8  & 3 & 2 & 13 \\
     \hline
-    \textbf{Subtotal (Pisos 1--2)} & \textbf{67} & \textbf{1} & \\
+    \textbf{Total General de Nodos} & \textbf{45} & \textbf{9} & \textbf{8} & \textbf{62 puntos de red} \\
     \hline
     \end{tabular}
     \normalsize
@@ -215,16 +215,18 @@ Administrativo 410.
 % ---------------------------------------------------------------
 \section{Plano de racks, patch panels y salas de telecomunicaciones}
 % ---------------------------------------------------------------
-El \textbf{rack principal (MDF)} se ubica en el \textbf{Centro de Cómputo (208)}
-del 2.\textsuperscript{o} piso: un gabinete cerrado 19" de 42U que concentra la llegada
-del backbone de fibra (ODF), los patch panels Cat.6 del cableado horizontal de los
-pisos 1 y 2 (67 tomas $\rightarrow$ 3 patch panels de 24p), los switches y el UPS.
-En el \textbf{4.\textsuperscript{o} piso} se ubica un \textbf{rack secundario (IDF)}.
-El etiquetado de puertos sigue la norma ANSI/TIA-606-B.
+El \textbf{Gabinete G09 (MDF)} se ubica en el \textbf{Centro de Cómputo (208)}
+del 2.\textsuperscript{o} piso: un gabinete cerrado 19'' de 42U que concentra la
+llegada del enlace de campus por fibra OS2 (ODF), los tres patch panels Cat.\ 6A
+del cableado horizontal de los cuatro niveles (62 nodos $\rightarrow$ 3 patch
+panels de 24p = 72 puertos), los switches PoE+ y el UPS. Al concentrarse toda la
+red del pabellón en un único rack central, no se requieren racks secundarios (IDF)
+ni backbones verticales internos. El etiquetado de puertos sigue la norma
+ANSI/TIA-606-B.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{images/imagenes/diagrama_racks.png}
+    \includegraphics[width=0.95\textwidth]{images/imagenes/diagrama_racks.jpeg}
     \caption{Elevación del rack principal (MDF) — Centro de Cómputo, 2.\textsuperscript{o} piso.}
     \label{fig:racks}
 \end{figure}
@@ -232,16 +234,17 @@ El etiquetado de puertos sigue la norma ANSI/TIA-606-B.
 % ---------------------------------------------------------------
 \section{Plano de backbone}
 % ---------------------------------------------------------------
-El backbone emplea \textbf{fibra óptica}: el enlace de campus llega al MDF por
-fibra monomodo OS2 y el backbone vertical interconecta el MDF (Piso 2) con
-el IDF (Piso 4) por fibra multimodo OM3. Los pisos sin rack hacen
-\textit{homing} al rack más cercano (Piso 1 $\rightarrow$ MDF; Piso 3 $\rightarrow$ IDF).
-La topología es en estrella jerárquica.
+El enlace de campus llega al \textbf{Gabinete G09 (MDF)} en el
+2.\textsuperscript{o} piso mediante \textbf{fibra óptica monomodo OS2} desde el
+centro de distribución general (DTIC-UNSAAC). Al existir un único rack central
+para todo el pabellón, no se requiere backbone vertical interno: los puntos de
+los cuatro niveles se conectan directamente al MDF mediante cableado horizontal
+de cobre Cat.\ 6A, en topología de estrella plana.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{images/imagenes/diagrama_backbone.png}
-    \caption{Diagrama de backbone (fibra de campus OS2 y vertical OM3).}
+    \includegraphics[width=0.95\textwidth]{images/imagenes/diagrama_backbone.jpeg}
+    \caption{Diagrama de backbone — enlace de campus OS2 al Gabinete G09 (MDF), 2.\textsuperscript{o} piso.}
     \label{fig:backbone}
 \end{figure}
 
@@ -283,14 +286,14 @@ mínima de 150 mm respecto al cableado eléctrico.
 \section{Diagrama de puesta a tierra}
 % ---------------------------------------------------------------
 El sistema de puesta a tierra sigue la norma ANSI/TIA-607-B: una barra principal
-(TMGB) en planta baja, barras de tierra (TGB) en los pisos con rack (2 y 4), un
-conductor bajante (TBB) que las une y un electrodo de tierra. Los racks se unen
-(bonding) a su TGB con conductor de cobre, en topología de estrella para evitar
-lazos de tierra.
+(TMGB) en planta baja, una barra de tierra (TGB) en el 2.\textsuperscript{o}
+piso donde se ubica el Gabinete G09, un conductor bajante (TBB) que las une y
+un electrodo de tierra. El rack se une (bonding) a su TGB con conductor de
+cobre, en topología de estrella para evitar lazos de tierra.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{images/imagenes/diagrama_puesta_tierra.png}
+    \includegraphics[width=0.95\textwidth]{images/imagenes/diagrama_puesta_tierra.jpeg}
     \caption{Diagrama de puesta a tierra del sistema de telecomunicaciones.}
     \label{fig:tierra}
 \end{figure}
