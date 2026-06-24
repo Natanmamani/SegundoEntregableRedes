@@ -4,7 +4,7 @@
 \section{Descripción General del Proyecto}
 El presente proyecto consiste en el diseño de una propuesta académica para la renovación y optimización del Sistema de Cableado Estructurado de la Escuela Profesional de Enfermería de la Universidad Nacional de San Antonio Abad del Cusco (UNSAAC).
 Físicamente, la escuela opera en un pabellón de concreto armado que consta de cuatro niveles funcionales.
-Actualmente el edificio cuenta con una instalación de red básica; sin embargo, esta propuesta plantea un rediseño técnico orientado exclusivamente a la \textbf{infraestructura física y pasiva de telecomunicaciones} (Capa 1 del modelo OSI). El diseño abarca el tendido de cables de datos para las estaciones de trabajo fijas, la canalización e interconexión de los puntos de acceso inalámbrico (Access Points) y los puntos para cámaras de video vigilancia (CCTV) del pabellón.
+Actualmente el edificio cuenta con una instalación de red básica; sin embargo, esta propuesta plantea un rediseño técnico orientado exclusivamente a la \textbf{infraestructura física y pasiva de telecomunicaciones} (Capa 1 del modelo OSI). El diseño abarca el tendido de cables de datos para las estaciones de trabajo fijas y la canalización e interconexión de los puntos de acceso inalámbrico (Access Points) del pabellón.
 El núcleo de la topología física propuesta se centraliza en un único Rack de Telecomunicaciones principal (Main Distribution Frame --- MDF), ubicado en el segundo nivel del edificio y compartiendo el entorno físico del Centro de Cómputo por motivos de centralidad geográfica y seguridad.
 Desde este punto central se distribuye el cableado horizontal de cobre de manera directa hacia los cuatro pisos del inmueble, prescindiendo de gabinetes secundarios para mantener una arquitectura de red simple, económica y de fácil mantenimiento.
 
@@ -16,7 +16,7 @@ Diseñar una propuesta técnica de cableado estructurado basada en estándares i
 \subsection{Objetivos Específicos}
 \begin{itemize}[label=$\bullet$,leftmargin=1.4em]
     \item Definir la distribución física de los puntos de red de datos para las áreas administrativas, académicas y laboratorios especializados en los cuatro niveles del pabellón.
-    \item Proyectar la ubicación de los puntos de red destinados a la alimentación y conectividad de los Access Points (APs) en techos, así como de las cámaras de seguridad, asegurando la infraestructura física necesaria para ambos servicios.
+    \item Proyectar la ubicación de los puntos de red destinados a la alimentación y conectividad de los Access Points (APs) en techos, asegurando la infraestructura física necesaria para la cobertura inalámbrica.
     \item Diseñar la distribución interna del Rack Principal (MDF) en el segundo piso, organizando de forma estandarizada los paneles de parcheo (Patch Panels) y los organizadores de cable necesarios para el total de nodos del edificio.
     \item Establecer los criterios técnicos de canalización y tendido de cables a través de canaletas y tuberías, garantizando que ningún enlace horizontal de cobre exceda el límite normativo de 90 metros lineales.
 \end{itemize}
@@ -68,7 +68,6 @@ La presente propuesta académica delimita sus fronteras estrictamente al diseño
 \begin{itemize}[label=$\bullet$,leftmargin=1.4em]
     \item \textbf{Cableado Horizontal:} Diseño del tendido de cable de par trenzado UTP desde el Centro de Cómputo (Piso 2) hacia las estaciones de trabajo del personal administrativo del primer nivel, las computadoras del laboratorio del segundo nivel y los escritorios de docentes distribuidos en los pisos superiores.
     \item \textbf{Infraestructura para Wi-Fi:} Inclusión en el cableado horizontal de los puntos de red aéreos (jacks en cajas de paso fijadas en el techo) requeridos para conectar físicamente los Access Points que darán cobertura inalámbrica a los estudiantes.
-    \item \textbf{Infraestructura para Video Vigilancia (CCTV):} Tendido de los puntos de red aéreos destinados a alimentar y conectar las cámaras de seguridad IP del pabellón, las cuales se integran a la misma infraestructura de cobre.
     \item \textbf{Gabinete de Telecomunicaciones Centralizado:} Configuración física del espacio del Rack Principal de piso (MDF) de 42U de altura, detallando el uso de Patch Panels RJ-45 de la categoría adecuada para recibir los cables de todo el edificio.
     \item \textbf{Canalizaciones Pasivas:} Definición de las rutas físicas de distribución de cables empleando canaletas adosadas a la pared y tuberías conduit para el tránsito ordenado de los conductores entre los diferentes niveles del pabellón.
 \end{itemize}

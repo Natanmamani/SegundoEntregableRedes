@@ -21,8 +21,12 @@ cableado horizontal de cobre Cat.\ 6A, sin racks intermedios por piso.
 
 \section{Planos de planta con puntos de red y canalizaciones}
 % ---------------------------------------------------------------
+Cada punto de red equivale a un enlace permanente: una corrida de cable de cobre
+Cat.\ 6A desde el patch panel del MDF hasta una salida RJ-45. Un punto = un cable
+= un puerto de patch panel.
+
 Por cada nivel se muestra la distribución de ambientes, la cantidad de puntos de
-red RJ-45 por ambiente y el recorrido de las canalizaciones: el cable principal
+red por ambiente y el recorrido de las canalizaciones: el cable principal
 corre por el pasillo (bandeja por techo/piso) y, dentro de cada ambiente, el
 cableado se distribuye por las paredes hasta cada toma. El número en el círculo
 rojo del plano indica la cantidad de tomas RJ-45 del ambiente.
@@ -30,8 +34,8 @@ rojo del plano indica la cantidad de tomas RJ-45 del ambiente.
 \subsection{Primer piso}
 Reúne ambientes administrativos (Decanato, Direcciones, Secretarías, Mesa de
 Partes), aulas, biblioteca, Sala de Lectura y servicios. \textbf{No tiene rack};
-se alimenta desde el MDF del 2.\textsuperscript{o} piso. La Sala de Lectura cuenta con un
-\textbf{Access Point}.
+se alimenta desde el MDF del 2.\textsuperscript{o} piso. Cuenta con
+\textbf{28 puntos de red} (25 de datos y 3 de Wi-Fi).
 
 \begin{figure}[H]
     \centering
@@ -44,23 +48,24 @@ se alimenta desde el MDF del 2.\textsuperscript{o} piso. La Sala de Lectura cuen
     \centering
     \caption{Puntos de red — Primer piso.}
     \label{tab:piso1}
-    \begin{tabular}{|c|l|c|l|}
+    \begin{tabular}{|c|l|c|c|l|}
         \hline
-        \textbf{N.\textsuperscript{o}} & \textbf{Ambiente} & \textbf{Tomas RJ-45} & \textbf{Uso previsto} \\
+        \textbf{N.\textsuperscript{o}} & \textbf{Ambiente} & \textbf{Puntos} & \textbf{Tipo} & \textbf{Uso previsto} \\
         \hline
-        116 & Decanato de la Fac.\ de Enfermería   & 4 & Oficina \\
-        115 & Secretaría Académica de la Facultad  & 4 & Oficina \\
-        114 & Dirección Depto.\ Acad.\ Enfermería  & 4 & Oficina \\
-        113 & Dirección E.P.\ de Enfermería        & 1 & Oficina \\
-        102 & Estimulación Temprana                & 2 & Sala \\
-        110 & Mesa de Partes de la Facultad        & 2 & Atención \\
-        109 & Secretaría del Decanato              & 2 & Oficina \\
-        108 & Aula                                 & 2 & Aula \\
-        107 & Aula                                 & 2 & Aula \\
-        106 & Biblioteca y Depósito de Libros      & 2 & Biblioteca \\
-        105 & Sala de Lectura                      & 1 AP & Cobertura WiFi \\
+        116 & Decanato de la Fac.\ de Enfermería   & 4 & Datos & Oficina \\
+        115 & Secretaría Académica de la Facultad  & 4 & Datos & Oficina \\
+        114 & Dirección Depto.\ Acad.\ Enfermería  & 4 & Datos & Oficina \\
+        113 & Dirección E.P.\ de Enfermería        & 1 & Datos & Oficina \\
+        110 & Mesa de Partes de la Facultad        & 2 & Datos & Atención \\
+        109 & Secretaría del Decanato              & 2 & Datos & Oficina \\
+        106 & Biblioteca y Depósito de Libros      & 2 & Datos & Biblioteca \\
+        108 & Aula                                 & 2 & Datos & Aula \\
+        107 & Aula                                 & 2 & Datos & Aula \\
+        102 & Estimulación Temprana                & 2 & Datos & Sala \\
+        105 & Sala de Lectura                      & 1 & Wi-Fi & Cobertura WiFi \\
+        --- & AP Wi-Fi (pasillo)                   & 2 & Wi-Fi & Cobertura WiFi \\
         \hline
-        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{25 + 1 AP} & \\
+        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{28} & \multicolumn{2}{l|}{25 Datos + 3 Wi-Fi} \\
         \hline
     \end{tabular}
 \end{table}
@@ -68,8 +73,9 @@ se alimenta desde el MDF del 2.\textsuperscript{o} piso. La Sala de Lectura cuen
 
 \subsection{Segundo piso}
 Aloja los laboratorios (Simulaciones y Médico Quirúrgico), el \textbf{Centro de
-Cómputo (208)} —que concentra 24 tomas y donde se ubica el \textbf{rack principal}
-(MDF)—, la Sala de Docentes, aulas y servicios.
+Cómputo (208)} —que concentra 24 puntos de datos y donde se ubica el \textbf{rack
+principal} (MDF)—, la Sala de Docentes, aulas y servicios. Cuenta con
+\textbf{44 puntos de red} (42 de datos y 2 de Wi-Fi).
 
 \begin{figure}[H]
     \centering
@@ -82,19 +88,20 @@ Cómputo (208)} —que concentra 24 tomas y donde se ubica el \textbf{rack princ
     \centering
     \caption{Puntos de red — Segundo piso.}
     \label{tab:piso2}
-    \begin{tabular}{|c|l|c|l|}
+    \begin{tabular}{|c|l|c|c|l|}
         \hline
-        \textbf{N.\textsuperscript{o}} & \textbf{Ambiente} & \textbf{Tomas RJ-45} & \textbf{Uso previsto} \\
+        \textbf{N.\textsuperscript{o}} & \textbf{Ambiente} & \textbf{Puntos} & \textbf{Tipo} & \textbf{Uso previsto} \\
         \hline
-        208 & Centro de Cómputo             & 24 & Laboratorio (aloja el rack) \\
-        209 & Laboratorio de Simulaciones   & 4  & Laboratorio \\
-        210 & Laboratorio Médico Quirúrgico & 4  & Laboratorio \\
-        207 & Sala de Docentes              & 4  & Oficina \\
-        206 & Aula                          & 2  & Aula \\
-        205 & Aula                          & 2  & Aula \\
-        204 & Tutoría Académica             & 2  & Oficina \\
+        208 & Centro de Cómputo             & 24 & Datos & Laboratorio (aloja el rack) \\
+        209 & Laboratorio de Simulaciones   & 4  & Datos & Laboratorio \\
+        210 & Laboratorio Médico Quirúrgico & 4  & Datos & Laboratorio \\
+        207 & Sala de Docentes              & 4  & Datos & Oficina \\
+        204 & Tutoría Académica             & 2  & Datos & Oficina \\
+        205 & Aula                          & 2  & Datos & Aula \\
+        206 & Aula                          & 2  & Datos & Aula \\
+        --- & AP Wi-Fi                      & 2  & Wi-Fi & Cobertura WiFi \\
         \hline
-        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{42} & \\
+        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{44} & \multicolumn{2}{l|}{42 Datos + 2 Wi-Fi} \\
         \hline
     \end{tabular}
 \end{table}
@@ -106,17 +113,16 @@ Cómputo (208)} —que concentra 24 tomas y donde se ubica el \textbf{rack princ
 
 El tercer nivel concentra aulas de teoría, una oficina de gestión institucional y un
 laboratorio especializado: Aulas 301, 303--307, la Dirección de Calidad y Acreditación
-(302) y el Laboratorio de Salud Materno Infantil (308). Se instalaron
-\textbf{9 puntos de red} (G09-D14 a G09-D22), cada uno con outlet doble Cat.6
-(2 puertos RJ-45), conforme a \mbox{ANSI/TIA-568-C.1}. Las aulas cuentan con punto
-dedicado para la estación docente con capacidad de videoconferencia; el laboratorio
-incorpora puntos para el equipamiento de simulación clínica y la estación de
-monitoreo del docente.
+(302) y el Laboratorio de Salud Materno Infantil (308). Cuenta con \textbf{20 puntos
+de red} (18 de datos y 2 de Wi-Fi), cada uno con salida Cat.\ 6A conforme a
+\mbox{ANSI/TIA-568-C.1}. Las aulas disponen de puntos dedicados para la estación
+docente; el laboratorio incorpora puntos para el equipamiento de simulación clínica
+y la estación de monitoreo.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.97\textwidth]{images/imagenes/plano_tercer_piso.jpeg}
-    \caption{Plano del tercer nivel con puntos de red G09-D14 a G09-D22
+    \caption{Plano del tercer nivel con 20 puntos de red
     y rutas de canalización. Esc.\ 1:100.}
     \label{fig:plano_tercer_nivel}
 \end{figure}
@@ -125,21 +131,21 @@ monitoreo del docente.
     \caption{Distribución de puntos de red — Tercer nivel.}
     \label{tab:puntos_nivel3}
     \small
-    \begin{tabular}{|c|l|c|c|}
+    \begin{tabular}{|l|l|c|c|l|}
         \hline
-        \textbf{Código} & \textbf{Ambiente} & \textbf{Puertos} & \textbf{Uso previsto} \\
+        \textbf{Código} & \textbf{Ambiente} & \textbf{Puntos} & \textbf{Tipo} & \textbf{Uso previsto} \\
         \hline
-        G09-D14 & Aula 301                          & 2 & Workstation -- videoconf. \\
-        G09-D15 & Dir.\ Calidad y Acred.\ 302       & 2 & Workstation -- AP Wi-Fi \\
-        G09-D16 & Lab.\ Salud Mat.\ Infant.\ 308    & 2 & Simul.\ Clínica / multimedia \\
-        G09-D17 & Lab.\ Salud Mat.\ Infant.\ 308    & 2 & Est.\ Monitoreo -- Workstation \\
-        G09-D18 & Aula 307                          & 2 & Workstation -- videoconf. \\
-        G09-D19 & Aula 303                          & 2 & Workstation -- videoconf. \\
-        G09-D20 & Aula 304                          & 2 & Workstation -- videoconf. \\
-        G09-D21 & Aula 305                          & 2 & Workstation -- videoconf. \\
-        G09-D22 & Aula 306                          & 2 & Workstation -- videoconf. \\
+        G09-N3-D68 & Aula 301                        & 2 & Datos & Aula \\
+        G09-N3-D70 & Dir.\ Calidad y Acred.\ 302     & 2 & Datos & Oficina \\
+        G09-N3-D72 & Aula 303                        & 2 & Datos & Aula \\
+        G09-N3-D74 & Aula 304                        & 2 & Datos & Aula \\
+        G09-N3-D76 & Aula 305                        & 2 & Datos & Aula \\
+        G09-N3-D78 & Aula 306                        & 2 & Datos & Aula \\
+        G09-N3-D80 & Aula 307                        & 2 & Datos & Aula \\
+        G09-N3-D82 & Lab.\ Salud Mat.\ Infant.\ 308  & 4 & Datos & Laboratorio \\
+        G09-N3-W06 & AP Wi-Fi                        & 2 & Wi-Fi & Cobertura WiFi \\
         \hline
-        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{18} & \\
+        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{20} & \multicolumn{2}{l|}{18 Datos + 2 Wi-Fi} \\
         \hline
     \end{tabular}
     \normalsize
@@ -148,8 +154,8 @@ monitoreo del docente.
 \subsection{Cuarto nivel}
 
 El cuarto nivel concentra oficinas administrativas, un aula de teoría, espacios
-de uso múltiple y un laboratorio especializado. Cuenta con \textbf{11 puntos de
-red} (G09-D23 a G09-D33) distribuidos entre: Oficina Administrativa 401,
+de uso múltiple y un laboratorio especializado. Cuenta con \textbf{24 puntos de
+red} (22 de datos y 2 de Wi-Fi) distribuidos entre: Oficina Administrativa 401,
 Centro de Investigación 403, Centro Federado 404, Aula 405, Oficina de
 Maestrías 406, Oficina de Segunda Especialidad 407, Salón de Uso Múltiple 408,
 Laboratorio de Simuladores 409 y Salón Administrativo 410. Todos los puntos se
@@ -159,7 +165,7 @@ horizontal Cat.\ 6A.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.97\textwidth]{images/imagenes/plano_cuarto_piso.jpeg}
-    \caption{Plano del cuarto nivel con puntos de red G09-D23 a G09-D33. Esc.\ 1:100.}
+    \caption{Plano del cuarto nivel con 24 puntos de red. Esc.\ 1:100.}
     \label{fig:plano_cuarto_nivel}
 \end{figure}
 \begin{table}[H]
@@ -167,23 +173,22 @@ horizontal Cat.\ 6A.
     \caption{Distribución de puntos de red — Cuarto nivel.}
     \label{tab:puntos_nivel4}
     \small
-    \begin{tabular}{|c|l|c|c|}
+    \begin{tabular}{|l|l|c|c|l|}
         \hline
-        \textbf{Código} & \textbf{Ambiente} & \textbf{Puertos} & \textbf{Uso previsto} \\
+        \textbf{Código} & \textbf{Ambiente} & \textbf{Puntos} & \textbf{Tipo} & \textbf{Uso previsto} \\
         \hline
-        G09-D23 & Of.\ Administrativa 401         & 2 & Workstation -- AP Wi-Fi \\
-        G09-D24 & Centro de Investigación 403      & 2 & Workstation \\
-        G09-D25 & Centro Federado 404              & 2 & Workstation -- AP Wi-Fi \\
-        G09-D26 & Aula 405                         & 2 & Est.\ docente -- videoconf. \\
-        G09-D27 & Of.\ Maestrías 406               & 2 & Workstation \\
-        G09-D28 & Of.\ Segunda Especialidad 407    & 2 & Workstation \\
-        G09-D29 & Salón Uso Múltiple 408           & 2 & Workstation -- videoconf. \\
-        G09-D30 & Salón Uso Múltiple 408           & 2 & AP Wi-Fi~6 \\
-        G09-D31 & Lab.\ de Simuladores 409         & 2 & Simulación Biomédica \\
-        G09-D32 & Lab.\ de Simuladores 409         & 2 & Workstation docente \\
-        G09-D33 & Salón Administrativo 410         & 2 & Workstation \\
+        G09-N4-D86  & Of.\ Administrativa 401       & 2 & Datos & Oficina \\
+        G09-N4-D88  & Centro de Investigación 403    & 2 & Datos & Oficina \\
+        G09-N4-D90  & Centro Federado 404            & 2 & Datos & Oficina \\
+        G09-N4-D92  & Aula 405                       & 2 & Datos & Aula \\
+        G09-N4-D94  & Of.\ Maestrías 406             & 2 & Datos & Oficina \\
+        G09-N4-D96  & Of.\ Segunda Especialidad 407  & 2 & Datos & Oficina \\
+        G09-N4-D98  & Salón Uso Múltiple 408         & 4 & Datos & Sala \\
+        G09-N4-D102 & Lab.\ de Simuladores 409       & 4 & Datos & Laboratorio \\
+        G09-N4-D106 & Salón Administrativo 410       & 2 & Datos & Oficina \\
+        G09-N4-W08  & AP Wi-Fi                       & 2 & Wi-Fi & Cobertura WiFi \\
         \hline
-        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{22} & \\
+        \multicolumn{2}{|l|}{\textbf{Total}} & \textbf{24} & \multicolumn{2}{l|}{22 Datos + 2 Wi-Fi} \\
         \hline
     \end{tabular}
     \normalsize
@@ -196,16 +201,16 @@ horizontal Cat.\ 6A.
     \caption{Resumen consolidado de infraestructura de cableado horizontal.}
     \label{tab:resumen}
     \small
-    \begin{tabular}{|l|c|c|c|c|}
+    \begin{tabular}{|l|c|c|c|}
     \hline
-    \textbf{Nivel del Edificio} & \textbf{Datos (D)} & \textbf{Wi-Fi (W)} & \textbf{CCTV (C)} & \textbf{Total} \\
+    \textbf{Nivel del Edificio} & \textbf{Datos (D)} & \textbf{Wi-Fi (W)} & \textbf{Total} \\
     \hline
-    Primer Nivel (Administración)       & 10 & 2 & 2 & 14 \\
-    Segundo Nivel (Cómputo / Aulas)     & 19 & 2 & 2 & 23 \\
-    Tercer Nivel (Laboratorios / Aulas) & 8  & 2 & 2 & 12 \\
-    Cuarto Nivel (Auditorio / Aulas)    & 8  & 3 & 2 & 13 \\
+    Primer Nivel (Administración)       & 25 & 3 & 28 \\
+    Segundo Nivel (Cómputo / Aulas)     & 42 & 2 & 44 \\
+    Tercer Nivel (Laboratorios / Aulas) & 18 & 2 & 20 \\
+    Cuarto Nivel (Auditorio / Aulas)    & 22 & 2 & 24 \\
     \hline
-    \textbf{Total General de Nodos} & \textbf{45} & \textbf{9} & \textbf{8} & \textbf{62 puntos de red} \\
+    \textbf{Total General de Nodos} & \textbf{107} & \textbf{9} & \textbf{116 puntos de red} \\
     \hline
     \end{tabular}
     \normalsize
@@ -217,9 +222,9 @@ horizontal Cat.\ 6A.
 % ---------------------------------------------------------------
 El \textbf{Gabinete G09 (MDF)} se ubica en el \textbf{Centro de Cómputo (208)}
 del 2.\textsuperscript{o} piso: un gabinete cerrado 19'' de 42U que concentra la
-llegada del enlace de campus por fibra OS2 (ODF), los tres patch panels Cat.\ 6A
-del cableado horizontal de los cuatro niveles (62 nodos $\rightarrow$ 3 patch
-panels de 24p = 72 puertos), los switches PoE+ y el UPS. Al concentrarse toda la
+llegada del enlace de campus por fibra OS2 (ODF), los cinco patch panels Cat.\ 6A
+del cableado horizontal de los cuatro niveles (116 nodos $\rightarrow$ 5 patch
+panels de 24p = 120 puertos), los switches PoE+ y el UPS. Al concentrarse toda la
 red del pabellón en un único rack central, no se requieren racks secundarios (IDF)
 ni backbones verticales internos. El etiquetado de puertos sigue la norma
 ANSI/TIA-606-B.
