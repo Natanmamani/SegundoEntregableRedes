@@ -97,10 +97,6 @@
 \addto\captionsspanish{\renewcommand{\listfigurename}{\begin{center} \large ÍNDICE DE FIGURAS \end{center}}}
 \addto\captionsspanish{\renewcommand{\bibname}{\large{BIBLIOGRAFÍA}}}
 
-% Quitar salto de página entre capítulos
-\makeatletter
-\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{\par}{}{}
-\makeatother
 
 % Formato de las tablas
 \captionsetup[table]{name={Tabla},labelfont={bf,sl},textfont={sl},labelsep=newline,justification=raggedright,
