@@ -1,19 +1,58 @@
 \chapter{Especificaciones Técnicas}
 
+El presente capítulo detalla las especificaciones técnicas de cada componente que integra el sistema de cableado estructurado del pabellón de Enfermería. Para cada elemento se incluye una descripción funcional y una tabla con los parámetros técnicos de la marca y modelo de referencia seleccionados. Las marcas comerciales especificadas (Furukawa, Cisco, Aruba, Tripp Lite, APC, Panduit, Dexson, Pavco y Brady) han sido elegidas por su conformidad con las normas ANSI/TIA e ISO/IEC, garantizando la interoperabilidad de todos los subsistemas y el soporte de transmisión a 10\,Gbps sobre cobre Categoría 6A.
+
 \section{Tipo y Categoría de Cables}
 La infraestructura física del pabellón de Enfermería requiere dos sistemas independientes de conducción de señales, divididos según su entorno de despliegue en un enlace troncal externo y un sistema de distribución interna hacia los terminales de usuario.
 
 \subsection{Cableado Horizontal de Cobre (interior)}
 El subsistema horizontal está destinado a la interconexión directa de las estaciones de trabajo fijas y los puntos de acceso inalámbrico (Access Points) del edificio.
 Los conductores se despliegan de manera oculta y protegida en el interior de canaletas plásticas adosadas a los muros de los salones, y transitan verticalmente a través de tuberías conduit que cruzan los techos y pasillos desde el segundo nivel hacia las demás plantas.
-Se prescribe el uso de cable de par trenzado \textbf{Categoría 6A U/UTP} (Unshielded Twisted Pair) de marcas reconocidas en el mercado de telecomunicaciones.
-La elección de esta categoría permite asegurar una transmisión de datos de alta velocidad de hasta 10\,Gbps a una frecuencia operativa de 500\,MHz, duplicando la capacidad de los sistemas convencionales de Categoría 6. La separación de 150\,mm respecto a los conductores de energía controla las interferencias electromagnéticas sin necesidad de un sistema apantallado.
+Se prescribe el uso de cable de par trenzado \textbf{Categoría 6A U/UTP} (Unshielded Twisted Pair) de la línea GigaLAN de Furukawa.
+La elección de esta categoría permite asegurar una transmisión de datos de alta velocidad de hasta 10\,Gbps a una frecuencia operativa de 500\,MHz. Su diseño estructural incluye separadores internos de alta precisión (crucetas) que mitigan la diafonía exógena (Alien Crosstalk) sin requerir láminas metálicas de blindaje, facilitando la instalación y eximiendo al cable de conexiones a tierra.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas del cable horizontal de cobre.}
+\label{tab:spec_cable_cobre}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Furukawa GigaLAN U/UTP Cat 6A \\
+Categoría y Blindaje & Categoría 6A U/UTP (Sin blindaje) \\
+Calibre del conductor & 23 AWG (Cobre sólido) \\
+Rendimiento máximo & 10\,Gbps a 500\,MHz \\
+Tensión máxima de tracción & 110\,N (25\,lbf) \\
+Radio de curvatura mínimo & 4 veces el diámetro exterior \\
+Cumplimiento normativo & ANSI/TIA-568.2-D e ISO/IEC 11801 Clase EA \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection{Cable de Fibra Óptica (conexión externa)}
 El enlace troncal de campus conecta el edificio de Enfermería con el centro de datos principal de la universidad, administrado por la Dirección de Tecnologías de la Información y Comunicaciones (DTIC-UNSAAC).
 Este conductor ingresa de forma subterránea por las canalizaciones del campus, penetra en el pabellón a través de la acometida de la planta baja y se extiende hasta el armario de telecomunicaciones del segundo piso.
-Se especifica para este tramo el uso de \textbf{Fibra Óptica Monomodo (OS2)} de 12 hilos, apta para tendido subterráneo en ducto.
-Su propósito es garantizar la conectividad del pabellón a largas distancias sin degradación de señal.
+Se especifica para este tramo el uso de \textbf{Fibra Óptica Monomodo (OS2)} de 12 hilos de la línea Optic-LAN de Furukawa, apta para tendido subterráneo en ducto.
+Su propósito es garantizar la conectividad del pabellón a largas distancias sin degradación de señal, con una atenuación máxima de 0.4\,dB/km a 1310\,nm.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas de la fibra óptica de campus.}
+\label{tab:spec_fibra}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Furukawa Optic-LAN OS2 \\
+Tipo de Fibra & Monomodo OS2 (9/125\,$\mu$m) \\
+Capacidad & 12 hilos \\
+Tipo de instalación & Tendido subterráneo en ducto \\
+Conectorización de extremo & LC Dúplex \\
+Atenuación máxima & $\le$ 0.4\,dB/km a 1310\,nm \\
+\hline
+\end{tabular}
+\end{table}
 
 \textit{Criterio de diseño:} El proyecto descarta el uso de fibra óptica en los recorridos verticales internos; toda la interconexión entre pisos se resuelve mediante cobre Categoría 6A, ya que las distancias horizontales y verticales acumuladas no superan el límite normativo de 90 metros. Esto optimiza los costos al evitar fusiones ópticas y módulos transceptores redundantes en cada nivel.
 
@@ -34,42 +73,339 @@ En el extremo central, los hilos se conectan en la parte posterior de los Patch 
 El destrenzado de los hilos en los puntos de contacto no superará los 13\,mm para mitigar problemas de diafonía en alta frecuencia.
 
 \subsection{Normas de Etiquetado}
-La identificación de los componentes sigue las directrices de la norma ANSI/TIA-606-B, empleando etiquetas de polímero autolaminables de transferencia térmica.
+La identificación de los componentes sigue las directrices de la norma ANSI/TIA-606-B, empleando etiquetas de polímero autolaminables de transferencia térmica de la marca Brady.
 La rotulación se aplicará de forma permanente en el conector de pared, en ambos extremos de cada cable y en los puertos frontales del rack, utilizando la nomenclatura unificada \textbf{G09-N[Piso]-[Tipo][Número]} establecida en la sección de codificación de puntos de red.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas del sistema de etiquetado.}
+\label{tab:spec_etiquetado}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Brady (Polímero autolaminable, impresión térmica) \\
+Norma de referencia & ANSI/TIA-606-B \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Componentes de Conectividad Pasiva}
+Los componentes de conectividad pasiva son los elementos que permiten la terminación, distribución y organización física de los cables sin requerir energía eléctrica para su funcionamiento. A continuación se detallan las especificaciones de cada uno.
+
+\subsection{Jack Keystone RJ-45 Cat 6A}
+El jack keystone es el conector hembra que se instala en el extremo del usuario (punto de red). Cada cable horizontal se termina por impacto en la parte posterior de un jack, exponiendo un puerto RJ-45 en la placa de pared donde el usuario conecta su equipo mediante un patch cord. Se instalarán 125 unidades (116 para los nodos del proyecto y 9 de repuesto).
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas del jack keystone RJ-45.}
+\label{tab:spec_jack}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Furukawa Keystone Jack U/UTP Cat 6A \\
+Tipo de conector & RJ-45 U/UTP (Sin blindaje) \\
+Esquema de cableado & T568A / T568B \\
+Compatibilidad de calibre & 22--26 AWG (sólido) \\
+Control de calidad & Serializado y 100\,\% probado en fábrica \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Faceplate (Placa de Pared)}
+El faceplate es la placa plástica que se fija sobre la caja eléctrica empotrada en el muro, alojando el módulo keystone y proporcionando una terminación estética y funcional al punto de red del usuario. Se emplearán placas de 1 puerto, asignando un faceplate individual a cada nodo para mantener una relación directa de uno a uno. Se instalarán 107 unidades en total para cubrir todos los puntos de datos fijos del edificio.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas del faceplate.}
+\label{tab:spec_faceplate}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Furukawa Faceplate 1 puerto \\
+Capacidad & 1 puerto/módulo Keystone \\
+Formato & Single gang (Estándar NEMA) \\
+Características & Porta-etiqueta integrado, plástico de alto impacto \\
+\hline
+\end{tabular}
+\end{table}
+
+La cantidad de cada componente del punto de red se desglosa de la siguiente manera para garantizar su trazabilidad:
+\begin{itemize}[label=$\bullet$,leftmargin=1.4em]
+    \item \textbf{Jacks (125):} 116 instalados ---107 en los puntos de datos y 9 en los puntos de Access Points--- más 9 unidades de repuesto. El jack es el componente que más se manipula y se poncha por impacto en obra, por lo que se reserva un margen de reposición de aproximadamente 8\,\%.
+    \item \textbf{Faceplates (107):} corresponden únicamente a los puntos de datos fijos, ya que los 9 puntos de Access Points no llevan placa de pared (su jack se aloja en la caja de paso del techo).
+    \item \textbf{Cajas de pared (107):} una por cada punto de datos, donde se monta el faceplate.
+    \item \textbf{Cajas de paso (9):} una por cada Access Point, fijada en el techo.
+\end{itemize}
+De esta forma, los 116 nodos del proyecto quedan cubiertos de manera consistente entre jacks instalados, faceplates, cajas de datos y cajas de paso.
+
+\subsection{Caja de Pared}
+Cada punto de datos requiere una caja empotrada o adosada al muro que aloja el módulo keystone y sobre la cual se atornilla el faceplate. Se emplean cajas de PVC estándar tipo rectangular, instalándose 107 unidades (una por cada punto de datos fijo). Los 9 puntos de Access Points no usan esta caja, pues su jack se aloja en la caja de paso del techo.
+
+\subsection{Patch Cord Cat 6A}
+El patch cord es el cordón flexible que conecta el puerto frontal del patch panel con el puerto del switch dentro del gabinete. A diferencia del cable horizontal (conductor sólido), el patch cord emplea conductor multifilar trenzado para soportar las manipulaciones frecuentes de la conmutación. Se requieren 116 unidades de 1 metro para el parcheo inicial del proyecto.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas del patch cord.}
+\label{tab:spec_patchcord}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Furukawa Patch Cord U/UTP Cat 6A \\
+Longitud & 1 metro \\
+Calibre del conductor & 24 AWG o 26 AWG (Cobre multifilar/trenzado) \\
+Frecuencia soportada & 500\,MHz \\
+Diseño & U/UTP (Sin blindaje), con pestaña (latch) antienredo \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Patch Panel 24 Puertos Cat 6A}
+Se especifica un patch panel de puertos fijos (cargado de fábrica), que recibe de forma permanente los cables horizontales por su parte posterior y expone puertos RJ-45 hembra integrados en su parte frontal, sin requerir jacks keystone adicionales para poblarse. La conmutación hacia los switches se realiza mediante los patch cords conectados en estos puertos frontales. Se instalarán 5 unidades de 24 puertos cada una, sumando 120 puertos para cubrir los 116 nodos del proyecto con holgura para crecimiento.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas del patch panel.}
+\label{tab:spec_patchpanel}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Furukawa Patch Panel Cargado (Fijo) Cat 6A U/UTP \\
+Capacidad & 24 puertos RJ-45 \\
+Tipo & Cargado/fijo: 24 puertos RJ-45 integrados de fábrica \\
+Tamaño de montaje & 1U para Rack estándar EIA 19'' \\
+Material & Acero de alta resistencia \\
+Cantidad en proyecto & 5 unidades (120 puertos totales) \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Organizador Horizontal de Cable}
+El organizador horizontal es un panel de 1U con anillos guía y dedos flexibles que se intercala entre los patch panels dentro del rack. Su función es direccionar los patch cords de forma ordenada, controlando el radio de curvatura y evitando tensiones mecánicas o enredos que puedan degradar el rendimiento de los enlaces. Se instalarán 6 unidades distribuidas entre los patch panels y los switches.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas del organizador horizontal de cable.}
+\label{tab:spec_organizador}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Panduit PatchLink 1U \\
+Tamaño de montaje & 1U para Rack estándar EIA 19'' \\
+Diseño frontal & Dedos flexibles con tapa abatible \\
+Función principal & Controlar el radio de curvatura de los patch cords \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{ODF / Bandeja de Fibra Óptica}
+El ODF (Optical Distribution Frame) es la bandeja de terminación óptica montada en el rack que recibe los hilos de la fibra del campus y los presenta en adaptadores LC dúplex para su conexión hacia los puertos SFP+ de los switches. Constituye el punto de demarcación entre la red externa (DTIC-UNSAAC) y la red interna del pabellón. Se instala 1 unidad en el Gabinete G09.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas del ODF / bandeja de fibra óptica.}
+\label{tab:spec_odf}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Panduit Opticom FAP OS2 LC Dúplex \\
+Puertos / Capacidad & 12 adaptadores LC dúplex (24 hilos totales) \\
+Material de alineación & Mangas de zirconia (para precisión monomodo) \\
+Función en el proyecto & Terminar la fibra del campus dentro del MDF \\
+\hline
+\end{tabular}
+\end{table}
 
 \section{Estándares de Racks y Gabinetes}
 Todos los componentes de conmutación y distribución del edificio se consolidarán de manera centralizada en una estructura metálica normalizada para telecomunicaciones, protegiendo el hardware contra el polvo, las fluctuaciones térmicas y los accesos no autorizados.
 El gabinete principal (MDF), denominado \textbf{Gabinete G09}, se ubicará anclado al suelo dentro del Centro de Cómputo del segundo piso, en un entorno con cerradura.
-Se especifica un gabinete cerrado de acero con ancho de montaje de 19 pulgadas (estándar EIA-310-D) y una altura útil de \textbf{42 Unidades de Rack (RU)}, con puerta delantera de vidrio templado y paneles laterales desmontables con cerradura.
-Para la gestión térmica, el gabinete integrará en su tapa superior un sistema de ventilación forzada controlado por un termostato. Este sistema activará los ventiladores únicamente cuando la temperatura interna supere los 35\,$^\circ$C, optimizando el consumo energético y reduciendo el ruido en el laboratorio.
 
-\section{Equipos Pasivos y Activos}
-Los materiales alojados en el Gabinete G09 se clasifican en componentes de distribución física que no requieren energía eléctrica (pasivos) y dispositivos electrónicos de procesamiento de datos (activos).
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas del gabinete de piso.}
+\label{tab:spec_gabinete}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Tripp Lite SmartRack 42U \\
+Capacidad útil & 42 Unidades de Rack (42U) \\
+Estándar de montaje & 19 pulgadas (EIA-310-D) \\
+Material y Puertas & Acero, puerta frontal de vidrio templado con cerradura \\
+Control térmico & Ventilación forzada con termostato (activa a $>$35\,$^\circ$C) \\
+\hline
+\end{tabular}
+\end{table}
 
-\subsection{Equipos Pasivos}
-\begin{itemize}[label=$\bullet$,leftmargin=1.4em]
-    \item \textbf{Patch Panels Modulares Cat.\,6A:} Bloques metálicos de 24 puertos RJ-45 que ocupan 1U de espacio vertical. Reciben los cables horizontales de forma fija por la parte posterior y exponen puertos hembra en la parte frontal para la conmutación hacia el switch mediante cordones de parcheo (Patch Cords). Se instalarán 5 unidades para cubrir los 116 nodos del proyecto.
-    \item \textbf{Organizadores de Cable Horizontales:} Paneles de 1U con anillos guía, intercalados entre los Patch Panels para direccionar los cables de parcheo y evitar tensiones mecánicas o enredos.
-    \item \textbf{Tomas de Red de Usuario:} Conjunto instalado en las estaciones de trabajo, compuesto por placas de pared (Faceplates) con compuertas antipolvo y módulos Keystone Categoría 6A.
-\end{itemize}
+\noindent En el interior del gabinete, montada sobre un riel del lateral sin ocupar unidades de rack (0U), se ubica la barra de tierra para telecomunicaciones (TGB), a la cual se conectan el chasis y los equipos activos según la norma ANSI/TIA-607-B.
 
-\subsection{Equipos Activos}
-\begin{itemize}[label=$\bullet$,leftmargin=1.4em]
-    \item \textbf{Switches de Acceso:} Tres conmutadores de datos de 48 puertos Gigabit Ethernet (1U cada uno) con enlaces ascendentes SFP+ a 10\,Gbps para la troncal de fibra. En conjunto suman 144 puertos, suficientes para los 116 nodos del proyecto con holgura para crecimiento. Cuentan con tecnología \textbf{PoE+ (Power over Ethernet --- IEEE 802.3at)}, que permite alimentar a través del mismo cable UTP los 9 Access Points, eliminando fuentes de alimentación locales.
-\end{itemize}
+\section{Equipos Activos}
+Los equipos activos son los dispositivos electrónicos que requieren energía eléctrica para procesar, conmutar y distribuir las señales de datos a través de la infraestructura pasiva.
+
+\subsection{Switches de Acceso}
+Los switches de acceso son los conmutadores de datos que reciben las conexiones de los 116 puntos de red a través de los patch cords y proporcionan la conectividad Gigabit Ethernet a cada estación de trabajo. Cuentan con tecnología \textbf{PoE+ (IEEE 802.3at)} que permite alimentar eléctricamente los 9 Access Points del edificio a través del mismo cable de cobre, eliminando la necesidad de fuentes de alimentación locales en los puntos de cobertura inalámbrica. Se instalarán 3 unidades con enlaces ascendentes SFP+ a 10\,Gbps para la conexión con la troncal de fibra óptica. Los puertos de acceso operan a 1\,Gbps, velocidad que cubre con holgura la demanda de las estaciones de trabajo y de los Access Points conectados.
+Los tres switches operan de forma activa desde la puesta en marcha, sumando 144 puertos de acceso que cubren los 116 nodos del proyecto con holgura para crecimiento; ninguno se reserva como unidad inactiva, ya que dos switches (96 puertos) serían insuficientes para la totalidad de los nodos.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas del switch de acceso.}
+\label{tab:spec_switch}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Cisco Catalyst 1300-48FP-4X \\
+Puertos de red (Cobre) & 48 puertos Gigabit Ethernet (10/100/1000) \\
+Puertos de enlace (Fibra) & 4 puertos SFP+ a 10\,Gbps \\
+Alimentación eléctrica & PoE+ (Estándar IEEE 802.3at) \\
+Presupuesto de energía (PoE) & $\sim$740 Watts \\
+Cantidad en proyecto & 3 unidades (Suman 144 puertos) \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Access Points Wi-Fi}
+Los Access Points son los dispositivos de cobertura inalámbrica que se instalan en cajas de paso fijadas en el techo de los ambientes estratégicos del pabellón. Reciben su alimentación eléctrica y su conexión de datos a través del mismo cable Cat 6A mediante la tecnología PoE+ provista por los switches Cisco. Se desplegarán 9 unidades distribuidas en los cuatro pisos del edificio para garantizar la cobertura Wi-Fi de estudiantes, docentes y personal administrativo.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas del access point Wi-Fi.}
+\label{tab:spec_ap}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Aruba Instant On AP25 \\
+Estándar Inalámbrico & IEEE 802.11ax (Wi-Fi 6) \\
+Frecuencias de operación & 2.4\,GHz y 5\,GHz (Doble banda) \\
+Tasa de transferencia máx. & 5.3\,Gbps agregado (4.8\,Gbps en 5\,GHz + 574\,Mbps en 2.4\,GHz) \\
+Tecnología de transmisión & MU-MIMO 4$\times$4 (5\,GHz) y 2$\times$2 (2.4\,GHz), OFDMA \\
+Puerto de red & 1 $\times$ 2.5\,GbE con PoE-in (802.3at) \\
+Método de alimentación & PoE+ (IEEE 802.3at, desde los switches Cisco) \\
+Seguridad & WPA2 / WPA3 / Enhanced Open \\
+Cantidad en proyecto & 9 unidades para cobertura en los 4 pisos \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent El puerto de enlace del AP25 es de 2.5\,GbE; al conectarse a los switches Cisco Catalyst 1300 (puertos de acceso Gigabit), el enlace negocia a 1\,Gbps, velocidad suficiente para la carga inalámbrica prevista en aulas y laboratorios. El puerto 2.5\,GbE queda como holgura para una futura migración a switches multigigabit sin reemplazar los puntos de acceso.
 
 \section{Requisitos Eléctricos y de Puesta a Tierra}
 
 \subsection{Requisitos Eléctricos y Respaldo}
 El suministro eléctrico del equipamiento activo se centraliza en la base del gabinete mediante una regleta de distribución de energía (PDU) con supresión de sobretensiones.
-Los switches se alimentan a través de una \textbf{UPS Online de Doble Conversión de 1500\,VA / 1350\,W}.
-Esta tecnología aísla los componentes de red frente a las fluctuaciones de voltaje del campus y provee una autonomía mínima de 30 minutos ante un corte de energía, manteniendo operativa la red inalámbrica.
+Los switches se alimentan a través de una \textbf{UPS Line-Interactive con Regulación Automática de Voltaje (AVR) de 1500\,VA / 1000\,W} de la línea Smart-UPS de APC by Schneider Electric.
+Esta tecnología protege los componentes de red frente a las fluctuaciones de voltaje del campus mediante su regulador integrado (AVR) y provee una autonomía mínima de 30 minutos ante un corte de energía, manteniendo operativa la red inalámbrica.
+La topología line-interactive con AVR corrige las fluctuaciones de voltaje del campus sin recurrir constantemente a la batería, ofreciendo una protección adecuada para la carga de los equipos de red con mayor eficiencia energética y menor costo que una topología online de doble conversión, manteniendo la autonomía mínima de 30 minutos requerida.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas de la UPS.}
+\label{tab:spec_ups}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & APC by Schneider Smart-UPS 1500VA (SMT1500I) \\
+Topología & Line-Interactive con AVR (Onda senoidal pura) \\
+Capacidad de carga & 1500\,VA / 1000\,W \\
+Voltaje nominal & 230\,V con Regulación Automática de Voltaje (AVR) \\
+Autonomía estimada & $\ge$ 30 minutos con la carga del proyecto (carga parcial) \\
+Salidas & 8 tomas IEC C13 \\
+\hline
+\end{tabular}
+\end{table}
+
+La PDU se monta en la parte baja del gabinete, inmediatamente sobre la UPS, distribuyendo la energía respaldada hacia los equipos activos.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas de la PDU (regleta de distribución de energía).}
+\label{tab:spec_pdu}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & PDU para rack 19'' con supresión de sobretensiones \\
+Formato de montaje & Horizontal 1U (rack EIA 19'') o vertical en lateral \\
+Número de tomas & 8 tomas tipo C13 / universales \\
+Protección & Supresión de sobretensiones (surge protection) integrada \\
+Función en el proyecto & Distribuir la energía de la UPS hacia los switches y equipos activos del gabinete \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection{Sistema de Puesta a Tierra}
 La protección de la infraestructura se resuelve mediante una barra colectora de cobre de puesta a tierra (TGB) aislada dentro del gabinete, a la cual se conectan el chasis del rack y los switches mediante conductores de cobre verde normados.
 Su propósito es desviar de forma segura las corrientes estáticas y sobrecargas hacia el sistema de tierra física del edificio, evitando daños en los circuitos electrónicos y riesgos de descarga en los técnicos.
 La calidad de este sistema se evalúa a través de su resistencia eléctrica, expresada en Ohmios ($\Omega$).
 Para que la infraestructura se considere conforme, la medición directa con un telurómetro en el pozo de tierra debe certificar un valor menor o igual a 5 Ohmios ($\le 5\,\Omega$).
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas del sistema de puesta a tierra.}
+\label{tab:spec_tierra}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca y Modelo & Erico (nVent) TGB de Cobre puro sólido \\
+Resistencia máxima admisible & $\le$ 5\,$\Omega$ \\
+Norma de referencia & ANSI/TIA-607-B \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Canalizaciones}
+Las canalizaciones constituyen las rutas físicas por donde transitan los cables de datos desde el Gabinete G09 hacia los puntos de red de los cuatro niveles del pabellón. Se emplean dos tipos principales de infraestructura de canalización: las canaletas plásticas adosadas a las paredes interiores de los ambientes y las bandejas portacables metálicas instaladas en el cielo raso de los pasillos y áreas comunes.
+
+\subsection{Canaletas PVC y Tubería Conduit}
+Las canaletas de PVC con tapa se utilizan para la distribución del cableado dentro de cada ambiente, desde el ingreso del cable por el muro hasta la toma de red del usuario. La tubería conduit EMT se emplea en los tramos empotrados y verticales donde el cable transita entre niveles del edificio, proporcionando protección mecánica adicional.
+La canaleta se dimensiona según la cantidad de cables que transporta cada tramo: las secciones mayores se ubican donde el manojo entra concentrado a un ambiente, y las menores en la distribución final hacia cada toma. El número de cables admisibles se rige por el límite de ocupación del 40\,\% de la norma ANSI/TIA-569-D: tomando un cable Cat 6A U/UTP de $\sim$7\,mm de diámetro ($\sim$38\,mm\textsuperscript{2} de área), la cantidad máxima de cables por sección es la que se indica a continuación.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas de canaletas PVC y tubería conduit.}
+\label{tab:spec_canaleta}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Canaleta PVC (Marca) & Dexson (Schneider Electric) \\
+Sección 40$\times$25\,mm & Distribución final (1--2 tomas); admite hasta $\sim$10 cables Cat 6A al 40\,\% \\
+Sección 60$\times$40\,mm & Tramos intermedios; admite hasta $\sim$25 cables Cat 6A al 40\,\% \\
+Sección 100$\times$60\,mm & Entrada a ambientes concentrados; admite hasta $\sim$63 cables Cat 6A al 40\,\% \\
+Tubería Conduit EMT & Pavco (3/4'' hasta 2 cables, 1'' hasta 5 cables, galvanizado) \\
+Límite normativo de llenado & Ocupación máxima del 40\,\% (Norma ANSI/TIA-569-D) \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Bandeja Portacables Metálica}
+La bandeja portacables tipo escalera se instala en el cielo raso de los pasillos principales del pabellón, constituyendo la ruta troncal por donde transitan los manojos de cables horizontales desde el MDF hacia las canaletas de distribución de cada ambiente. Su diseño abierto facilita la ventilación de los cables y permite futuras ampliaciones sin intervenir la infraestructura existente.
+
+\begin{table}[H]
+\centering
+\caption{Especificaciones técnicas de la bandeja portacables.}
+\label{tab:spec_bandeja}
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Parámetro} & \textbf{Valor} \\
+\hline
+Marca referencial & Dexson (Tipo Escalera) \\
+Ancho útil & 100\,mm a 300\,mm \\
+Fijación & En cielo raso con soportes cada 1.5 metros \\
+Separación normativa & $\ge$150\,mm del cableado eléctrico (Fuerza) \\
+\hline
+\end{tabular}
+\end{table}
 
 \section{Procedimientos de Certificación}
 Una vez finalizada la instalación física de los cables y conectores, se ejecutará un proceso obligatorio de control de calidad denominado \textbf{Certificación de Enlace Permanente}.

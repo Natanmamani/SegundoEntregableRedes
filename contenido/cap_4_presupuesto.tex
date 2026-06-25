@@ -2,6 +2,8 @@
 
 El presupuesto de la obra se elabora a partir del inventario de 116 puntos de red definido en el capítulo de Planos, considerando los materiales pasivos, los equipos activos, la mano de obra y la certificación final. Todos los montos son \textbf{referenciales} y están expresados en soles (S/) con IGV incluido; corresponden a precios promedio del mercado nacional de telecomunicaciones y pueden variar según el proveedor y la fecha de compra.
 
+Los precios unitarios consignados son referenciales de mercado nacional. Las marcas especificadas en el Capítulo III (Furukawa, Cisco, Aruba, Tripp Lite, APC, Panduit) corresponden a líneas corporativas de alta gama seleccionadas por su conformidad normativa y desempeño para soportar 10\,Gbps (Cat 6A U/UTP); sus precios reales pueden ser superiores a los valores referenciales aquí presentados. Para efectos de este presupuesto académico se conservan montos referenciales promedio, entendiéndose que una cotización comercial exacta con dichas marcas incrementaría la inversión total.
+
 \section{Presupuesto General de la Obra}
 El presupuesto general agrupa la inversión en tres grandes rubros: los materiales y equipos del sistema de cableado, la mano de obra de instalación y la certificación de los enlaces. El resumen se muestra en el Cuadro~\ref{tab:presupuesto_general}.
 
@@ -13,16 +15,16 @@ El presupuesto general agrupa la inversión en tres grandes rubros: los material
 \hline
 \textbf{Ítem} & \textbf{Descripción del Rubro} & \textbf{Monto (S/)} \\
 \hline
-1 & Materiales y equipos (cableado, gabinete, activos) & 34\,094.00 \\
-2 & Mano de obra de instalación (estimada en 30\,\%) & 10\,228.00 \\
+1 & Materiales y equipos (cableado, gabinete, activos) & 47\,209.00 \\
+2 & Mano de obra de instalación (estimada en 30\,\%) & 14\,163.00 \\
 3 & Certificación de los 116 enlaces (global) & 2\,900.00 \\
 \hline
-\multicolumn{2}{r}{\textbf{TOTAL ESTIMADO DE LA OBRA}} & \textbf{47\,222.00} \\
+\multicolumn{2}{r}{\textbf{TOTAL ESTIMADO DE LA OBRA}} & \textbf{64\,272.00} \\
 \hline
 \end{tabular}
 \end{table}
 
-\noindent El costo aproximado por punto de red instalado y certificado es de S/ 47\,222.00 / 116 $\approx$ \textbf{S/ 407.00 por nodo}, valor coherente con proyectos de cableado estructurado de mediana escala en el ámbito educativo.
+\noindent El costo aproximado por punto de red instalado y certificado es de S/ 64\,272.00 / 116 $\approx$ \textbf{S/ 554.00 por nodo}, valor coherente con proyectos de cableado estructurado de mediana escala en el ámbito educativo que incluyen equipos activos y cobertura Wi-Fi.
 
 \section{Presupuesto Detallado por Partidas}
 A continuación se desglosa el presupuesto en partidas individuales, separando los componentes pasivos (cables, conectores, canalizaciones) de los equipos activos y de respaldo. Esta clasificación facilita la elaboración del cronograma de compras.
@@ -38,34 +40,53 @@ A continuación se desglosa el presupuesto en partidas individuales, separando l
 \hline
 \multicolumn{6}{l}{\textit{A. Componentes pasivos (cableado y conectividad)}} \\
 %
-1  & Cable U/UTP Cat 6A, caja x 305\,m            & caja & 15  & 950.00  & 14\,250.00 \\
-2  & Patch Panel 24 puertos Cat 6A               & und  & 5   & 200.00  & 1\,000.00 \\
-3  & Jack Keystone RJ-45 Cat 6A                  & und  & 125 & 18.00   & 2\,250.00 \\
-4  & Faceplate (placa de pared)                  & und  & 107 & 8.00    & 856.00 \\
-5  & Caja de paso/registro (APs)                 & und  & 9   & 12.00   & 108.00 \\
-6  & Patch cord Cat 6A 1\,m (parcheo)            & und  & 116 & 15.00   & 1\,740.00 \\
-7  & Organizador horizontal de cable 1U          & und  & 6   & 60.00   & 360.00 \\
-8  & Canaleta PVC 40$\times$25\,mm (tramo 2\,m)  & und  & 220 & 14.00   & 3\,080.00 \\
-9  & Tubería conduit y accesorios                & glb  & 1   & 1\,000.00 & 1\,000.00 \\
+1  & Cable Furukawa Cat 6A, caja 305\,m    & caja & 20  & 950.00    & 19\,000.00 \\
+2  & Patch Panel Furukawa 24p Cat 6A       & und  & 5   & 200.00    & 1\,000.00 \\
+3  & Jack Keystone Furukawa Cat 6A         & und  & 125 & 18.00     & 2\,250.00 \\
+4  & Faceplate Furukawa 1 puerto           & und  & 107 & 8.00      & 856.00 \\
+5  & Caja de paso/registro (APs)           & und  & 9   & 12.00     & 108.00 \\
+6  & Caja de pared PVC para punto de datos & und  & 107 & 5.00      & 535.00 \\
+7  & Patch cord Furukawa Cat 6A 1\,m       & und  & 116 & 15.00     & 1\,740.00 \\
+8  & Organizador Panduit 1U                & und  & 6   & 60.00     & 360.00 \\
+9  & Canaleta PVC Dexson 40$\times$25\,mm (distribución) & und & 130 & 12.00 & 1\,560.00 \\
+10 & Canaleta PVC Dexson 60$\times$40\,mm (intermedia)   & und & 70  & 16.00 & 1\,120.00 \\
+11 & Canaleta PVC Dexson 100$\times$60\,mm (troncal)     & und & 20  & 20.00 & 400.00 \\
+12 & Tubería conduit EMT Pavco             & glb  & 1   & 1\,000.00 & 1\,000.00 \\
+13 & ODF Panduit OS2 LC Dúplex             & und  & 1   & 350.00    & 350.00 \\
+14 & Bandeja portacables Dexson 2\,m       & und  & 30  & 45.00     & 1\,350.00 \\
 %
 \multicolumn{6}{l}{\textit{B. Equipos activos y de respaldo}} \\
 %
-10 & Gabinete de piso 42U con llave              & und  & 1   & 1\,800.00 & 1\,800.00 \\
-11 & Switch 48 puertos Gigabit PoE+              & und  & 3   & 1\,900.00 & 5\,700.00 \\
-12 & UPS Online 1500\,VA / 1350\,W               & und  & 1   & 1\,500.00 & 1\,500.00 \\
+15 & Gabinete Tripp Lite 42U               & und  & 1   & 1\,800.00 & 1\,800.00 \\
+16 & Switch Cisco Catalyst 1300-48FP PoE+  & und  & 3   & 1\,900.00 & 5\,700.00 \\
+17 & UPS APC Smart-UPS 1500\,VA            & und  & 1   & 1\,500.00 & 1\,500.00 \\
+18 & Access Point Aruba AP25 Wi-Fi 6       & und  & 9   & 650.00    & 5\,850.00 \\
+19 & PDU regleta con supresión de sobretensiones & und & 1 & 280.00 & 280.00 \\
 %
 \multicolumn{6}{l}{\textit{C. Puesta a tierra y rotulado}} \\
 %
-13 & Barra de tierra (TGB) y cable verde         & glb  & 1   & 250.00  & 250.00 \\
-14 & Etiquetas y material de rotulado            & glb  & 1   & 200.00  & 200.00 \\
+20 & Barra de tierra TGB Erico y cable     & glb  & 1   & 250.00    & 250.00 \\
+21 & Etiquetas Brady y rotulado            & glb  & 1   & 200.00    & 200.00 \\
 \hline
-\multicolumn{5}{r}{\textbf{SUBTOTAL MATERIALES Y EQUIPOS}} & \textbf{34\,094.00} \\
+\multicolumn{5}{r}{\textbf{SUBTOTAL MATERIALES Y EQUIPOS}} & \textbf{47\,209.00} \\
 \hline
 \end{tabular}
 \end{table}
 
 \section{Metrados de Materiales}
-El metrado consiste en calcular las cantidades físicas de cada material a partir del diseño. El insumo más importante es el cable de cobre, cuyo metrado se obtiene multiplicando el número de enlaces por la longitud promedio de cada uno y añadiendo un margen de desperdicio.
+El metrado consiste en calcular las cantidades físicas de cada material a partir del diseño. El insumo más importante es el cable de cobre, cuyo metrado se obtiene mediante la fórmula de longitud promedio establecida por la norma ANSI/TIA-568.
+
+Dado que el MDF se ubica en el segundo piso y alimenta enlaces de muy distinta longitud según el nivel y la posición del ambiente, la longitud promedio no se estima de manera arbitraria sino que se calcula a partir de las distancias mínima y máxima reales del edificio:
+
+\[
+L_{\text{prom}} = \left[\frac{L_{\min} + L_{\max}}{2}\right] \times 1.1 + 2.5
+\]
+
+\noindent donde $L_{\min} = 6$\,m (punto más cercano, dentro del propio Centro de Cómputo del piso 2) y $L_{\max} = 75$\,m (punto más lejano, esquina opuesta del cuarto piso, incluyendo $\sim$8\,m de recorrido vertical por dos niveles). Este valor máximo de 75\,m permanece por debajo del límite normativo de 90\,m para el enlace permanente, lo que valida la viabilidad técnica de la topología centralizada sin racks intermedios.
+
+\[
+L_{\text{prom}} = \left[\frac{6 + 75}{2}\right] \times 1.1 + 2.5 = 40.5 \times 1.1 + 2.5 = 44.55 + 2.5 \approx 47\,\text{m}
+\]
 
 \begin{table}[H]
 \centering
@@ -75,19 +96,21 @@ El metrado consiste en calcular las cantidades físicas de cada material a parti
 \hline
 \textbf{Parámetro de Cálculo} & \textbf{Valor} \\
 \hline
-Número total de enlaces (nodos)                 & 116 enlaces \\
-Longitud promedio estimada por enlace           & 35\,m \\
-Longitud total de cable (116 $\times$ 35\,m)    & 4\,060\,m \\
-Margen de desperdicio y reservas (10\,\%)       & 406\,m \\
+Número total de enlaces (nodos)                          & 116 enlaces \\
+Distancia mínima al MDF ($L_{\min}$)                     & 6\,m \\
+Distancia máxima al MDF ($L_{\max}$)                     & 75\,m \\
+Longitud promedio por enlace (fórmula TIA-568)           & 47\,m \\
+Longitud total de cable (116 $\times$ 47\,m)             & 5\,452\,m \\
+Margen de desperdicio y reservas (10\,\%)                & 545\,m \\
 \hline
-\textbf{Total de cable requerido}               & \textbf{4\,466\,m} \\
-Presentación comercial (caja x 305\,m)          & 305\,m/caja \\
-\textbf{Cajas a adquirir (4\,466 / 305 $\approx$ 14.6)} & \textbf{15 cajas} \\
+\textbf{Total de cable requerido}                        & \textbf{5\,997\,m} \\
+Presentación comercial (caja $\times$ 305\,m)            & 305\,m/caja \\
+\textbf{Cajas a adquirir (5\,997 / 305 $\approx$ 19.7)} & \textbf{20 cajas} \\
 \hline
 \end{tabular}
 \end{table}
 
-\noindent El resto de materiales se metra directamente a partir del inventario de puntos: 125 jacks (116 instalados más repuestos), 107 faceplates para los puntos de datos fijos, 9 cajas de paso para los Access Points y 5 patch panels de 24 puertos para alojar los 116 nodos con holgura. La longitud de canaleta se estima en función del recorrido de los muros y de los tramos verticales hacia el Rack G09.
+\noindent El resto de materiales se metra directamente a partir del inventario de puntos: 125 jacks (116 instalados más repuestos), 107 faceplates con sus respectivas 107 cajas de pared para los puntos de datos fijos, 9 cajas de paso para los Access Points y 5 patch panels de 24 puertos para alojar los 116 nodos con holgura. La longitud de canaleta se obtiene del recorrido de distribución por los muros de cada ambiente, estimado en 440\,m (220 tramos de 2\,m), repartidos en tres secciones según la concentración de cables: $\sim$260\,m en 40$\times$25\,mm para los tramos finales, $\sim$140\,m en 60$\times$40\,mm para los intermedios y $\sim$40\,m en 100$\times$60\,mm para las entradas a los ambientes con más puntos. Las bandejas portacables suman 30 tramos de 2\,m ($\sim$60\,m de recorrido troncal por el cielo raso de los pasillos). A diferencia del cable ---que se metra por enlace individual---, la canalización se metra por la ruta física, ya que un mismo tramo transporta varios cables simultáneamente.
 
 \section{Análisis de Precios Unitarios (APU)}
 El Análisis de Precios Unitarios descompone el costo de instalar \textbf{un} punto de red, sumando el material directo, la mano de obra y una pequeña proporción de herramientas. Sirve para sustentar el precio de la partida principal del proyecto. El Cuadro~\ref{tab:apu} muestra el APU del punto de datos típico.
@@ -101,9 +124,9 @@ El Análisis de Precios Unitarios descompone el costo de instalar \textbf{un} pu
 \textbf{Recurso} & \textbf{Und.} & \textbf{Cant.} & \textbf{Parcial (S/)} \\
 \hline
 \multicolumn{4}{l}{\textit{Materiales}} \\
-Cable Cat 6A (35\,m a S/ 3.19/m)        & m   & 35   & 111.65 \\
+Cable Cat 6A (47\,m a S/ 3.11/m)        & m   & 47   & 146.17 \\
 Jack Keystone Cat 6A                    & und & 1    & 18.00 \\
-Faceplate                              & und & 0.7  & 5.60 \\
+Faceplate 1 puerto (1 por punto)        & und & 1    & 8.00 \\
 Canaleta y accesorios (prorrateo)       & glb & 1    & 25.00 \\
 %
 \multicolumn{4}{l}{\textit{Mano de obra}} \\
@@ -112,12 +135,16 @@ Técnico instalador (tendido + ponchado) & h   & 1.5  & 30.00 \\
 \multicolumn{4}{l}{\textit{Herramientas}} \\
 Desgaste de herramienta (3\,\% M.O.)    & glb & 1    & 0.90 \\
 \hline
-\multicolumn{3}{r}{\textbf{COSTO POR PUNTO DE RED}} & \textbf{191.15} \\
+\multicolumn{3}{r}{\textbf{COSTO POR PUNTO DE RED}} & \textbf{228.07} \\
 \hline
 \end{tabular}
 \end{table}
 
-\noindent Este valor unitario es referencial y no incluye los equipos activos centralizados (gabinete, switches y UPS), que se presupuestan de forma global por ser únicos para todo el edificio.
+\noindent Se emplean faceplates de 1 puerto, por lo que a cada punto de red le corresponde una placa individual (1 faceplate/punto). El precio unitario del cable se obtiene de la presentación comercial: S/ 950.00 / 305\,m = S/ 3.11/m.
+
+\noindent Este valor unitario es referencial y no incluye los equipos activos centralizados (gabinete, switches, UPS y access points), que se presupuestan de forma global por ser únicos para todo el edificio.
+
+\noindent Cabe precisar que el costo unitario por punto (S/ 228.07) sustenta exclusivamente la partida de instalación de un nodo de datos típico y no debe multiplicarse por los 116 puntos para obtener el total de la obra. El presupuesto general (Cuadro~\ref{tab:presupuesto_general}) contabiliza de forma independiente los equipos activos centralizados (gabinete, switches, UPS y access points) y la certificación, los cuales no forman parte del precio unitario de un punto de red.
 
 \section{Fórmulas Polinómicas}
 En obras formales, la fórmula polinómica es una expresión matemática que permite reajustar el presupuesto cuando los precios de los insumos varían en el tiempo (por inflación o cambios de mercado). Agrupa los costos en componentes y asigna a cada uno un coeficiente de incidencia que refleja su peso dentro del total.
@@ -138,3 +165,36 @@ K = a\,\frac{C_c}{C_{c0}} + b\,\frac{E_a}{E_{a0}} + c\,\frac{M_o}{M_{o0}}
 \end{itemize}
 
 \noindent La suma de los coeficientes cumple $a + b + c = 1$. En un proyecto universitario basta con \textbf{presentar la fórmula y justificar las incidencias}; no es necesario aplicar índices oficiales de reajuste.
+
+\section{Cronograma de Compras y Desembolsos}
+
+Los materiales deberán adquirirse antes de la actividad en la que serán utilizados. Esta programación evita retrasos y reduce el almacenamiento innecesario de equipos.
+
+\begin{table}[H]
+\centering
+\caption{Cronograma de compras y desembolsos.}
+\label{tab:compra}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|p{7.3cm}|p{4.2cm}|r|}
+\hline
+\textbf{Adquisición} & \textbf{Momento de compra} & \textbf{Monto (S/)} \\
+\hline
+Canaletas Dexson, conduit Pavco, bandejas portacables y accesorios & Antes de la semana 1 & 5\,430.00 \\
+\hline
+Cable Furukawa Cat 6A (20 cajas), jacks, faceplates, cajas de pared, cajas de paso de APs, patch cords y accesorios & Antes de la semana 2 & 24\,489.00 \\
+\hline
+Gabinete Tripp Lite 42U, switches Cisco, UPS APC, PDU, ODF Panduit, patch panels y organizadores & Antes de la semana 4 & 10\,990.00 \\
+\hline
+Access Points Aruba Instant On AP25 & Antes de la semana 4 & 5\,850.00 \\
+\hline
+Etiquetas Brady, barra de tierra Erico y materiales complementarios & Antes de la semana 4 & 450.00 \\
+\hline
+Servicio de certificación & Semana 6 & 2\,900.00 \\
+\hline
+\textbf{Total} & & \textbf{50\,109.00} \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+\noindent El monto indicado corresponde a materiales, equipos y certificación (S/ 47\,209.00 + S/ 2\,900.00 = S/ 50\,109.00). La mano de obra (S/ 14\,163.00) será desembolsada progresivamente según el avance de la instalación, totalizando los S/ 64\,272.00 del presupuesto general.
